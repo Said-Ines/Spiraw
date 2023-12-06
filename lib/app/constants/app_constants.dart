@@ -165,7 +165,7 @@ class _TextButtons {
 
   // static const _applyElevation = false;
   //final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
-  final double height = 60;
+  final double height = 20;
 }
 
 class _SmallButtons {
@@ -201,7 +201,7 @@ class _Inputs {
   final double horizontalContentPadding =
       AppConstants.bodyMinSymetricHorizontalPadding;
   final double verticalContentPadding = 24;
-  // final double borderWidth = 1.5;
+  final double borderWidth = 1.5;
   //final int passwordInputMaxLength = 12;
   //final int maxLength = 50;
 }

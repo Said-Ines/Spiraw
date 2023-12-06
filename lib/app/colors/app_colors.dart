@@ -124,7 +124,7 @@ class AppColors {
 
   static const LinearGradient bottomBarColor = bottomBarGradient;
 
-  static const Color scaffold = Colors.white;
+  static const Color scaffold = primary;
 
   static const Color activeToggleButton = Color(0xFF31B947);
   static const Color inactiveToggleButtonColor = Color(0xFFE5E5E5);
