@@ -122,23 +122,18 @@ class AppColors {
     stops: [-0.0777, 1.265],
   );
 
-  static const Color bottomBarColor = greyBackground;
-  static const Color bottomBarDarkColor = Color.fromRGBO(6, 48, 72, 1);
+  static const LinearGradient bottomBarColor = bottomBarGradient;
 
   static const Color scaffold = Colors.white;
 
-  static const Color splashColor = Color(0x1A6DADF0);
-  static const Color focusColor = Color(0x1AFC5656);
-  static const Color overlayColor = Color(0x0D063048);
-  static const Color inactiveColor = Color(0xA7003A76);
-  static const Color disabledColor = greyBackground;
-  static const Color hint = greyRegular;
+  static const Color activeToggleButton = Color(0xFF31B947);
+  static const Color inactiveToggleButtonColor = Color(0xFFE5E5E5);
+  static const Color hint = Color(0xFFF5F5F5);
+  static const Color label = grey;
   static const Color boxShadow = Color.fromRGBO(84, 84, 84, 0.21);
   static const Color greenBoxShadow = Color.fromRGBO(52, 217, 69, 0.45);
 
   static const Color remove = Color(0xFFFF3B30);
-  static const Color info = Color(0xFFFF6B00);
-  static const Color success = Color.fromRGBO(120, 195, 84, 1);
 
   static const Color transparent = Colors.transparent;
 }
