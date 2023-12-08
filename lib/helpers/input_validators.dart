@@ -5,30 +5,31 @@ class InputValidators {
 
   static String? noValueValidation<T>(T? value) => (value != null) ? null : "";
 
-  static String? noMessageValidation(String? value) => (value != null && value.isNotEmpty) ? null : "";
+  static String? noMessageValidation(String? value) =>
+      (value != null && value.isNotEmpty) ? null : "";
 
-  static String? validateLogin(String? value) => (value != null && value.length >= 6) ? null : 'Invalid Login';
+  static String? validateLogin(String? value) =>
+      (value != null && value.length >= 6) ? null : 'Invalid Login';
 
-  static String? validateFirstname(String? value) => (value != null && value.length >= 2) ? null : 'Invalid first name';
+  static String? validateUsername(String? value) =>
+      (value != null && value.length >= 2) ? null : 'Invalid username';
 
-  static String? validateLastname(String? value) => (value != null && value.length >= 2) ? null : 'Invalid last name';
+  static String? validateEmail(String? value) =>
+      (value != null && GetUtils.isEmail(value)) ? null : "Invalid email";
 
-  static String? validateDate(String? value) => (value != null && value.isNotEmpty) ? null : "Invalid date and time";
+  static String? validatePassword(String? value) =>
+      (value != null && value.length > 5) ? null : 'Invalid password';
 
-  static String? validateEmail(String? value) => (value != null && GetUtils.isEmail(value)) ? null : "Invalid email";
+  static String? validatePasswordConfirmation(String? value,
+          {required String password}) =>
+      validatePassword(password) == null
+          ? (value == password)
+              ? null
+              : 'Mismatching passwords'
+          : null;
 
-  static String? validatePassword(String? value) => (value != null && value.length > 5) ? null : 'Invalid password';
-
-  static String? validateDecoyCallerName(String? value) =>
-      (value != null && value.length >= 2) ? null : 'Invalid decoy caller name';
-
-  static String? validatePasswordConfirmation(String? value, {required String password}) => validatePassword(password) == null
-      ? (value == password)
-          ? null
-          : 'Mismatching passwords'
-      : null;
-
-  static String? validatePhone(String? value) => (value != null && value.length > 7) ? null : 'Invalid Phone';
+  static String? validatePhone(String? value) =>
+      (value != null && value.length > 7) ? null : 'Invalid Phone';
 
   static String? validateSMSCode(String? value) {
     return (value != null && value.length == 4) ? null : 'Invalid SMS code';

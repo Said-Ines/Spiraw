@@ -11,14 +11,10 @@ class LinkTextButton extends StatelessWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: AppFonts.inter
-          .bold()
-          .withSize(FontSizes.subtitle)
-          .withColor(AppColors.secondary),
-    )
+    return Text(title,
+            style:
+                AppStyles.interregularSubTitle.withColor(AppColors.secondary))
         //.overallPadding(6)
-        .onTap(onTap, overlayColor: AppColors.hint);
+        .onTap(onTap, overlayColor: AppColors.blueDark);
   }
 }
