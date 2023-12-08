@@ -5,6 +5,7 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../bases/screens/exports.dart';
 import '../../widgets/back_button.dart';
+import '../../widgets/bottom_bars/rounded_bottom_bar.dart';
 import '../auth/common/widgets/index.dart';
 import 'ds_controller.dart';
 
@@ -181,12 +182,14 @@ class DesignSystemScreen extends GetView<DesignSystemController> {
                       alignment: Alignment.center,
                       child: Icon(
                         Icons.arrow_back,
-                        size: AppConstants.buttons.floating.iconSize + 13,
+                        size: AppConstants.buttons.floating.iconSize,
                         color: AppColors.inputColor,
                       ),
                     ),
                   ),
-                ))
+                )),
+            const VerticalSpacing(20),
+            const RoundedBottomBar(),
           ]),
     );
   }
