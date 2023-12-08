@@ -33,6 +33,7 @@ class AppConstants {
   static const double bodyMaxSymetricHorizontalPadding = 34;
   static const double bodyMinBottomPadding = 95;
   static const double bodyMaxBottomPadding = 120;
+  static const double bodyBottomPadding = 50;
 
   //? TabBar
   static const double tabBarHeight = 50;
@@ -45,21 +46,21 @@ class AppConstants {
   static bool get elevationAppliedToAppBar => applyElevationToAppBar;
 
   // //? AppBar
-  // static const double appBarHeight = 130;
-  // static const double appBarTopPaddingToSafeArea = 12;
-  // static const double searchAppBarHeight = 80;
-  // static const double appBarSymetricHorizontalPadding =
-  //     bodyMaxSymetricHorizontalPadding;
-  // static const double appBarButtonsBorderRadius = 8;
-  // static const double appBarButtonHeight = 40 + defaultElevation;
-  // static const double appBarButtonWidth = appBarButtonHeight + 20;
-  // static const double appBarButtonIconSize = 20;
-  // static const double appBarButtonsElevation =
-  //     applyElevationToAppBar ? defaultElevation : 0;
-  // static const double appBarRadius = 28;
-  // static const double appBarElevation =
-  //     applyElevationToAppBar ? defaultElevation : 0;
-  // static const double searchAppBatTitleSpacing = 20;
+  static const double appBarHeight = 130;
+  static const double appBarTopPaddingToSafeArea = 12;
+  static const double searchAppBarHeight = 80;
+  static const double appBarSymetricHorizontalPadding =
+      bodyMaxSymetricHorizontalPadding;
+  static const double appBarButtonsBorderRadius = 8;
+  static const double appBarButtonHeight = 40 + defaultElevation;
+  static const double appBarButtonWidth = appBarButtonHeight + 20;
+  static const double appBarButtonIconSize = 20;
+  static const double appBarButtonsElevation =
+      applyElevationToAppBar ? defaultElevation : 0;
+  static const double appBarRadius = 28;
+  static const double appBarElevation =
+      applyElevationToAppBar ? defaultElevation : 0;
+  static const double searchAppBatTitleSpacing = 20;
 
   //? AutoComplete Inputs
   static const double autoCompleteInputSuggestionsBoxElevation =
