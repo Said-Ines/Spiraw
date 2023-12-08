@@ -6,9 +6,11 @@ class AppImages {
   static const imagesFolder = AppResources.imagesFolder;
 
   static const appLogo = "$imagesFolder/app_logo.png";
-  // static const simpleLogo = "$imagesFolder/simple_logo.png";
-  // static const onboardingImage = "$imagesFolder/onboarding_image.png";
-  // static const cancelIcon = "$imagesFolder/cancel_icon.png";
+  static const visibilityIcon = "$imagesFolder/visibility_icon.png";
+
+  static const googleIcon = "$imagesFolder/google_icon.png";
+
+  static const facebookIcon = "$imagesFolder/facebook_icon.png";
   //static const bottomBar = _BottomBar();
 }
 

@@ -158,7 +158,7 @@ class _ElevatedButtons {
   const _ElevatedButtons._();
   static const _applyElevation = false;
   final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
-  final double height = 60;
+  final double height = 54;
 }
 
 class _TextButtons {
@@ -185,7 +185,7 @@ class _FloatingActionButtons {
   //static const _applyElevation = true;
   // final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
   final double size = 48;
-  final double iconSize = 20;
+  final double iconSize = 60;
   final double radius = 8;
 }
 
