@@ -11,13 +11,14 @@ class AppImages {
   static const googleIcon = "$imagesFolder/google_icon.png";
 
   static const facebookIcon = "$imagesFolder/facebook_icon.png";
-  //static const bottomBar = _BottomBar();
+  static const bottomBar = _BottomBar();
 }
 
-// class _BottomBar {
-//   const _BottomBar();
+class _BottomBar {
+  const _BottomBar();
 
-//   final phone = "${AppImages.imagesFolder}/phone.png";
-//   final messageBubble = "${AppImages.imagesFolder}/message_bubble.png";
-//   final danger = "${AppImages.imagesFolder}/danger.png";
-// }
+  final shopping = "${AppImages.imagesFolder}/shopping.png";
+  final twoPersons = "${AppImages.imagesFolder}/two_persons.png";
+  final home = "${AppImages.imagesFolder}/home.png";
+  final profile = "${AppImages.imagesFolder}/profile_image.png";
+}
