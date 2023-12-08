@@ -185,7 +185,7 @@ class _FloatingActionButtons {
   //static const _applyElevation = true;
   // final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
   final double size = 48;
-  final double iconSize = 60;
+  final double iconSize = 28;
   final double radius = 8;
 }
 
