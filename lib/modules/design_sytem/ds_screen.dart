@@ -189,7 +189,6 @@ class DesignSystemScreen extends GetView<DesignSystemController> {
                   ),
                 )),
             const VerticalSpacing(20),
-            const RoundedBottomBar(),
           ]),
     );
   }
