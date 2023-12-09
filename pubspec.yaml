@@ -28,6 +28,8 @@ dependencies:
   pin_code_fields:
   flutter_dash:
   material_symbols_icons:
+  outline_gradient_button:
+  dotted_border:
 
 dev_dependencies:
   flutter_test:
