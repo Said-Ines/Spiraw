@@ -1,12 +1,8 @@
 import 'dart:io';
 
-import '../../bases/extensions/widget_modifiers.dart';
-
 import '../../bases/screens/exports.dart';
 import '../../managers/connectivity_manager.dart';
-import '../observable.dart';
 import '../top_bar/top_bar.dart';
-import '../vertical_spacing.dart';
 
 part 'disconnected_widget.dart';
 
@@ -18,8 +14,7 @@ class SmartScaffold extends StatelessWidget {
     this.appbarBackgroundColor,
     required this.body,
     this.floatingActionButton,
-    this.floatingActionButtonLocation =
-        FloatingActionButtonLocation.centerDocked,
+    this.floatingActionButtonLocation = FloatingActionButtonLocation.centerDocked,
     this.bottomNavigationBar,
     this.bottomSheet,
     this.backgroundColor = AppColors.scaffold,
