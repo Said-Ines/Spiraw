@@ -6,6 +6,7 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../bases/screens/exports.dart';
 import '../../widgets/back_button.dart';
 import '../../widgets/bottom_bars/rounded_bottom_bar.dart';
+import '../../widgets/upload_button.dart';
 import '../auth/common/widgets/index.dart';
 import 'ds_controller.dart';
 
@@ -203,6 +204,8 @@ class DesignSystemScreen extends GetView<DesignSystemController> {
                 reversed: true,
               ),
             ),
+            const VerticalSpacing(20),
+            const UploadButton(),
           ]),
     );
   }
