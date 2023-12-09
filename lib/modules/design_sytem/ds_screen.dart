@@ -191,7 +191,18 @@ class DesignSystemScreen extends GetView<DesignSystemController> {
             const VerticalSpacing(20),
             const RoundedBottomBar(),
             const VerticalSpacing(20),
-            
+            Observer(
+              observes: controller.performingApiCall,
+              builder: (context, performingApiCall) => StyledButton(
+                isLoading: performingApiCall,
+                style: ButtonStyles.primary,
+                title: "Next",
+                onPressed: () {},
+                icon: const Icon(Icons.keyboard_arrow_right_outlined),
+                isFromRecipe: true,
+                reversed: true,
+              ),
+            ),
           ]),
     );
   }
