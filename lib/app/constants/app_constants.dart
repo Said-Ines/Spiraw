@@ -16,8 +16,7 @@ class AppConstants {
   //static final topBar = _TopBar._();
   static final bottomBar = _BottomBar._();
 
-  static const Transition bottomNavBarInitalScreensTransition =
-      Transition.noTransition;
+  static const Transition bottomNavBarInitalScreensTransition = Transition.noTransition;
 
   static const double logoHorizontalPadding = 64;
   // static const double logoWidth = 262;
@@ -28,7 +27,7 @@ class AppConstants {
   static const double heightOfInputBox = dropDownHeight;
 
   //? Scaffold
-  static const double bodyTopPadding = 25;
+  static const double bodyTopPadding = 100;
   static const double bodyMinSymetricHorizontalPadding = 24;
   static const double bodyMaxSymetricHorizontalPadding = 34;
   static const double bodyMinBottomPadding = 95;
@@ -40,8 +39,7 @@ class AppConstants {
 
   //$ Elevation concerned widgets
   static const bool applyElevationToAppBar = defaultElevation != 0 && true;
-  static const bool applyElevationToBottomNavBar =
-      defaultElevation != 0 && false;
+  static const bool applyElevationToBottomNavBar = defaultElevation != 0 && false;
 
   static bool get elevationAppliedToAppBar => applyElevationToAppBar;
 
@@ -49,24 +47,19 @@ class AppConstants {
   static const double appBarHeight = 130;
   static const double appBarTopPaddingToSafeArea = 12;
   static const double searchAppBarHeight = 80;
-  static const double appBarSymetricHorizontalPadding =
-      bodyMaxSymetricHorizontalPadding;
+  static const double appBarSymetricHorizontalPadding = bodyMaxSymetricHorizontalPadding;
   static const double appBarButtonsBorderRadius = 8;
   static const double appBarButtonHeight = 40 + defaultElevation;
   static const double appBarButtonWidth = appBarButtonHeight + 20;
   static const double appBarButtonIconSize = 20;
-  static const double appBarButtonsElevation =
-      applyElevationToAppBar ? defaultElevation : 0;
+  static const double appBarButtonsElevation = applyElevationToAppBar ? defaultElevation : 0;
   static const double appBarRadius = 28;
-  static const double appBarElevation =
-      applyElevationToAppBar ? defaultElevation : 0;
+  static const double appBarElevation = applyElevationToAppBar ? defaultElevation : 0;
   static const double searchAppBatTitleSpacing = 20;
 
   //? AutoComplete Inputs
-  static const double autoCompleteInputSuggestionsBoxElevation =
-      defaultElevation + 2;
-  static const double autoCompleteInputSuggestionsSymetricHorizontalPadding =
-      10;
+  static const double autoCompleteInputSuggestionsBoxElevation = defaultElevation + 2;
+  static const double autoCompleteInputSuggestionsSymetricHorizontalPadding = 10;
   static const double autoCompleteInputSuggestionsSymetricVerticalPadding = 5;
   static const int autoCompleteInputDebounceDuration = 600;
 
@@ -117,15 +110,9 @@ class AppConstants {
 
   //? File Picking
   static const int pickedFileSizeLimit = 5;
-  static const int pickedFileSizeLimitInBytes =
-      pickedFileSizeLimit * 1024 * 1024;
+  static const int pickedFileSizeLimitInBytes = pickedFileSizeLimit * 1024 * 1024;
   static const int pickedImageQuality = 60;
-  static const List<String> pickableFilesExtensions = [
-    'jpeg',
-    'jpg',
-    'png',
-    'pdf'
-  ];
+  static const List<String> pickableFilesExtensions = ['jpeg', 'jpg', 'png', 'pdf'];
 
   //? Api Error Widget
   static const double apiErrorWidgetImageSize = 100;
@@ -199,8 +186,7 @@ class _Inputs {
   final double radius = 12;
   final double height = 54;
   final double width = 366;
-  final double horizontalContentPadding =
-      AppConstants.bodyMinSymetricHorizontalPadding;
+  final double horizontalContentPadding = AppConstants.bodyMinSymetricHorizontalPadding;
   final double verticalContentPadding = 24;
   final double borderWidth = 1.5;
   //final int passwordInputMaxLength = 12;
