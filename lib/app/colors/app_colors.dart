@@ -122,6 +122,31 @@ class AppColors {
     stops: [-0.0777, 1.265],
   );
 
+  static LinearGradient incompletedDoseCardGradient = const LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color.fromRGBO(146, 182, 217, 0.5),
+      Color.fromRGBO(23, 28, 34, 1),
+    ],
+  );
+  static LinearGradient incompletedDoseCardBorderGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      const Color(0xFF555555).withOpacity(0.5),
+      const Color((0xFF555555)).withOpacity(0.5),
+    ],
+  );
+
+  static LinearGradient completedDoseCard = const LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color.fromRGBO(52, 217, 69, 1),
+      Color.fromRGBO(52, 217, 69, 0.27),
+    ],
+  );
   static const LinearGradient bottomBarColor = bottomBarGradient;
 
   static const Color scaffold = primary;
@@ -132,6 +157,7 @@ class AppColors {
   static const Color label = grey;
   static const Color boxShadow = Color.fromRGBO(84, 84, 84, 0.21);
   static const Color greenBoxShadow = Color.fromRGBO(52, 217, 69, 0.45);
+  static const Color overlayColor = Color(0x0D063048);
 
   static const Color remove = Color(0xFFFF3B30);
 

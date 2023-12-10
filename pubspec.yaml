@@ -14,12 +14,28 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.6
   path_provider:
+  intl:
   shared_preferences:
   firebase_auth:
   firebase_core:
   firebase_messaging:
   connectivity_plus:
   google_fonts:
+  flutter_picker:
+  url_launcher:
+  flutter_inset_box_shadow:
+  mask_text_input_formatter:
+  pin_code_fields:
+  flutter_dash:
+  material_symbols_icons:
+  glassmorphism: ^3.0.0
+  gap: ^3.0.1
+  action_slider: ^0.7.0
+  simple_circular_progress_bar:
+  vertical_percent_indicator: ^0.0.1
+  flutter_time_picker_spinner: ^2.0.0
+  flutter_spinner_picker: ^0.0.7
+  day_picker: ^2.2.0
 
 dev_dependencies:
   flutter_test:

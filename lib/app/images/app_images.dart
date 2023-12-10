@@ -5,7 +5,7 @@ class AppImages {
 
   static const imagesFolder = AppResources.imagesFolder;
 
-  // static const appLogo = "$imagesFolder/app_logo.png";
+  static const appLogo = "$imagesFolder/app_logo.png";
   // static const simpleLogo = "$imagesFolder/simple_logo.png";
   // static const onboardingImage = "$imagesFolder/onboarding_image.png";
   // static const cancelIcon = "$imagesFolder/cancel_icon.png";
