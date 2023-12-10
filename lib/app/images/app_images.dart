@@ -12,6 +12,7 @@ class AppImages {
 
   static const facebookIcon = "$imagesFolder/facebook_icon.png";
   static const bottomBar = _BottomBar();
+  static const qrScanner = "$imagesFolder/qr_scanner.png";
 }
 
 class _BottomBar {

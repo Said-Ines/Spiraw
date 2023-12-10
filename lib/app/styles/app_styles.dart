@@ -7,57 +7,33 @@ import 'font_sizes.dart';
 class AppStyles {
   AppStyles._();
 
-  static final interboldHeadline1 =
-      AppFonts.inter.bold().withSize(FontSizes.headline1);
-  static final interboldHeadline3 =
-      AppFonts.inter.bold().withSize(FontSizes.headline3);
-  static final interregularTitle = AppFonts.inter
-      .regular()
-      .withSize(FontSizes.title)
-      .withColor(AppColors.greyBackground);
-  static final interregularSubTitle = AppFonts.inter
-      .regular()
-      .withSize(FontSizes.subtitle)
-      .withColor(AppColors.greyRegular);
+  static final interboldHeadline1 = AppFonts.inter.bold().withSize(FontSizes.headline1);
+  static final interboldHeadline3 = AppFonts.inter.bold().withSize(FontSizes.headline3);
+  static final interregularTitle =
+      AppFonts.inter.regular().withSize(FontSizes.title).withColor(AppColors.greyBackground);
+  static final interregularSubTitle =
+      AppFonts.inter.regular().withSize(FontSizes.subtitle).withColor(AppColors.greyRegular);
 
-  static final rubikboldHeadline1 =
-      AppFonts.rubik.bold().withSize(FontSizes.headline1);
-  static final rubikboldHeadline3 =
-      AppFonts.rubik.bold().withSize(FontSizes.headline3);
-  static final rubikregularTitle = AppFonts.rubik
-      .regular()
-      .withSize(FontSizes.title)
-      .withColor(AppColors.greyBackground);
-  static final rubikregularSubTitle = AppFonts.rubik
-      .regular()
-      .withSize(FontSizes.subtitle)
-      .withColor(AppColors.greyRegular);
+  static final rubikboldHeadline1 = AppFonts.rubik.bold().withSize(FontSizes.headline1);
+  static final rubikboldHeadline3 = AppFonts.rubik.bold().withSize(FontSizes.headline3);
+  static final rubikregularTitle =
+      AppFonts.rubik.regular().withSize(FontSizes.title).withColor(AppColors.greyBackground);
+  static final rubikregularSubTitle =
+      AppFonts.rubik.regular().withSize(FontSizes.subtitle).withColor(AppColors.greyRegular);
 
-  static final poppinsboldHeadline1 =
-      AppFonts.poppins.bold().withSize(FontSizes.headline1);
-  static final poppinsboldHeadline3 =
-      AppFonts.poppins.bold().withSize(FontSizes.headline3);
-  static final poppinsregularTitle = AppFonts.poppins
-      .regular()
-      .withSize(FontSizes.title)
-      .withColor(AppColors.greyBackground);
-  static final poppinsregularSubTitle = AppFonts.poppins
-      .regular()
-      .withSize(FontSizes.subtitle)
-      .withColor(AppColors.greyRegular);
+  static final poppinsboldHeadline1 = AppFonts.poppins.bold().withSize(FontSizes.headline1);
+  static final poppinsboldHeadline3 = AppFonts.poppins.bold().withSize(FontSizes.headline3);
+  static final poppinsregularTitle =
+      AppFonts.poppins.regular().withSize(FontSizes.title).withColor(AppColors.greyBackground);
+  static final poppinsregularSubTitle =
+      AppFonts.poppins.regular().withSize(FontSizes.subtitle).withColor(AppColors.greyRegular);
 
-  static final urbanistboldHeadline1 =
-      AppFonts.urbanist.bold().withSize(FontSizes.headline1);
-  static final urbanistboldHeadline3 =
-      AppFonts.urbanist.bold().withSize(FontSizes.headline3);
-  static final urbanistregularTitle = AppFonts.urbanist
-      .regular()
-      .withSize(FontSizes.title)
-      .withColor(AppColors.greyBackground);
-  static final urbanistregularSubTitle = AppFonts.urbanist
-      .regular()
-      .withSize(FontSizes.subtitle)
-      .withColor(AppColors.greyRegular);
+  static final urbanistboldHeadline1 = AppFonts.urbanist.bold().withSize(FontSizes.headline1);
+  static final urbanistboldHeadline3 = AppFonts.urbanist.bold().withSize(FontSizes.headline3);
+  static final urbanistregularTitle =
+      AppFonts.urbanist.regular().withSize(FontSizes.title).withColor(AppColors.greyBackground);
+  static final urbanistregularSubTitle =
+      AppFonts.urbanist.regular().withSize(FontSizes.subtitle).withColor(AppColors.greyRegular);
 }
 
 extension TextStyleExt on TextStyle {
