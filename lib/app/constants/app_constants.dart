@@ -112,6 +112,10 @@ class AppConstants {
   static const double alertButtonWidth = 140;
   static const double alertButtonRadius = defaultRadius;
 
+  //? Scanner
+  static const double scannerHeight = 370;
+  static const double scannerWidth = 350;
+
   //? File Picking
   static const int pickedFileSizeLimit = 5;
   static const int pickedFileSizeLimitInBytes = pickedFileSizeLimit * 1024 * 1024;
