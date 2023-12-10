@@ -66,6 +66,10 @@ class AppConstants {
   //? Cards
   //static const double cardElevation = defaultElevation;
   static const double cardRadius = 16;
+  static const double cardHeight = 143;
+  static const double cardWidth = 175;
+  static const double cardBlur = 16;
+
   //static const double cardIconSize = 36;
 
   //? list Tiles
@@ -215,9 +219,15 @@ class _BottomBar {
   _BottomBar._();
 
   final double bottomRadius = 50;
+
   final double height =
       // 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
       100;
+
+  
+  final double height = 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+
+  
   final double mainButtonSize = 78;
   final double secondaryButtonSize = 32;
   //final double elevation = 5;
