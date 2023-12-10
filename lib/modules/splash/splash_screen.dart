@@ -1,4 +1,5 @@
 import '../../bases/screens/exports.dart';
+import '../../widgets/logo.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -15,12 +16,7 @@ class SplashScreen extends StatelessWidget {
             width: 84,
             height: 84,
           ).customPadding(left: 20, top: 150),
-          Center(
-            child: Text(
-              "SPIRAW.",
-              style: AppStyles.interboldHeadline1.withSize(FontSizes.splashTitle).withColor(AppColors.secondary),
-            ),
-          )
+          const Center(child: Logo())
         ],
       ),
     );
