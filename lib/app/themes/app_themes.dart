@@ -14,6 +14,7 @@ class AppThemes {
       background: AppColors.scaffold,
       primary: AppColors.primary,
       secondary: AppColors.secondary,
+
       //shadow: AppColors.shadow,
     ),
     scaffoldBackgroundColor: AppColors.scaffold,
@@ -41,8 +42,7 @@ class AppThemes {
         minimumSize: Size.fromHeight(AppConstants.buttons.elevated.height),
         backgroundColor: AppColors.secondary,
         shape: RoundedRectangleBorder(
-            borderRadius:
-                BorderRadius.all(Radius.circular(AppConstants.buttons.radius))),
+            borderRadius: BorderRadius.all(Radius.circular(AppConstants.buttons.radius))),
         // textStyle: AppFonts.helvetica.bold().withSize(FontSizes.headline3),
         foregroundColor: AppColors.scaffold,
       ),
@@ -59,6 +59,9 @@ class AppThemes {
         foregroundColor: AppColors.primary,
       ),
     ),
+
+    //! Tab bar
+    tabBarTheme: const TabBarTheme(dividerHeight: 0),
 
     //! Floating Action Button
     floatingActionButtonTheme: FloatingActionButtonThemeData(
@@ -133,8 +136,7 @@ class AppThemes {
       //elevation: AppConstants.cardElevation,
       margin: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
-        borderRadius:
-            BorderRadius.all(Radius.circular(AppConstants.cardRadius)),
+        borderRadius: BorderRadius.all(Radius.circular(AppConstants.cardRadius)),
       ),
     ),
 
