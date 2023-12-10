@@ -1,5 +1,3 @@
-import '../bases/extensions/widget_modifiers.dart';
-
 import '../app/index.dart';
 import '../bases/controllers/exports.dart';
 
@@ -8,7 +6,7 @@ class ScrollableForm extends StatelessWidget {
     super.key,
     this.formKey,
     this.topPadding = AppConstants.bodyTopPadding,
-    this.horizontalPadding = AppConstants.bodyMaxSymetricHorizontalPadding,
+    this.horizontalPadding = AppConstants.bodyMinSymetricHorizontalPadding,
     this.bottomPadding = AppConstants.bodyBottomPadding,
     this.mainAxisAlignment = MainAxisAlignment.center,
     this.crossAxisAlignment = CrossAxisAlignment.center,

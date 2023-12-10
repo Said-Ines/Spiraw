@@ -27,7 +27,7 @@ class AppConstants {
   static const double heightOfInputBox = dropDownHeight;
 
   //? Scaffold
-  static const double bodyTopPadding = 25;
+  static const double bodyTopPadding = 100;
   static const double bodyMinSymetricHorizontalPadding = 24;
   static const double bodyMaxSymetricHorizontalPadding = 34;
   static const double bodyMinBottomPadding = 95;
