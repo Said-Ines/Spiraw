@@ -61,16 +61,16 @@ class LoginScreen extends GetView<LoginController> {
                 onPressed: controller.login,
               ),
             ),
-            const VerticalSpacing(48),
+            const VerticalSpacing(45),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Expanded(child: Divider(color: Colors.white, thickness: AppConstants.dividerThickness)),
+                Expanded(child: Divider(color: Colors.white.withOpacity(0.16), thickness: AppConstants.dividerThickness)),
                 Text("Or login with", style: AppStyles.interregularSubTitle.withColor(AppColors.greenLighter))
                     .paddingSymmetric(horizontal: 5),
-                const Expanded(
+                Expanded(
                     child: Divider(
-                  color: Colors.white,
+                  color: Colors.white.withOpacity(0.16),
                   thickness: AppConstants.dividerThickness,
                 ))
               ],
