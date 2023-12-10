@@ -20,7 +20,7 @@ class PhoneLoginScreen extends GetView<PhoneLoginController> {
         children: [
           Gap(Get.height * 0.06),
           const Center(child: Logo()),
-          const Gap(AppConstants.bodyTopPadding),
+          const Gap(AppConstants.maxBodyTopPadding),
           Align(
             alignment: Alignment.centerLeft,
             child: Text(

@@ -5,7 +5,7 @@ class ScrollableForm extends StatelessWidget {
   const ScrollableForm({
     super.key,
     this.formKey,
-    this.topPadding = AppConstants.bodyTopPadding,
+    this.topPadding = AppConstants.maxBodyTopPadding,
     this.horizontalPadding = AppConstants.bodyMinSymetricHorizontalPadding,
     this.bottomPadding = AppConstants.bodyBottomPadding,
     this.mainAxisAlignment = MainAxisAlignment.center,

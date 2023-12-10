@@ -1,6 +1,6 @@
 // export '../modules/auth/email_signup/module/email_signup_module.dart';
-// export '../modules/auth/otp/module/otp_module.dart';
 export '../modules/auth/login/module/login_module.dart';
+export '../modules/auth/otp/module/otp_module.dart';
 export '../modules/auth/phone_login/module/phone_login_module.dart';
 export '../modules/design_sytem/ds_module.dart';
 export '../modules/splash/splash_module.dart';
