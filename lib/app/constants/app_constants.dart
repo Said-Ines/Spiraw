@@ -220,14 +220,12 @@ class _BottomBar {
 
   final double bottomRadius = 50;
 
-  final double height =
-      // 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
-      100;
+  // final double height =
+  //     // 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+  //     100;
 
-  
-  final double height = 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+  final double height = 100 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
 
-  
   final double mainButtonSize = 78;
   final double secondaryButtonSize = 32;
   //final double elevation = 5;
