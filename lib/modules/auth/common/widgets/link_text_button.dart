@@ -17,7 +17,7 @@ class LinkTextButton extends StatelessWidget {
     return Text(title,
             style: !isRegister
                 ? AppStyles.interregularSubTitle.withColor(AppColors.secondary)
-                : AppStyles.interboldHeadline3.withColor(AppColors.secondary).withSize(FontSizes.subtitle))
+                : AppStyles.interboldHeadline3.withColor(AppColors.secondary).withSize(FontSizes.title).medium())
         //.overallPadding(6)
         .onTap(onTap, overlayColor: AppColors.blueDark);
   }

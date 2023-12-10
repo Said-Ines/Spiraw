@@ -120,15 +120,15 @@ class LoginScreen extends GetView<LoginController> {
               children: [
                 Text(
                   "Don't have an account ? ",
-                  style: AppStyles.interregularSubTitle,
+                  style: AppStyles.interregularTitle,
                 ),
                 LinkTextButton(
-                  title: "Register Now!",
+                  title: "Register Now",
                   onTap: () {},
                   isRegister: true,
                 )
               ],
-            ).paddingSymmetric(horizontal: 35)
+            ).paddingSymmetric(horizontal: 20)
           ],
         ));
   }
