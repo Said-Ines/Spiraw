@@ -36,9 +36,7 @@ class StyledButton extends StatelessWidget {
           ).squared(side: 18)
         : Text(
             title,
-            style: AppStyles.interregularTitle
-                .withSize(FontSizes.headline5)
-                .withColor(style.textColor),
+            style: AppStyles.interSemiBoldTextButton.withColor(style.textColor),
           );
     final side = MaterialStateProperty.resolveWith<BorderSide?>((states) {
       if (isFromRecipe) {

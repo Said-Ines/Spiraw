@@ -9,6 +9,9 @@ class ScannerController extends GetxController {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   QRViewController? qrController;
   Barcode? result;
+
+  final performingApiCall = Observable(false);
+
   final RxList<ScannedQrCodeModel> scannedQrCodeModelList = <ScannedQrCodeModel>[].obs;
 
   StreamSubscription<Barcode>? streamSubscription;
@@ -53,6 +56,11 @@ class ScannerController extends GetxController {
     result = null;
     gotResult.value = false;
     Get.back(closeOverlays: true);
+  }
+
+//! TODO:
+  void toSetupMachine() {
+    // Get.toNamed();
   }
 
   @override

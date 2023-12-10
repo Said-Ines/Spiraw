@@ -13,7 +13,7 @@ class AppStyles {
       AppFonts.inter.regular().withSize(FontSizes.title).withColor(AppColors.greyBackground);
   static final interregularSubTitle =
       AppFonts.inter.regular().withSize(FontSizes.subtitle).withColor(AppColors.greyRegular);
-
+  static final interSemiBoldTextButton = AppFonts.inter.semiBold().withSize(FontSizes.title);
   static final rubikboldHeadline1 = AppFonts.rubik.bold().withSize(FontSizes.headline1);
   static final rubikboldHeadline3 = AppFonts.rubik.bold().withSize(FontSizes.headline3);
   static final rubikregularTitle =
