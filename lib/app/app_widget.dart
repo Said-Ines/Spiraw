@@ -32,19 +32,18 @@ class SpirawApp extends StatelessWidget {
 
       //@ Routing
       initialRoute: initialModule.name,
-      // designSystemModule.name,
       getPages: [
         //! Desing System
         designSystemModule,
 
-        //$ Splash
+        //& Menu
         splashModule,
 
         // //* Auth
         // phoneSignupModule,
         // otpModule,
         // userInfoModule,
-        // emailSignupModule,
+        signupModule,
         loginModule,
 
         // //? Setup
@@ -57,9 +56,6 @@ class SpirawApp extends StatelessWidget {
 
         // //$ Home
         // homeModule,
-
-        // //& Menu
-        // menuModule,
       ],
     );
   }
