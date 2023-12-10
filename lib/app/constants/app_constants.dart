@@ -149,7 +149,7 @@ class _ElevatedButtons {
   const _ElevatedButtons._();
   static const _applyElevation = false;
   final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
-  final double height = 60;
+  final double height = 54;
 }
 
 class _TextButtons {
@@ -176,7 +176,7 @@ class _FloatingActionButtons {
   //static const _applyElevation = true;
   // final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
   final double size = 48;
-  final double iconSize = 20;
+  final double iconSize = 28;
   final double radius = 8;
 }
 
@@ -219,7 +219,15 @@ class _BottomBar {
   _BottomBar._();
 
   final double bottomRadius = 50;
+
+  final double height =
+      // 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+      100;
+
+  
   final double height = 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+
+  
   final double mainButtonSize = 78;
   final double secondaryButtonSize = 32;
   //final double elevation = 5;

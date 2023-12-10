@@ -23,6 +23,7 @@ class AppColors {
   static const Color inputBorder = Color(0xFF98C4DE);
   static const offBlack = Color(0xFF1D1D1F);
   static const offWhite = Color(0xFFFAFAFC);
+  static const blackTitleButton = Color(0xFF1B232A);
 
   static const LinearGradient greenGradient = LinearGradient(
     begin: Alignment(-0.0777, 0.0),

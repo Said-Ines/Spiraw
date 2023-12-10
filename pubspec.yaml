@@ -28,6 +28,12 @@ dependencies:
   pin_code_fields:
   flutter_dash:
   material_symbols_icons:
+
+
+  outline_gradient_button:
+  dotted_border:
+
+
   glassmorphism: ^3.0.0
   gap: ^3.0.1
   action_slider: ^0.7.0
@@ -36,6 +42,7 @@ dependencies:
   flutter_time_picker_spinner: ^2.0.0
   flutter_spinner_picker: ^0.0.7
   day_picker: ^2.2.0
+
 
 dev_dependencies:
   flutter_test:
