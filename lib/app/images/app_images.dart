@@ -6,6 +6,9 @@ class AppImages {
   static const imagesFolder = AppResources.imagesFolder;
 
   static const appLogo = "$imagesFolder/app_logo.png";
+  static const splashImage = "$imagesFolder/splash_image.png";
+  static const groupImage = "$imagesFolder/group_98.png";
+
   static const visibilityIcon = "$imagesFolder/visibility_icon.png";
 
   static const googleIcon = "$imagesFolder/google_icon.png";
@@ -14,6 +17,7 @@ class AppImages {
   static const bottomBar = _BottomBar();
   static const qrScanner = "$imagesFolder/qr_scanner.png";
   static const successMark = "$imagesFolder/success_mark.png";
+
 }
 
 class _BottomBar {

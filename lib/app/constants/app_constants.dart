@@ -27,7 +27,7 @@ class AppConstants {
   static const double heightOfInputBox = dropDownHeight;
 
   //? Scaffold
-  static const double bodyTopPadding = 25;
+  static const double bodyTopPadding = 100;
   static const double bodyMinSymetricHorizontalPadding = 24;
   static const double bodyMaxSymetricHorizontalPadding = 34;
   static const double bodyMinBottomPadding = 95;
@@ -224,11 +224,15 @@ class _BottomBar {
 
   final double bottomRadius = 50;
 
-  final double height =
-      // 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
-      100;
+  // final double height =
+  //     // 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+  //     100;
 
-  // final double height = 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+  final double height = 100 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+
+
+  final double height = 100 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+
 
   final double mainButtonSize = 78;
   final double secondaryButtonSize = 32;

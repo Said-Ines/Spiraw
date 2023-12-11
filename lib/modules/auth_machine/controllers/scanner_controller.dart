@@ -58,10 +58,12 @@ class ScannerController extends GetxController {
     Get.back(closeOverlays: true);
   }
 
+
 //! TODO:
   void toSetupMachine() {
     // Get.toNamed();
   }
+
 
   @override
   void onClose() {
@@ -70,3 +72,4 @@ class ScannerController extends GetxController {
     super.onClose();
   }
 }
+
