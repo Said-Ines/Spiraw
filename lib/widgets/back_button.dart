@@ -19,8 +19,7 @@ class BackButton extends StatelessWidget {
           fixedSize: Size.square(AppConstants.buttons.icon.size),
           shape: RoundedRectangleBorder(
             side: const BorderSide(color: Colors.white),
-            borderRadius:
-                BorderRadius.circular(AppConstants.buttons.icon.radius),
+            borderRadius: BorderRadius.circular(AppConstants.buttons.icon.radius),
           ),
         ),
         onPressed: Get.back,
@@ -30,6 +29,6 @@ class BackButton extends StatelessWidget {
           size: AppConstants.buttons.icon.iconSize,
         ).paddingSymmetric(horizontal: 7),
       ),
-    );
+    ).align(alignment: Alignment.topLeft);
   }
 }
