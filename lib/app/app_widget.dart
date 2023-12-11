@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import '../managers/connectivity_manager.dart';
 import '../modules/all_modules.dart';
-import '../modules/auth/phone_login/module/phone_login_module.dart';
 import 'index.dart';
 
 class SpirawApp extends StatelessWidget {
@@ -43,17 +42,17 @@ class SpirawApp extends StatelessWidget {
 
         // //* Auth
         phoneLoginModule,
-        user_info
+        userInfoModule,
         otpModule,
         userInfoModule,
-        phone_signin  
         otpModule,
         // emailSignupModule,
         loginModule,
 
-        // //? Setup
-        // setupModule,
-        // emergencyCallingModule,
+        //? Machine Auth
+        getStartedModule,
+        scannerModule,
+        successModule,
         // stayConnectedModule,
         // messageSetupModule,
         // decoyCallModule,
