@@ -11,6 +11,10 @@ class InputValidators {
 
   static String? validateUsername(String? value) => (value != null && value.length >= 2) ? null : 'Invalid username';
 
+  static String? validateFirstname(String? value) => (value != null && value.length >= 2) ? null : 'Invalid first name';
+
+  static String? validateLastname(String? value) => (value != null && value.length >= 2) ? null : 'Invalid last name';
+
   static String? validateEmail(String? value) => (value != null && GetUtils.isEmail(value)) ? null : "Invalid email";
 
   static String? validatePassword(String? value) => (value != null && value.length > 5) ? null : 'Invalid password';

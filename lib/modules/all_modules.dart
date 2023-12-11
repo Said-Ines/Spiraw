@@ -2,9 +2,9 @@
 export '../modules/auth/login/module/login_module.dart';
 export '../modules/auth/otp/module/otp_module.dart';
 export '../modules/auth/phone_login/module/phone_login_module.dart';
+export '../modules/auth/user_info/module/user_info_module.dart';
 export '../modules/design_sytem/ds_module.dart';
 export '../modules/splash/splash_module.dart';
-// export '../modules/auth/user_info/module/user_info_module.dart';
 // export '../modules/core/emergency_calling/module/emergency_calling_module.dart';
 // export '../modules/core/sos_text_message/stay_connected/module/stay_connected_module.dart';
 // export '../modules/core/sos_text_message/text_message_setup/module/message_setup_module.dart';
