@@ -50,7 +50,7 @@ class UserInfoScreen extends GetView<UserInfoController> {
         StyledButton(
           style: ButtonStyles.primary,
           title: "Next",
-          onPressed: () {},
+          onPressed: controller.userValidate,
           icon: const Icon(Icons.keyboard_arrow_right_outlined),
           isFromRecipe: true,
           reversed: true,

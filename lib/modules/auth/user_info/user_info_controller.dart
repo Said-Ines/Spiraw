@@ -1,3 +1,5 @@
+import 'package:spiraw/modules/all_modules.dart';
+
 import '../../../bases/controllers/exports.dart';
 
 class UserInfoController extends GetxController {
@@ -6,14 +8,9 @@ class UserInfoController extends GetxController {
   final inputControls = InputControl.generate(3);
   final formKey = GlobalKey<FormState>();
 
-  void userValidate() {
+  void userValidate() async {
     if (!formKey.isValid) return;
-  }
-
-  Future<void> login() async {
-    performingApiCall.toggle();
-    await 2.delay();
-    performingApiCall.toggle();
+    Get.offNamed(getStartedModule.name);
   }
 
   void back() {

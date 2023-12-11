@@ -3,6 +3,7 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import '../../../bases/models/input_control.dart';
 import '../../../bases/screens/exports.dart';
+import '../otp/module/otp_module.dart';
 
 class PhoneLoginController extends GetxController {
   final countyPhoneCodeObs = Observable<Country?>(null);
@@ -11,10 +12,10 @@ class PhoneLoginController extends GetxController {
 
   void toOtpValidation() {
     if (!formKey.isValid) return;
-    // Get.toNamed(
-    //   otpModule.name,
-    //   arguments: phoneControl.first.controller.text,
-    // );
+    Get.toNamed(
+      otpModule.name,
+      arguments: phoneControl.first.controller.text,
+    );
   }
 
   MaskTextInputFormatter phoneInputsMaskFormatter() => MaskTextInputFormatter(

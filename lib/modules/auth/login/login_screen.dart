@@ -21,7 +21,6 @@ class LoginScreen extends GetView<LoginController> {
             ).align(alignment: Alignment.topLeft),
             const VerticalSpacing(12),
             FormInput(
-              type: FormInputType.normal,
               hint: "Enter email",
               controller: controller.inputControls.first.controller,
               keyboardType: TextInputType.emailAddress,
@@ -36,7 +35,6 @@ class LoginScreen extends GetView<LoginController> {
             const VerticalSpacing(12),
             FormInput(
               type: FormInputType.password,
-              // label: "Password",
               hint: "Enter password",
               hintColor: AppColors.hint,
               controller: controller.inputControls.second.controller,
