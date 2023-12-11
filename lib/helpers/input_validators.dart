@@ -11,6 +11,7 @@ class InputValidators {
 
   static String? validateUsername(String? value) => (value != null && value.length >= 2) ? null : 'Invalid username';
 
+
   static String? validateFirstname(String? value) => (value != null && value.length >= 2) ? null : 'Invalid first name';
 
   static String? validateLastname(String? value) => (value != null && value.length >= 2) ? null : 'Invalid last name';
@@ -24,7 +25,6 @@ class InputValidators {
           ? null
           : 'Mismatching passwords'
       : null;
-
   static String? validatePhone(String? value) => (value != null && value.length > 7) ? null : 'Invalid Phone Number';
 
   static String? validateSMSCode(String? value) {
