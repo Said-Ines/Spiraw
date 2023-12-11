@@ -38,8 +38,11 @@ class PhoneLoginScreen extends GetView<PhoneLoginController> {
           const Gap(48),
           StyledButton(
             style: ButtonStyles.primary,
-            title: "Continue",
+            title: "Next",
             onPressed: controller.toOtpValidation,
+            icon: const Icon(Icons.keyboard_arrow_right_outlined),
+            isFromRecipe: true,
+            reversed: true,
           ),
         ],
       ),
