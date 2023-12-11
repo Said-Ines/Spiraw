@@ -26,5 +26,6 @@ class ScannerScreen extends GetView<ScannerController> {
                     ),
                   )))),
     );
+
   }
 }

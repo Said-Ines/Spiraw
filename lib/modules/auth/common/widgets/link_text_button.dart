@@ -5,15 +5,19 @@ class LinkTextButton extends StatelessWidget {
     super.key,
     required this.title,
     required this.onTap,
+    this.isRegister = false,
   });
 
   final String title;
   final VoidCallback onTap;
+  final bool isRegister;
+
   @override
   Widget build(BuildContext context) {
     return Text(title,
-            style:
-                AppStyles.interregularSubTitle.withColor(AppColors.secondary))
+            style: !isRegister
+                ? AppStyles.interregularSubTitle.withColor(AppColors.secondary)
+                : AppStyles.interboldHeadline3.withColor(AppColors.secondary).withSize(FontSizes.title).medium())
         //.overallPadding(6)
         .onTap(onTap, overlayColor: AppColors.blueDark);
   }

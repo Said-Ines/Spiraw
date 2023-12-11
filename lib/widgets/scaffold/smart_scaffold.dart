@@ -111,9 +111,7 @@ class SmartScaffold extends StatelessWidget {
                   body: body,
                   floatingActionButton: floatingActionButton,
                   floatingActionButtonLocation: floatingActionButtonLocation ??
-                      (Platform.isIOS
-                          ? FloatingActionButtonLocation.endDocked
-                          : FloatingActionButtonLocation.endFloat),
+                      (Platform.isIOS ? FloatingActionButtonLocation.endDocked : FloatingActionButtonLocation.endFloat),
                   bottomSheet: bottomSheet,
                   backgroundColor: backgroundColor,
                   resizeToAvoidBottomInset: resizeToAvoidBottomInset,

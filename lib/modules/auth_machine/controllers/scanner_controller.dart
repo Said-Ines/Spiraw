@@ -62,3 +62,4 @@ class ScannerController extends GetxController {
     super.onClose();
   }
 }
+
