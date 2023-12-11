@@ -43,9 +43,11 @@ class SpirawApp extends StatelessWidget {
 
         // //* Auth
         phoneLoginModule,
+        user_info
+        otpModule,
+        userInfoModule,
         phone_signin  
         otpModule,
-        // userInfoModule,
         // emailSignupModule,
         loginModule,
 

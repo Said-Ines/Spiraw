@@ -20,8 +20,7 @@ class PhoneLoginScreen extends GetView<PhoneLoginController> {
         children: [
           Gap(Get.height * 0.06),
           const Center(child: Logo()),
-
-          const Gap(AppConstants.bodyTopPadding),
+          const Gap(AppConstants.maxBodyTopPadding),
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
@@ -39,8 +38,7 @@ class PhoneLoginScreen extends GetView<PhoneLoginController> {
           const Gap(48),
           StyledButton(
             style: ButtonStyles.primary,
-
-            title: "Continue",
+            title: "Next",
             onPressed: controller.toOtpValidation,
             icon: const Icon(Icons.keyboard_arrow_right_outlined),
             isFromRecipe: true,
