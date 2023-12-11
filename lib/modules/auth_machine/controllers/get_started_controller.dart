@@ -1,6 +1,5 @@
-import 'package:spiraw/modules/auth_machine/modules/scanner_module.dart';
-
 import '../../../bases/screens/exports.dart';
+import '../modules/scanner_module.dart';
 
 class GetStartedController extends GetxController {
   final performingApiCall = Observable(false);

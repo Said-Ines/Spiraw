@@ -1,5 +1,3 @@
-import 'package:spiraw/modules/all_modules.dart';
-
 import '../../../bases/controllers/exports.dart';
 
 class UserInfoController extends GetxController {

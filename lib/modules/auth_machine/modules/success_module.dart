@@ -1,7 +1,6 @@
-import 'package:spiraw/modules/auth_machine/controllers/scanner_controller.dart';
-import 'package:spiraw/modules/auth_machine/success_screen.dart';
-
 import '../../../bases/screens/exports.dart';
+import '../controllers/scanner_controller.dart';
+import '../success_screen.dart';
 
 final successModule = GetPage(
   name: '/successModule',

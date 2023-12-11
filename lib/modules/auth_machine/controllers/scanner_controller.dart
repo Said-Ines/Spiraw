@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:spiraw/modules/auth_machine/data/scanned_qr_model.dart';
 
 import '../../../bases/controllers/exports.dart';
+import '../data/scanned_qr_model.dart';
 
 class ScannerController extends GetxController {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
@@ -58,12 +58,10 @@ class ScannerController extends GetxController {
     Get.back(closeOverlays: true);
   }
 
-
 //! TODO:
   void toSetupMachine() {
     // Get.toNamed();
   }
-
 
   @override
   void onClose() {
@@ -72,4 +70,3 @@ class ScannerController extends GetxController {
     super.onClose();
   }
 }
-

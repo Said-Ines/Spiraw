@@ -1,6 +1,5 @@
-import 'package:spiraw/modules/auth_machine/controllers/scanner_controller.dart';
-
 import '../../../bases/screens/exports.dart';
+import '../controllers/scanner_controller.dart';
 
 final scannerModule = GetPage(
   name: '/scannerModule',

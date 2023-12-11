@@ -1,6 +1,6 @@
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:spiraw/bases/screens/exports.dart';
 
+import '../../bases/screens/exports.dart';
 import 'controllers/scanner_controller.dart';
 
 class ScannerScreen extends GetView<ScannerController> {
@@ -26,6 +26,5 @@ class ScannerScreen extends GetView<ScannerController> {
                     ),
                   )))),
     );
-
   }
 }

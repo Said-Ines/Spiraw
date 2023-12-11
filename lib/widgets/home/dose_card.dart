@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-import 'package:spiraw/bases/extensions/index.dart';
 
 import '../../app/index.dart';
+import '../../bases/extensions/index.dart';
 
 enum DoseStatus { completed, incompleted }
 

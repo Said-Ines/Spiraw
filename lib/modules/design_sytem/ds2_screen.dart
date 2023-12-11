@@ -3,11 +3,11 @@ import 'package:day_picker/day_picker.dart';
 import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
-import 'package:spiraw/bases/screens/exports.dart';
-import 'package:spiraw/widgets/home/dose_card.dart';
 import 'package:vertical_percent_indicator/vertical_percent_indicator.dart';
 
+import '../../bases/screens/exports.dart';
 import '../../widgets/home/circuler_progress.dart';
+import '../../widgets/home/dose_card.dart';
 import '../../widgets/home/harvest_schedule.dart';
 
 class DS2Screen extends StatefulWidget {
@@ -75,9 +75,7 @@ class _DS2ScreenState extends State<DS2Screen> with SingleTickerProviderStateMix
                 unselectedLabelColor: Colors.grey,
                 indicatorColor: Colors.transparent,
                 labelStyle: _tabController.index == 0
-                    ? AppStyles.interboldHeadline3
-                        .withColor(Colors.white)
-                        .withSize(FontSizes.headline3)
+                    ? AppStyles.interboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline3)
                     : AppStyles.interregularSubTitle.withColor(Colors.grey),
 
                 tabs: [
@@ -86,9 +84,7 @@ class _DS2ScreenState extends State<DS2Screen> with SingleTickerProviderStateMix
                       padding: const EdgeInsets.symmetric(horizontal: 30.0),
                       child: Text('Spirulina',
                           style: _tabController.index == 0
-                              ? AppStyles.interboldHeadline3
-                                  .withColor(Colors.white)
-                                  .withSize(FontSizes.headline3)
+                              ? AppStyles.interboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline3)
                               : AppStyles.interregularSubTitle.withColor(Colors.grey)),
                     ),
                   ),
@@ -97,9 +93,7 @@ class _DS2ScreenState extends State<DS2Screen> with SingleTickerProviderStateMix
                       padding: const EdgeInsets.symmetric(horizontal: 30.0),
                       child: Text('Eco-impact',
                           style: _tabController.index == 1
-                              ? AppStyles.interboldHeadline3
-                                  .withColor(Colors.white)
-                                  .withSize(FontSizes.headline3)
+                              ? AppStyles.interboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline3)
                               : AppStyles.interregularSubTitle.withColor(Colors.grey)),
                     ),
                   ),
@@ -136,8 +130,7 @@ class _DS2ScreenState extends State<DS2Screen> with SingleTickerProviderStateMix
                   await Future.delayed(const Duration(seconds: 1));
                   controller.reset(); //resets the slider
                 },
-                child: Text('Harvest now          >>',
-                    style: AppStyles.interboldHeadline1.withColor(Colors.white)),
+                child: Text('Harvest now          >>', style: AppStyles.interboldHeadline1.withColor(Colors.white)),
               ),
             ),
             const HarvestSchedule(

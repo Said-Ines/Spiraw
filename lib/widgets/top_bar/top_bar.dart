@@ -1,8 +1,5 @@
 import 'dart:ui';
 
-import '../../bases/extensions/widget_modifiers.dart';
-
-import '../../bases/controllers/exports.dart';
 import '../../bases/screens/exports.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
@@ -52,8 +49,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   final void Function()? onActionPressed;
 
   @override
-  Size get preferredSize =>
-      Size.fromHeight(appBarHeight - MediaQuery.of(Get.context!).padding.top);
+  Size get preferredSize => Size.fromHeight(appBarHeight - MediaQuery.of(Get.context!).padding.top);
 
   @override
   Widget build(BuildContext context) {
@@ -61,10 +57,8 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: appBarHeight,
       elevation: applyElevation ? AppConstants.appBarElevation : 0,
       automaticallyImplyLeading: false,
-      backgroundColor: blurred
-          ? Colors.white.withAlpha(1)
-          : appBarBackgroundColor ??
-              Theme.of(context).appBarTheme.backgroundColor,
+      backgroundColor:
+          blurred ? Colors.white.withAlpha(1) : appBarBackgroundColor ?? Theme.of(context).appBarTheme.backgroundColor,
       flexibleSpace: blurred
           ? ClipRect(
               child: BackdropFilter(
@@ -94,8 +88,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         children: [
           Container(
-            margin: const EdgeInsets.only(
-                left: AppConstants.bodyMinSymetricHorizontalPadding, right: 8),
+            margin: const EdgeInsets.only(left: AppConstants.bodyMinSymetricHorizontalPadding, right: 8),
             width: 48,
             height: 48,
             decoration: BoxDecoration(

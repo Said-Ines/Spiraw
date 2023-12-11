@@ -1,7 +1,7 @@
 import 'package:gap/gap.dart';
-import 'package:spiraw/widgets/logo.dart';
 
 import '../../../bases/screens/exports.dart';
+import '../../../widgets/logo.dart';
 import '../common/widgets/terms_and_conditions.dart';
 import 'user_info_controller.dart';
 

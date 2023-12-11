@@ -1,6 +1,7 @@
 import 'package:gap/gap.dart';
-import 'package:spiraw/bases/screens/exports.dart';
-import 'package:spiraw/modules/auth_machine/controllers/scanner_controller.dart';
+
+import '../../bases/screens/exports.dart';
+import 'controllers/scanner_controller.dart';
 
 class SuccessScreen extends GetView<ScannerController> {
   const SuccessScreen({super.key});
