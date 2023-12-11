@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../managers/connectivity_manager.dart';
-
 import '../modules/all_modules.dart';
 import 'index.dart';
 
-class KingaSafetyApp extends StatelessWidget {
+class SpirawApp extends StatelessWidget {
   final GetPage initialModule;
 
-  KingaSafetyApp({
+  SpirawApp({
     super.key,
     required this.initialModule,
   }) {
@@ -32,19 +31,21 @@ class KingaSafetyApp extends StatelessWidget {
       opaqueRoute: true,
 
       //@ Routing
-      initialRoute:
-          //initialModule.name,
-          designSystemModule.name,
+      initialRoute: initialModule.name,
+      // designSystemModule.name,
       getPages: [
         //! Desing System
         designSystemModule,
+
+        //$ Splash
+        splashModule,
 
         // //* Auth
         // phoneSignupModule,
         // otpModule,
         // userInfoModule,
         // emailSignupModule,
-        // signinModule,
+        loginModule,
 
         // //? Setup
         // setupModule,
