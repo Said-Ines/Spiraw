@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:image_picker/image_picker.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:scan/scan.dart';
 
 import '../../../../bases/controllers/exports.dart';
 import '../../../auth_machine/data/scanned_qr_model.dart';
@@ -19,7 +20,7 @@ class ScanningTemplateController extends GetxController {
   StreamSubscription<Barcode>? streamSubscription;
   Rx<bool> gotResult = false.obs;
 
-  Rx<String?> selectedImagePath = Rx<String?>(null);
+  final selectedImagePath = Observable<Rx<String?>>("".obs);
 
   @override
   void onInit() {
@@ -68,6 +69,12 @@ class ScanningTemplateController extends GetxController {
     }
   }
 
+  //? scanning QR code from uploaded image
+  void scanningUploadedImage(String? selectedImagePath) async {
+    String? result = await Scan.parse(selectedImagePath ?? "");
+    log(result ?? "");
+  }
+
   Future<void> pickImageFromGallery() async {
     //! TODO
     // open gallery permission
@@ -75,7 +82,10 @@ class ScanningTemplateController extends GetxController {
     final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
-      selectedImagePath.value = pickedFile.path;
+      selectedImagePath.value = pickedFile.path.obs;
+
+      scanningUploadedImage(selectedImagePath.value.string);
+      log(selectedImagePath.value.string);
 
       log('Image sélectionnée depuis la galerie: ${pickedFile.path}');
     }

@@ -41,6 +41,7 @@ dependencies:
   flutter_spinner_picker: ^0.0.7
   day_picker: ^2.2.0
   qr_code_scanner: ^1.0.1
+  scan: ^1.6.0
 
 dev_dependencies:
   flutter_test:

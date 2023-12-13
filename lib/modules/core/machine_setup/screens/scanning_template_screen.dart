@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:dotted_border/dotted_border.dart';
 import 'package:gap/gap.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -27,7 +30,9 @@ class ScanningTemplateScreen extends GetView<ScanningTemplateController> {
               const Gap(28),
               Text(
                 title,
-                style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline4).withColor(Colors.white),
+                style: AppStyles.urbanistboldHeadline3
+                    .withSize(FontSizes.headline4)
+                    .withColor(Colors.white),
               ).center().align(alignment: Alignment.topLeft),
             ],
           ),
@@ -36,24 +41,42 @@ class ScanningTemplateScreen extends GetView<ScanningTemplateController> {
               //! TODO
               //Scan the qr code of the selected image
               borderRadius: BorderRadius.circular(AppConstants.defaultRadius),
-              child: SizedBox(
-                  height: AppConstants.scannerHeight,
-                  width: AppConstants.scannerWidth,
-                  child: Stack(children: [
-                    QRView(
-                      key: controller.qrKey,
-                      onQRViewCreated: controller.onQRViewCreated,
-                      overlay: QrScannerOverlayShape(
-                        cutOutSize: 300,
-                        borderLength: 2,
-                        borderWidth: 3,
-                      ),
-                    ),
-                  ]))),
+              child: Observer(
+                observes: controller.selectedImagePath,
+                builder: (context, selectedImagePath) => SizedBox(
+                    height: AppConstants.scannerHeight,
+                    width: AppConstants.scannerWidth,
+                    child: Stack(alignment: Alignment.center, children: [
+                      selectedImagePath.value != ""
+                          ? DottedBorder(
+                              padding: const EdgeInsets.all(7),
+                              borderType: BorderType.RRect,
+                              radius: Radius.circular(AppConstants.inputs.radius),
+                              color: AppColors.secondary,
+                              strokeWidth: 1.5,
+                              dashPattern: const [135, 145],
+                              child: Image.file(
+                                File(selectedImagePath.value ?? ""),
+                                width: 300,
+                                height: 300,
+                                fit: BoxFit.contain,
+                              ),
+                            )
+                          : QRView(
+                              key: controller.qrKey,
+                              onQRViewCreated: controller.onQRViewCreated,
+                              overlay: QrScannerOverlayShape(
+                                cutOutSize: 300,
+                                borderLength: 2,
+                                borderWidth: 3,
+                              ),
+                            ),
+                    ])),
+              )),
         ],
       ).paddingOnly(top: 50),
-      floatingActionButton:
-          const GradientBar().paddingSymmetric(vertical: 40, horizontal: AppConstants.bodyMinSymetricHorizontalPadding),
+      floatingActionButton: const GradientBar().paddingSymmetric(
+          vertical: 40, horizontal: AppConstants.bodyMinSymetricHorizontalPadding),
     );
   }
 }
