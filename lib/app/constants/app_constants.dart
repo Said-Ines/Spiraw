@@ -15,6 +15,7 @@ class AppConstants {
   // static const drawer = _Drawer._();
   //static final topBar = _TopBar._();
   static final bottomBar = _BottomBar._();
+  static final gradientBottomBar = _GradientBottomBar._();
 
   static const Transition bottomNavBarInitalScreensTransition = Transition.noTransition;
 
@@ -31,7 +32,7 @@ class AppConstants {
   static const double maxBodyTopPadding = 100;
   static const double bodyMinSymetricHorizontalPadding = 24;
   static const double bodyMaxSymetricHorizontalPadding = 34;
-  static const double bodyMinBottomPadding = 95;
+  static const double bodyMinBottomPadding = 40;
   static const double bodyMaxBottomPadding = 120;
   static const double bodyBottomPadding = 50;
 
@@ -225,13 +226,19 @@ class _BottomBar {
 
   final double bottomRadius = 50;
 
-  // final double height =
-  //     // 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
-  //     100;
-
   final double height = 100 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
 
   final double mainButtonSize = 78;
   final double secondaryButtonSize = 32;
   //final double elevation = 5;
+}
+
+//? Gradient Bottom Bar
+class _GradientBottomBar {
+  _GradientBottomBar._();
+
+  final double gradientBottomBarHeight = 64;
+  final double gradientBottomBarWeight = 365.7;
+  final double radius = 10;
+  final double iconSize = 42;
 }

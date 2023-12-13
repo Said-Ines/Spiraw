@@ -14,33 +14,32 @@ class OtpScreen extends GetView<OtpController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-        displayAppBar: false,
         body: ScrollableForm(topPadding: AppConstants.minBodyTopPadding, children: [
-          const BackButton(),
-          const Gap(16),
-          Text(
-            "Verification Code",
-            style: AppStyles.interboldHeadline1.withSize(FontSizes.headline2).withColor(Colors.white),
-          ).align(alignment: Alignment.topLeft),
-          const Gap(16),
-          Text(
-            "Enter the verification code we just sent on your email address.",
-            style: AppStyles.interregularTitle.withColor(Colors.white).medium(),
-          ).align(alignment: Alignment.topLeft),
-          const Gap(48),
-          const _PinInput(),
-          const Gap(48),
-          Observer(
-            observes: controller.performingApiCall,
-            builder: (context, performingApiCall) => StyledButton(
-              isLoading: performingApiCall,
-              isDisabled: true,
-              style: ButtonStyles.primary,
-              title: "Verify account",
-              onPressed: controller.otpValidation,
-            ),
-          ),
-        ]));
+      const BackButton(),
+      const Gap(16),
+      Text(
+        "Verification Code",
+        style: AppStyles.interboldHeadline1.withSize(FontSizes.headline2).withColor(Colors.white),
+      ).align(alignment: Alignment.topLeft),
+      const Gap(16),
+      Text(
+        "Enter the verification code we just sent on your email address.",
+        style: AppStyles.interregularTitle.withColor(Colors.white).medium(),
+      ).align(alignment: Alignment.topLeft),
+      const Gap(48),
+      const _PinInput(),
+      const Gap(48),
+      Observer(
+        observes: controller.performingApiCall,
+        builder: (context, performingApiCall) => StyledButton(
+          isLoading: performingApiCall,
+          isDisabled: true,
+          style: ButtonStyles.primary,
+          title: "Verify account",
+          onPressed: controller.otpValidation,
+        ),
+      ),
+    ]));
   }
 }
 

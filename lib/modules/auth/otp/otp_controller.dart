@@ -1,5 +1,4 @@
 import '../../../bases/controllers/exports.dart';
-import '../user_info/module/user_info_module.dart';
 
 class OtpController extends GetxController {
   final String phoneNumber = Get.arguments ?? "------";

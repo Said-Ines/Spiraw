@@ -12,7 +12,6 @@ class PhoneLoginScreen extends GetView<PhoneLoginController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      displayAppBar: false,
       backgroundColor: AppColors.primary,
       body: ScrollableForm(
         formKey: controller.formKey,

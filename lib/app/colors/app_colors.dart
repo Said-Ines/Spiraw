@@ -22,9 +22,12 @@ class AppColors {
   static const Color purple = Color(0xFF4932D9);
   static const Color inputColor = Color(0xFF1B2D51);
   static const Color inputBorder = Color(0xFF98C4DE);
-  static const offBlack = Color(0xFF1D1D1F);
-  static const offWhite = Color(0xFFFAFAFC);
-  static const blackTitleButton = Color(0xFF1B232A);
+  static const Color offBlack = Color(0xFF1D1D1F);
+  static const Color offWhite = Color(0xFFFAFAFC);
+  static const Color blackTitleButton = Color(0xFF1B232A);
+  static const Color darkBackIcon = Color(0xFF1E232C);
+
+  static const Color gradientBarBorderClr = Color(0xFF98F9FF);
 
   static const LinearGradient greenGradient = LinearGradient(
     begin: Alignment(-0.0777, 0.0),
@@ -70,15 +73,17 @@ class AppColors {
     ],
     stops: [0.0, 0.7708, 1.0],
   );
-  static const LinearGradient bottomBarGradient = LinearGradient(
-    begin: Alignment.bottomCenter,
-    end: Alignment.topCenter,
+  static const LinearGradient scanningOptionsGradientBox = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
     colors: [
-      Color(0xFF1B2D51),
-      Color.fromRGBO(27, 45, 81, 0.00),
+      Color.fromRGBO(165, 239, 255, 0.20),
+      Color.fromRGBO(110, 191, 244, 0.04),
+      Color.fromRGBO(70, 144, 212, 0.00),
     ],
-    stops: [0.2083, 1.0],
+    stops: [0.0, 0.7708, 1.0],
   );
+
   static const LinearGradient greyGradient = LinearGradient(
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
@@ -149,6 +154,16 @@ class AppColors {
       Color.fromRGBO(52, 217, 69, 0.27),
     ],
   );
+
+  static const LinearGradient bottomBarGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Color.fromRGBO(22, 28, 34, 0.00),
+      Color(0xFF1B2D51),
+    ],
+  );
+
   static const LinearGradient bottomBarColor = bottomBarGradient;
 
   static const Color scaffold = primary;

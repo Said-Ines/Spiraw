@@ -6,9 +6,16 @@ export '../modules/auth/user_info/module/user_info_module.dart';
 export '../modules/auth_machine/modules/get_started_module.dart';
 export '../modules/auth_machine/modules/scanner_module.dart';
 export '../modules/auth_machine/modules/success_module.dart';
+export '../modules/core/machine_setup/modules/add_water_module.dart';
+export '../modules/core/machine_setup/modules/disinfection_module.dart';
+export '../modules/core/machine_setup/modules/scanning_supplement_module.dart';
+export '../modules/core/machine_setup/modules/scanning_template_module.dart';
+export '../modules/core/machine_setup/modules/starter_added_module.dart';
+export '../modules/core/machine_setup/modules/success_template_module.dart';
+export '../modules/core/machine_setup/modules/supplement_added_module.dart';
+export '../modules/core/machine_setup/modules/well_done_module.dart';
 export '../modules/design_sytem/module/ds_module.dart';
 export '../modules/splash/splash_module.dart';
-
 // export '../modules/core/emergency_calling/module/emergency_calling_module.dart';
 // export '../modules/core/sos_text_message/stay_connected/module/stay_connected_module.dart';
 // export '../modules/core/sos_text_message/text_message_setup/module/message_setup_module.dart';

@@ -48,7 +48,6 @@ class _DS2ScreenState extends State<DS2Screen> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      displayAppBar: false,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
