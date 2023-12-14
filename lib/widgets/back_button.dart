@@ -15,8 +15,8 @@ class BackButton extends StatelessWidget {
     final backgroundColor = fromScanning ? Colors.white : (fromMachineSetup ? AppColors.inputColor : AppColors.transparent);
     final iconColor = fromScanning ? AppColors.inputColor : Colors.white;
     return Container(
-      height: AppConstants.buttons.icon.size,
-      width: AppConstants.buttons.icon.size,
+      height: fromScanning ? AppConstants.buttons.icon.ScanningButtonSize : AppConstants.buttons.icon.size,
+      width: fromScanning ? AppConstants.buttons.icon.ScanningButtonSize : AppConstants.buttons.icon.size,
       decoration: BoxDecoration(
         color: backgroundColor,
         //gradient: AppColors.backButtonBorderGradient,
@@ -34,7 +34,7 @@ class BackButton extends StatelessWidget {
         icon: Icon(
           !fromMachineSetup ? Icons.arrow_back_ios : Icons.arrow_back,
           color: iconColor,
-          size: AppConstants.buttons.icon.iconSize,
+          size: fromScanning ? AppConstants.buttons.icon.ScanningIconSize : AppConstants.buttons.icon.iconSize,
         ).paddingSymmetric(horizontal: !fromMachineSetup ? 7 : 0),
       ),
     ).align(alignment: fromMachineSetup ? Alignment.topLeft : Alignment.bottomLeft);
