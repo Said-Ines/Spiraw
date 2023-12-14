@@ -11,7 +11,6 @@ class UserInfoScreen extends GetView<UserInfoController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      displayAppBar: false,
       body: ScrollableForm(formKey: controller.formKey, children: [
         const Logo().center(),
         const Gap(AppConstants.minBodyTopPadding),

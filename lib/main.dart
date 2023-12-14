@@ -8,8 +8,7 @@ import 'app/colors/app_colors.dart';
 import 'bases/controllers/exports.dart';
 import 'environment/app_environment.dart';
 import 'managers/connectivity_manager.dart';
-import 'managers/firebase_manager copy.dart';
-import 'modules/all_modules.dart';
+import 'managers/firebase_manager.dart';
 
 part 'main_bindings.dart';
 part 'main_styling.dart';

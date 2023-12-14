@@ -18,6 +18,11 @@ class AppImages {
   static const qrScanner = "$imagesFolder/qr_scanner.png";
   static const successMark = "$imagesFolder/success_mark.png";
 
+  static const galleryIcon = "$imagesFolder/gallery_icon.png";
+  static const flashIcon = "$imagesFolder/flash.png";
+  static const switchCameraIcon = "$imagesFolder/switch_camera.png";
+
+  static const screensImage = "$imagesFolder/screens.png";
 }
 
 class _BottomBar {

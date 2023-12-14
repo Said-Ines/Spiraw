@@ -7,7 +7,6 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      displayAppBar: false,
       body: Stack(
         children: [
           Center(child: Image.asset(AppImages.splashImage)),

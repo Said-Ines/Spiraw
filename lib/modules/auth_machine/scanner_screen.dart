@@ -1,15 +1,14 @@
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 import '../../bases/screens/exports.dart';
-import 'controllers/scanner_controller.dart';
+import '../core/machine_setup/controllers/scanning_template_controller.dart';
 
-class ScannerScreen extends GetView<ScannerController> {
+class ScannerScreen extends GetView<ScanningTemplateController> {
   const ScannerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      displayAppBar: false,
       body: Center(
           child: ClipRRect(
               borderRadius: BorderRadius.circular(AppConstants.defaultRadius),

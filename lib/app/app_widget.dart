@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../managers/connectivity_manager.dart';
 import '../modules/all_modules.dart';
+import '../widgets/bottom_bars/gradient_bar_module.dart';
 import 'index.dart';
 
 class SpirawApp extends StatelessWidget {
@@ -40,7 +41,7 @@ class SpirawApp extends StatelessWidget {
         //$ Splash
         splashModule,
 
-        // //* Auth
+        //* Auth
         phoneLoginModule,
         userInfoModule,
         otpModule,
@@ -53,16 +54,23 @@ class SpirawApp extends StatelessWidget {
         getStartedModule,
         scannerModule,
         successModule,
+        gradientBarModule,
         // stayConnectedModule,
         // messageSetupModule,
         // decoyCallModule,
         // micAccessModule,
 
+        //& Machine Setup
+        addWaterModule,
+        scanningSupplementModule,
+        scanningTemplateModule,
+        successTemplateModule,
+        supplementAddedModule,
+        starterAddedModule,
+        disinfinctionModule,
+        wellDoneModule
         // //$ Home
         // homeModule,
-
-        // //& Menu
-        // menuModule,
       ],
     );
   }

@@ -16,7 +16,6 @@ class DesignSystemScreen extends GetView<DesignSystemController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      displayAppBar: false,
       body: ScrollableForm(formKey: controller.formKey, topPadding: 35, bottomPadding: 135, children: [
         const VerticalSpacing(20),
         Text(
@@ -204,6 +203,44 @@ class DesignSystemScreen extends GetView<DesignSystemController> {
         ),
         const VerticalSpacing(20),
         const UploadButton(),
+        const VerticalSpacing(20),
+        Container(
+          height: AppConstants.gradientBottomBar.gradientBottomBarHeight,
+          width: AppConstants.gradientBottomBar.gradientBottomBarWeight,
+          decoration: BoxDecoration(
+              gradient: AppColors.scanningOptionsGradientBox,
+              borderRadius: BorderRadius.all(Radius.circular(AppConstants.gradientBottomBar.radius)),
+              border: Border.all(color: AppColors.gradientBarBorderClr, width: 2)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  AppImages.galleryIcon,
+                  width: AppConstants.gradientBottomBar.iconSize,
+                  height: AppConstants.gradientBottomBar.iconSize,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  AppImages.flashIcon,
+                  width: AppConstants.gradientBottomBar.iconSize,
+                  height: AppConstants.gradientBottomBar.iconSize,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  AppImages.switchCameraIcon,
+                  width: AppConstants.gradientBottomBar.iconSize - 10,
+                  height: AppConstants.gradientBottomBar.iconSize - 10,
+                ),
+              ),
+            ],
+          ).symmetricPadding(horizontal: 15),
+        )
       ]),
     );
   }

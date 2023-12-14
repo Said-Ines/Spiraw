@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../app/colors/app_colors.dart';
-import '../../app/constants/app_constants.dart';
-import '../../app/images/app_images.dart';
-import '../../bases/controllers/exports.dart';
+import '../../bases/screens/exports.dart';
 
 class RoundedBottomBar extends StatelessWidget {
   const RoundedBottomBar({super.key});

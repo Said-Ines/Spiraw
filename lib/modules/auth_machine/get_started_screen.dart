@@ -9,7 +9,6 @@ class GetStartedScreen extends GetView<GetStartedController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      displayAppBar: false,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

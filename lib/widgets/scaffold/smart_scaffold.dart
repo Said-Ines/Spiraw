@@ -35,7 +35,7 @@ class SmartScaffold extends StatelessWidget {
     this.actionIconColor = AppColors.primary,
     this.actionBackgroundColor,
     this.onActionPressed,
-    this.displayAppBar = true,
+    this.displayAppBar = false,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.start,
     this.formKey,
