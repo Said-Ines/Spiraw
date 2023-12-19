@@ -80,7 +80,11 @@ class IngredientsScreen extends GetView<AddRecipeController> {
                 title: "Next ",
                 onPressed: () {},
                 isFromRecipe: true,
-                reversed: false,
+                reversed: true,
+                icon: const Icon(
+                  Icons.arrow_forward_ios,
+                  size: 20,
+                ),
               ),
             ),
           ],
