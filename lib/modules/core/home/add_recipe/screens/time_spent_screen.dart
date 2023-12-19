@@ -41,17 +41,21 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (controller.preparationTime.value > 1) {
+                          controller.preparationTime--;
+                        }
+                      },
                       icon: Image.asset(
                         AppImages.minusIcon,
                         height: 15,
                         width: 15,
                       ))),
               const Gap(20),
-              Text(
-                "5 Mins",
-                style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
-              ),
+              Obx(() => Text(
+                    "${controller.preparationTime.value} Mins",
+                    style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
+                  )),
               const Gap(20),
               Container(
                   height: 40,
@@ -61,7 +65,9 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.preparationTime.value++;
+                      },
                       icon: Image.asset(
                         AppImages.plusIcon,
                         height: 20,
@@ -85,17 +91,21 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (controller.cookingTime.value > 1) {
+                          controller.cookingTime--;
+                        }
+                      },
                       icon: Image.asset(
                         AppImages.minusIcon,
                         height: 15,
                         width: 15,
                       ))),
               const Gap(20),
-              Text(
-                "4 Mins",
-                style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
-              ),
+              Obx(() => Text(
+                    "${controller.cookingTime.value} Mins",
+                    style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
+                  )),
               const Gap(20),
               Container(
                   height: 40,
@@ -105,7 +115,9 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.cookingTime.value++;
+                      },
                       icon: Image.asset(
                         AppImages.plusIcon,
                         height: 20,
