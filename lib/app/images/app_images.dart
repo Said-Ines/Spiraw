@@ -23,6 +23,16 @@ class AppImages {
   static const switchCameraIcon = "$imagesFolder/switch_camera.png";
 
   static const screensImage = "$imagesFolder/screens.png";
+
+  static const plusIcon = "$imagesFolder/plus_icon.png";
+  static const minusIcon = "$imagesFolder/minus_icon.png";
+
+  static const indianFood = "$imagesFolder/indian.png";
+  static const italianFood = "$imagesFolder/italian.png";
+  static const greekFood = "$imagesFolder/greek.png";
+  static const mexicanFood = "$imagesFolder/mexican.png";
+  static const americanFood = "$imagesFolder/american.png";
+  static const chineseFood = "$imagesFolder/chinese.png";
 }
 
 class _BottomBar {

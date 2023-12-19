@@ -37,6 +37,7 @@ class BackButton extends StatelessWidget {
           size: AppConstants.buttons.icon.iconSize,
         ).paddingSymmetric(horizontal: !fromMachineSetup ? 7 : 0),
       ),
-    ).align(alignment: fromMachineSetup ? Alignment.topLeft : Alignment.bottomLeft);
+    );
+    //.align(alignment: !fromMachineSetup ? Alignment.topLeft : Alignment.bottomLeft);
   }
 }

@@ -195,6 +195,7 @@ class _Inputs {
   //final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
   final double radius = 12;
   final double height = 54;
+  final double descriptionHeight = 140;
   final double width = 366;
   final double horizontalContentPadding = AppConstants.bodyMinSymetricHorizontalPadding;
   final double verticalContentPadding = 24;

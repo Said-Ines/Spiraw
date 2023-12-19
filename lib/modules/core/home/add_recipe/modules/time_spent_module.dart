@@ -1,9 +1,9 @@
 import '../../../../../bases/screens/exports.dart';
 import '../controllers/add_recipe_controller.dart';
-import '../screens/add_recipe_screen.dart';
+import '../screens/time_spent_screen.dart';
 
-final addRecipeModule = GetPage(
-  name: '/addRecipeModule',
-  page: () => const AddRecipeScreen(),
+final timeSpentModule = GetPage(
+  name: '/timeSpentModule',
+  page: () => const TimeSpentScreen(),
   binding: BindingsBuilder.put(() => AddRecipeController()),
 );

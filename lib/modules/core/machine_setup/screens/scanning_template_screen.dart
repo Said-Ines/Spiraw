@@ -51,7 +51,7 @@ class ScanningTemplateScreen extends GetView<ScanningTemplateController> {
                     ),
                   ]))),
         ],
-      ).paddingOnly(top: 50),
+      ).paddingOnly(top: AppConstants.minBodyTopPadding),
       floatingActionButton:
           const GradientBar().paddingSymmetric(vertical: 40, horizontal: AppConstants.bodyMinSymetricHorizontalPadding),
     );

@@ -1,5 +1,6 @@
 export 'package:flutter/gestures.dart';
 export 'package:flutter/material.dart' hide BackButton, MenuController;
+export 'package:gap/gap.dart';
 export 'package:get/get.dart';
 
 //export 'package:intl/intl.dart' hide TextDirection;
