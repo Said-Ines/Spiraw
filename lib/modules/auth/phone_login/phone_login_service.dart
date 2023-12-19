@@ -1,12 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../bases/screens/exports.dart';
-import '../helpers/index.dart';
-import '../modules/auth/data/model/user_model.dart';
+import '../../../bases/controllers/exports.dart';
 
-final firebaseManager = Get.find<FirebaseManager>();
+final phoneSignupService = Get.find<PhoneLoginService>();
 
-class FirebaseManager {
+class PhoneLoginService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> verifyPhoneNumber({
@@ -68,63 +66,11 @@ class FirebaseManager {
     }
   }
 
-  Future<UserModel?> registerWithEmailAndPassword({
-    required String firstName,
-    required String lastName,
-    required String email,
-    required String password,
-  }) async {
-    try {
-      UserCredential authResult = await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+  // Future<void> signUpWithPhone(String phone) async {
+  //   await firebaseManager.verifyPhoneNumber(phoneNumber: phone, codeSent: (a, b) => {});
+  // }
 
-      User? user = authResult.user;
-      if (user != null) {
-        await user.updateDisplayName('$firstName $lastName');
-        return UserModel.fromFirebaseUser(user);
-      }
-
-      return null;
-    } catch (e) {
-      Debugger.red('Error register with email and password : $e');
-
-      return null;
-      //TODO:  Handle register error
-    }
-  }
-
-  // Sign out the user
-  Future<void> signOut() async {
-    try {
-      await _auth.signOut();
-    } catch (e) {
-      Debugger.red('Error signing out: $e');
-      // TODO: Handle sign-out error
-    }
-  }
+  // Future<void> verifySMS() async {
+  //   await firebaseManager.signInWithSmsCode()
+  // }
 }
-
-
- // FirebaseMessaging messaging = FirebaseMessaging.instance;
-
- // Future<void> requestNotificationPermissions() async {
-   // NotificationSettings settings = await messaging.requestPermission(
-    //  alert: true,
-    //  announcement: false,
-    //  badge: true,
-     // carPlay: false,
-     // criticalAlert: false,
-     // provisional: false,
-     // sound: true,
-  //  );
-
-  //  if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      //User granted permission
-   // } else if (settings.authorizationStatus == AuthorizationStatus.provisional) {
-      // User granted provisional permission
-   // } else {
-      //User declined or has not accepted permission
-   // }
- // }
