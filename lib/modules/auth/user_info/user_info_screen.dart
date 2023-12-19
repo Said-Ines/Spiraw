@@ -1,5 +1,3 @@
-import 'package:gap/gap.dart';
-
 import '../../../bases/screens/exports.dart';
 import '../../../widgets/logo.dart';
 import '../common/widgets/terms_and_conditions.dart';

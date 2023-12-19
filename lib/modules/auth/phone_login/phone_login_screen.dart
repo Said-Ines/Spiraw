@@ -1,5 +1,4 @@
 import 'package:country_picker/country_picker.dart';
-import 'package:gap/gap.dart';
 
 import '../../../bases/screens/exports.dart';
 import '../../../widgets/logo.dart';

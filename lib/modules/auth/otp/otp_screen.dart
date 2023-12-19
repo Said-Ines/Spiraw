@@ -1,7 +1,6 @@
 library otp_screen;
 
 import 'package:flutter/services.dart';
-import 'package:gap/gap.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:spiraw/modules/auth/otp/otp_controller.dart';
 
