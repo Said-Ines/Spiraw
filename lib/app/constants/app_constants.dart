@@ -171,9 +171,11 @@ class _SmallButtons {
 
   // static const _applyElevation = false;
   //final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
-  final double size = 41;
+  final double size = 54;
   final double radius = 12;
-  final double iconSize = 19;
+  final double iconSize = 23;
+  final double scanningIconSize = 19;
+  final double scanningButtonSize = 41;
 }
 
 class _FloatingActionButtons {

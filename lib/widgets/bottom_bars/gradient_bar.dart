@@ -12,32 +12,13 @@ class GradientBar extends GetView<ScanningTemplateController> {
       height: AppConstants.gradientBottomBar.gradientBottomBarHeight,
       width: double.infinity,
       decoration: const BoxDecoration(gradient: AppColors.bottomBarGradient),
-      child: _CameraOption(
-        switchCameraAction: () {
-          controller.flipCamera();
-        },
-        flashAction: () {
-          controller.toggleFlash();
-        },
-        galleryAction: () {
-          controller.pickImageFromGallery();
-        },
-      ),
+      child: const _CameraOption(),
     ).align(alignment: Alignment.bottomCenter);
   }
 }
 
-class _CameraOption extends StatelessWidget {
-  const _CameraOption({
-    super.key,
-    required this.switchCameraAction,
-    required this.flashAction,
-    required this.galleryAction,
-  });
-
-  final void Function()? switchCameraAction;
-  final void Function()? flashAction;
-  final void Function()? galleryAction;
+class _CameraOption extends GetView<ScanningTemplateController> {
+  const _CameraOption();
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +33,7 @@ class _CameraOption extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: galleryAction,
+            onPressed: controller.pickImageFromGallery,
             icon: Image.asset(
               AppImages.galleryIcon,
               width: AppConstants.gradientBottomBar.iconSize,
@@ -60,7 +41,7 @@ class _CameraOption extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: flashAction,
+            onPressed: controller.toggleFlash,
             icon: Image.asset(
               AppImages.flashIcon,
               width: AppConstants.gradientBottomBar.iconSize,
@@ -68,7 +49,7 @@ class _CameraOption extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: switchCameraAction,
+            onPressed: controller.flipCamera,
             icon: Image.asset(
               AppImages.switchCameraIcon,
               width: AppConstants.gradientBottomBar.iconSize - 10,
