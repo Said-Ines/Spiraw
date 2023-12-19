@@ -174,8 +174,8 @@ class _SmallButtons {
   final double size = 54;
   final double radius = 12;
   final double iconSize = 23;
-  final double ScanningIconSize = 19;
-  final double ScanningButtonSize = 41;
+  final double scanningIconSize = 19;
+  final double scanningButtonSize = 41;
 }
 
 class _FloatingActionButtons {
