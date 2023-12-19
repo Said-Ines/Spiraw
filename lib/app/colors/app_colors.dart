@@ -160,8 +160,18 @@ class AppColors {
     end: Alignment.bottomCenter,
     colors: [
       Color.fromRGBO(22, 28, 34, 0.00),
-      Color(0xFF1B2D51),
+      inputColor,
     ],
+  );
+
+  static LinearGradient categoriesBarGradient = const LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Color.fromRGBO(27, 45, 81, 0.00),
+      inputColor,
+    ],
+    stops: [0.2083, 1.0],
   );
 
   static const LinearGradient bottomBarColor = bottomBarGradient;

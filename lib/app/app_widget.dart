@@ -68,9 +68,12 @@ class SpirawApp extends StatelessWidget {
         supplementAddedModule,
         starterAddedModule,
         disinfinctionModule,
-        wellDoneModule
-        // //$ Home
-        // homeModule,
+        wellDoneModule,
+
+        //$ Community Home Page
+        addRecipeModule,
+        recipeCategoriesModule,
+        timeSpentModule,
       ],
     );
   }

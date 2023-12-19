@@ -30,7 +30,7 @@ class DoseCard extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.4,
       height: AppConstants.cardHeight,
       borderRadius: AppConstants.cardRadius,
-      blur: 16,
+      blur: AppConstants.cardBlur,
       alignment: Alignment.bottomCenter,
       border: 1,
       linearGradient: AppColors.incompletedDoseCardGradient,

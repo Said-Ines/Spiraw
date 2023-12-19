@@ -11,7 +11,6 @@ class InputValidators {
 
   static String? validateUsername(String? value) => (value != null && value.length >= 2) ? null : 'Invalid username';
 
-
   static String? validateFirstname(String? value) => (value != null && value.length >= 2) ? null : 'Invalid first name';
 
   static String? validateLastname(String? value) => (value != null && value.length >= 2) ? null : 'Invalid last name';
@@ -30,4 +29,9 @@ class InputValidators {
   static String? validateSMSCode(String? value) {
     return (value != null && value.length == 4) ? null : 'Invalid Code';
   }
+
+  static String? validateRecipeName(String? value) =>
+      (value != null && value.length > 2) ? null : 'Title must contain more than 2 characters';
+  static String? validateRecipeDescription(String? value) =>
+      (value != null && value.length > 2) ? null : 'Descrpition must contain more than 2 characters';
 }
