@@ -25,6 +25,7 @@ class AddRecipeController extends GetxController {
 
   var preparationTime = 5.obs;
   var cookingTime = 4.obs;
+  var quantity = 4.obs;
 
   void addRecipeValidation() {
     if (!formKey.isValid) return;

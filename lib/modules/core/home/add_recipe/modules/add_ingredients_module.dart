@@ -1,9 +1,9 @@
 import '../../../../../bases/screens/exports.dart';
 import '../controllers/add_recipe_controller.dart';
-import '../screens/ingredients_screen.dart';
+import '../screens/add_ingredients_screen.dart';
 
-final ingredientsModule = GetPage(
-  name: '/ingredientsModule',
-  page: () => const IngredientsScreen(),
+final addIngredientsModule = GetPage(
+  name: '/addIngredientsModule',
+  page: () => const AddIngredientsScreen(),
   binding: BindingsBuilder.put(() => AddRecipeController()),
 );

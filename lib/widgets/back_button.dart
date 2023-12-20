@@ -2,10 +2,10 @@ import '../../../../bases/screens/exports.dart';
 
 class BackButton extends StatelessWidget {
   const BackButton({
-    super.key,
+    Key? key,
     this.fromMachineSetup = false,
     this.fromScanning = false,
-  });
+  }) : super(key: key);
 
   final bool fromMachineSetup;
   final bool fromScanning;
@@ -15,11 +15,10 @@ class BackButton extends StatelessWidget {
     final backgroundColor = fromScanning ? Colors.white : (fromMachineSetup ? AppColors.inputColor : AppColors.transparent);
     final iconColor = fromScanning ? AppColors.inputColor : Colors.white;
     return Container(
-      height: !fromScanning ? AppConstants.buttons.icon.scanningButtonSize : AppConstants.buttons.icon.size,
-      width: !fromScanning ? AppConstants.buttons.icon.scanningButtonSize : AppConstants.buttons.icon.size,
+      height: fromScanning ? AppConstants.buttons.icon.scanningButtonSize : AppConstants.buttons.icon.size,
+      width: fromScanning ? AppConstants.buttons.icon.scanningButtonSize : AppConstants.buttons.icon.size,
       decoration: BoxDecoration(
         color: backgroundColor,
-        //gradient: AppColors.backButtonBorderGradient,
         borderRadius: BorderRadius.circular(AppConstants.buttons.icon.radius),
       ),
       child: IconButton(
@@ -32,12 +31,11 @@ class BackButton extends StatelessWidget {
         ),
         onPressed: Get.back,
         icon: Icon(
-          !fromMachineSetup ? Icons.arrow_back_ios : Icons.arrow_back,
+          fromMachineSetup ? Icons.arrow_back : Icons.arrow_back_ios,
           color: iconColor,
-          size: !fromScanning ? AppConstants.buttons.icon.scanningIconSize : AppConstants.buttons.icon.iconSize,
-        ).paddingSymmetric(horizontal: (!fromMachineSetup) ? 7 : (fromScanning ? 12 : 0)),
+          size: fromScanning ? AppConstants.buttons.icon.scanningIconSize : AppConstants.buttons.icon.iconSize,
+        ).paddingSymmetric(horizontal: fromScanning ? 7 : (fromMachineSetup ? 0 : 12)),
       ),
     );
-    //.align(alignment: !fromMachineSetup ? Alignment.topLeft : Alignment.bottomLeft);
   }
 }

@@ -1,7 +1,6 @@
-import 'package:spiraw/modules/core/home/add_recipe/controllers/add_recipe_controller.dart';
-
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/back_button.dart';
+import '../controllers/add_recipe_controller.dart';
 
 class IngredientsScreen extends GetView<AddRecipeController> {
   const IngredientsScreen({super.key});

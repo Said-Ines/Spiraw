@@ -6,6 +6,7 @@ export '../modules/auth/user_info/module/user_info_module.dart';
 export '../modules/auth_machine/modules/get_started_module.dart';
 export '../modules/auth_machine/modules/scanner_module.dart';
 export '../modules/auth_machine/modules/success_module.dart';
+export '../modules/core/home/add_recipe/modules/add_ingredients_module.dart';
 export '../modules/core/home/add_recipe/modules/add_recipe_module.dart';
 export '../modules/core/home/add_recipe/modules/ingredients_module.dart';
 export '../modules/core/home/add_recipe/modules/recipe_categories_module.dart';
