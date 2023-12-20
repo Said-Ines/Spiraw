@@ -1,5 +1,7 @@
 library otp_screen;
 
+import 'dart:developer';
+
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:spiraw/modules/auth/otp/otp_controller.dart';
@@ -14,6 +16,7 @@ class OtpScreen extends GetView<OtpController> {
   Widget build(BuildContext context) {
     return SmartScaffold(
         body: ScrollableForm(
+      formKey: controller.formKey,
       topPadding: AppConstants.minBodyTopPadding,
       children: [
         const BackButton().align(alignment: Alignment.topLeft),
@@ -32,13 +35,17 @@ class OtpScreen extends GetView<OtpController> {
         const Gap(48),
         Observer(
           observes: controller.performingApiCall,
-          builder: (context, performingApiCall) => StyledButton(
-            isLoading: performingApiCall,
-            isDisabled: true,
-            style: ButtonStyles.primary,
-            title: "Verify account",
-            onPressed: controller.otpValidation,
-          ),
+          builder: (context, performingApiCall) {
+            log("Performing API Call: $performingApiCall");
+
+            return StyledButton(
+              isLoading: performingApiCall,
+              isDisabled: true,
+              style: ButtonStyles.primary,
+              title: "Verify account",
+              onPressed: controller.otpValidation,
+            );
+          },
         ),
       ],
     ));

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import '../../../bases/controllers/exports.dart';
 import 'otp_service.dart';
 
@@ -14,7 +16,12 @@ class OtpController extends GetxController {
   final formKey = GlobalKey<FormState>();
 
   void otpValidation() {
-    if (!formKey.isValid) return;
+    log("OTP Validation method called");
+    if (!formKey.currentState!.validate()) {
+      log("Form validation failed");
+      return;
+    }
+    log("Form validation successful");
     performingApiCall.toggle();
     final smsCode = inputControls.first.controller.text.trim();
     Debugger.green(smsCode);
