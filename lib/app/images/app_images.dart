@@ -21,6 +21,8 @@ class AppImages {
   static const galleryIcon = "$imagesFolder/gallery_icon.png";
   static const flashIcon = "$imagesFolder/flash.png";
   static const switchCameraIcon = "$imagesFolder/switch_camera.png";
+  static const cameraIcon = "$imagesFolder/camera_icon.png";
+  static const gallery = "$imagesFolder/gallery.png";
 
   static const screensImage = "$imagesFolder/screens.png";
 
