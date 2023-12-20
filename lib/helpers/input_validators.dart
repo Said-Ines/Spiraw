@@ -27,7 +27,7 @@ class InputValidators {
   static String? validatePhone(String? value) => (value != null && value.length > 7) ? null : 'Invalid Phone Number';
 
   static String? validateSMSCode(String? value) {
-    return (value != null && value.length == 4) ? null : 'Invalid Code';
+    return (value != null && value.length == 6) ? null : 'Invalid Code';
   }
 
   static String? validateRecipeName(String? value) =>

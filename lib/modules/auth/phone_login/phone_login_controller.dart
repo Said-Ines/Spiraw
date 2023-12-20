@@ -17,7 +17,7 @@ class PhoneLoginController extends GetxController {
   void loginWithPhone() {
     if (!formKey.isValid) return;
     performingApiCall.toggle();
-    final phoneNumber = countryPhoneCodeObs.value?.phoneCode ?? "+216${phoneControl.first.controller.text}";
+    final phoneNumber = "+${countryPhoneCodeObs.value?.phoneCode ?? "216"} ${phoneControl.first.controller.text}";
     phoneLoginService.verifyPhoneNumber(
         phoneNumber: phoneNumber,
         codeSent: (verificationId, resendToken) => {
@@ -27,6 +27,7 @@ class PhoneLoginController extends GetxController {
                 arguments: [phoneControl.first.controller.text, verificationId],
               )
             });
+    performingApiCall.toggle();
   }
 
   MaskTextInputFormatter phoneInputsMaskFormatter() => MaskTextInputFormatter(
