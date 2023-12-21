@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:dotted_border/dotted_border.dart';
-import 'package:gap/gap.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 import '../../../../bases/screens/exports.dart';
@@ -30,9 +29,7 @@ class ScanningTemplateScreen extends GetView<ScanningTemplateController> {
               const Gap(28),
               Text(
                 title,
-                style: AppStyles.urbanistboldHeadline3
-                    .withSize(FontSizes.headline4)
-                    .withColor(Colors.white),
+                style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline4).withColor(Colors.white),
               ).center().align(alignment: Alignment.topLeft),
             ],
           ),
@@ -77,7 +74,6 @@ class ScanningTemplateScreen extends GetView<ScanningTemplateController> {
       ).paddingOnly(top: AppConstants.minBodyTopPadding),
       floatingActionButton:
           const GradientBar().paddingSymmetric(vertical: 40, horizontal: AppConstants.bodyMinSymetricHorizontalPadding),
-
     );
   }
 }
