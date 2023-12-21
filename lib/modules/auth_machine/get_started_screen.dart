@@ -29,7 +29,7 @@ class GetStartedScreen extends GetView<GetStartedController> {
               isLoading: performingApiCall,
               style: ButtonStyles.primary,
               title: "Next",
-              onPressed: () {},
+              onPressed: controller.toScannerScreen,
               icon: const Icon(Icons.keyboard_arrow_right_outlined),
               isFromRecipe: true,
               reversed: true,
