@@ -123,6 +123,13 @@ enum ButtonStyles {
     backgroundColor: Colors.white,
     borderColor: AppColors.blackTitleButton,
     borderWidth: 1.5,
+  ),
+
+  ingredient(
+    textColor: Colors.white,
+    backgroundColor: Colors.black,
+    borderColor: Colors.black,
+    borderWidth: 1,
   );
 
   final Color textColor;

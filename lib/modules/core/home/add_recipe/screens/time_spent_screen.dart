@@ -1,5 +1,6 @@
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/back_button.dart';
+import '../../../../../widgets/drop_down_button_section.dart';
 import '../controllers/add_recipe_controller.dart';
 
 class TimeSpentScreen extends GetView<AddRecipeController> {
@@ -41,17 +42,21 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (controller.preparationTime.value > 1) {
+                          controller.preparationTime--;
+                        }
+                      },
                       icon: Image.asset(
                         AppImages.minusIcon,
                         height: 15,
                         width: 15,
                       ))),
               const Gap(20),
-              Text(
-                "5 Mins",
-                style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
-              ),
+              Obx(() => Text(
+                    "${controller.preparationTime.value} Mins",
+                    style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
+                  )),
               const Gap(20),
               Container(
                   height: 40,
@@ -61,7 +66,9 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.preparationTime.value++;
+                      },
                       icon: Image.asset(
                         AppImages.plusIcon,
                         height: 20,
@@ -85,17 +92,21 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (controller.cookingTime.value > 1) {
+                          controller.cookingTime--;
+                        }
+                      },
                       icon: Image.asset(
                         AppImages.minusIcon,
                         height: 15,
                         width: 15,
                       ))),
               const Gap(20),
-              Text(
-                "4 Mins",
-                style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
-              ),
+              Obx(() => Text(
+                    "${controller.cookingTime.value} Mins",
+                    style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
+                  )),
               const Gap(20),
               Container(
                   height: 40,
@@ -105,7 +116,9 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.cookingTime.value++;
+                      },
                       icon: Image.asset(
                         AppImages.plusIcon,
                         height: 20,
@@ -119,7 +132,11 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
             style: AppStyles.interSemiBoldTextButton.withColor(Colors.white).medium().withSize(FontSizes.headline2),
           ).align(alignment: Alignment.topLeft),
           const Gap(20),
-          const DropDownButtonSection()
+          Obx(() => DropDownButtonSection(
+                onChanged: controller.updateSelectedDifficulty,
+                value: controller.selectedDifficulty.value,
+                itemsList: controller.difficultyOptions,
+              ))
         ],
       ).paddingOnly(top: AppConstants.minBodyTopPadding),
       floatingActionButton: Container(
@@ -144,57 +161,5 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
         ).paddingSymmetric(horizontal: AppConstants.bodyMinSymetricHorizontalPadding),
       ),
     );
-  }
-}
-
-class DropDownButtonSection extends GetView<AddRecipeController> {
-  const DropDownButtonSection({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Obx(() => DropdownButtonHideUnderline(
-        child: Container(
-            height: 56,
-            width: 350,
-            decoration: BoxDecoration(
-              color: AppColors.offWhite,
-              border: Border.all(color: AppColors.inputColor, width: 2),
-              borderRadius: BorderRadius.circular(
-                AppConstants.inputs.radius,
-              ),
-            ),
-            child: DropdownButton<String>(
-              items: controller.difficultyOptions.map((String difficulty) {
-                return DropdownMenuItem<String>(
-                  value: difficulty,
-                  child: Text(
-                    difficulty,
-                    style: AppStyles.rubikregularTitle.withSize(FontSizes.headline6).medium().withColor(AppColors.darkBackIcon),
-                  ).paddingOnly(left: AppConstants.bodyMinSymetricHorizontalPadding),
-                );
-              }).toList(),
-              onChanged: controller.updateSelectedDifficulty,
-              value: controller.selectedDifficulty.value,
-              dropdownColor: AppColors.offWhite,
-              icon: Container(
-                width: 56,
-                height: 56,
-                decoration: BoxDecoration(
-                  color: AppColors.secondary,
-                  border: Border.all(color: AppColors.inputColor, width: 2),
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(AppConstants.inputs.radius),
-                    bottomRight: Radius.circular(AppConstants.inputs.radius),
-                  ),
-                ),
-                child: const Icon(
-                  Icons.keyboard_arrow_down,
-                  color: AppColors.offBlack,
-                  size: 35,
-                ),
-              ),
-            ))).paddingSymmetric(horizontal: AppConstants.bodyMinSymetricHorizontalPadding));
   }
 }
