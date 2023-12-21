@@ -83,7 +83,17 @@ class FirebaseManager {
       User? user = authResult.user;
       if (user != null) {
         await user.updateDisplayName('$firstName $lastName');
-        return UserModel.fromFirebaseUser(user);
+        // return UserModel.fromFirebaseUser(user);
+        UserModel userModel = UserModel(
+          uid: user.uid,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phoneNumber: '',
+          userImage: '',
+        );
+
+        return userModel;
       }
 
       return null;

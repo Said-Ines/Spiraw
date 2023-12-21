@@ -30,6 +30,10 @@ class PhoneLoginController extends GetxController {
     performingApiCall.toggle();
   }
 
+  String getPhoneNumber() {
+    return "+${countryPhoneCodeObs.value?.phoneCode ?? "216"} ${phoneControl.first.controller.text}";
+  }
+
   MaskTextInputFormatter phoneInputsMaskFormatter() => MaskTextInputFormatter(
         mask: '## ### ###',
         filter: {'#': RegExp('[0-9]')},
