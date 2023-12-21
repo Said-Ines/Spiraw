@@ -1,5 +1,3 @@
-import 'package:gap/gap.dart';
-
 import '../../bases/screens/exports.dart';
 import '../core/machine_setup/controllers/scanning_template_controller.dart';
 

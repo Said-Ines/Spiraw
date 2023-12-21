@@ -1,5 +1,3 @@
-import 'package:gap/gap.dart';
-
 import '../../bases/screens/exports.dart';
 import 'controllers/get_started_controller.dart';
 
