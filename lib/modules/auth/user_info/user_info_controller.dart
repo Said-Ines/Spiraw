@@ -27,6 +27,7 @@ class UserInfoController extends GetxController {
 
     // Save information to Database
     if (currentUser != null) {
+      performingApiCall.toggle();
       await userInfoService.saveUsertoDatabase(
         UserModel(
           uid: currentUser.uid,
@@ -37,9 +38,11 @@ class UserInfoController extends GetxController {
           userImage: '',
         ),
       );
+      performingApiCall.toggle();
       Get.offNamed(getStartedModule.name);
     } else {
       Get.snackbar('Error', 'Something went wrong');
+      performingApiCall.toggle();
     }
   }
 

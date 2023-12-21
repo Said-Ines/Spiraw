@@ -10,7 +10,7 @@ class UserInfoService {
   Future<void> saveUsertoDatabase(UserModel user) async {
     try {
       await userCollection.doc(user.uid).set(user.toMap());
-    } catch (e) {
+    } on FirebaseException catch (e) {
       Debugger.red("Error while saving user info: $e");
     }
   }

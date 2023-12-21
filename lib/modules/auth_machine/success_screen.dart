@@ -29,7 +29,7 @@ class SuccessScreen extends GetView<ScanningTemplateController> {
             isLoading: performingApiCall,
             style: ButtonStyles.primary,
             title: "Setup your machine",
-            onPressed: () {},
+            onPressed: controller.toAddWaterScreen,
             isFromRecipe: true,
             reversed: true,
           ),
