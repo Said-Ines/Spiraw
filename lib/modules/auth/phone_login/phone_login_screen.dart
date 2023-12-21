@@ -34,13 +34,17 @@ class PhoneLoginScreen extends GetView<PhoneLoginController> {
               ),
               child: const _CountryPhoneInput()),
           const Gap(48),
-          StyledButton(
-            style: ButtonStyles.primary,
-            title: "Next",
-            onPressed: controller.toOtpValidation,
-            icon: const Icon(Icons.keyboard_arrow_right_outlined),
-            isFromRecipe: true,
-            reversed: true,
+          Observer(
+            observes: controller.performingApiCall,
+            builder: (context, performingApiCall) => StyledButton(
+              style: ButtonStyles.primary,
+              title: "Next",
+              onPressed: controller.loginWithPhone,
+              icon: const Icon(Icons.keyboard_arrow_right_outlined),
+              isFromRecipe: true,
+              reversed: true,
+              isLoading: performingApiCall,
+            ),
           ),
         ],
       ),
@@ -93,12 +97,12 @@ class _CountryPhoneInput extends GetView<PhoneLoginController> {
               ),
             ),
             onSelect: (Country country) {
-              controller.countyPhoneCodeObs.value = country;
+              controller.countryPhoneCodeObs.value = country;
             },
           );
         },
         child: Observer(
-            observes: controller.countyPhoneCodeObs,
+            observes: controller.countryPhoneCodeObs,
             builder: (context, Country? countryPhoneCode) {
               return Row(
                 crossAxisAlignment: CrossAxisAlignment.center,

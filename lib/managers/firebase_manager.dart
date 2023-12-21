@@ -1,20 +1,27 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../bases/screens/exports.dart';
 import '../helpers/index.dart';
 import '../modules/auth/data/model/user_model.dart';
+
+final firebaseManager = Get.find<FirebaseManager>();
 
 class FirebaseManager {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future<void> verifyPhoneNumber(String phoneNumber) async {
+  Future<void> verifyPhoneNumber({
+    required String phoneNumber,
+    required void Function(String, int?) codeSent,
+  }) async {
     try {
       await _auth.verifyPhoneNumber(
         phoneNumber: phoneNumber,
         verificationCompleted: _onVerificationCompleted,
         verificationFailed: _onVerificationFailed,
-        codeSent: _onCodeSent,
+        codeSent: codeSent,
         codeAutoRetrievalTimeout: _onCodeAutoRetrievalTimeout,
       );
+      Debugger.green('Verifying phone number: $phoneNumber');
     } catch (e) {
       //TODO:  Handle verification error
       Debugger.red('Error verifying phone number: $e');
@@ -76,7 +83,17 @@ class FirebaseManager {
       User? user = authResult.user;
       if (user != null) {
         await user.updateDisplayName('$firstName $lastName');
-        return UserModel.fromFirebaseUser(user);
+        // return UserModel.fromFirebaseUser(user);
+        UserModel userModel = UserModel(
+          uid: user.uid,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phoneNumber: '',
+          userImage: '',
+        );
+
+        return userModel;
       }
 
       return null;

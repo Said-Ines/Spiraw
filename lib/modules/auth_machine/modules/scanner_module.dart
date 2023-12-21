@@ -1,8 +1,8 @@
 import '../../../bases/screens/exports.dart';
-import '../controllers/scanner_controller.dart';
+import '../../core/machine_setup/controllers/scanning_template_controller.dart';
 
 final scannerModule = GetPage(
   name: '/scannerModule',
   page: () => const ScannerScreen(),
-  binding: BindingsBuilder.put(() => ScannerController()),
+  binding: BindingsBuilder.put(() => ScanningTemplateController()),
 );

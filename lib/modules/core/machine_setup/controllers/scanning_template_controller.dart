@@ -34,6 +34,10 @@ class ScanningTemplateController extends GetxController {
     super.onReady();
   }
 
+  void toAddWaterScreen() {
+    Get.toNamed(addWaterModule.name);
+  }
+
   void reassemble() {
     if (Platform.isAndroid) {
       qrController?.pauseCamera();
