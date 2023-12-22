@@ -24,6 +24,11 @@ class AppImages {
   static const cameraIcon = "$imagesFolder/camera_icon.png";
   static const gallery = "$imagesFolder/gallery.png";
 
+  static const emptyImage = "$imagesFolder/empty.png";
+  static const fillingImage = "$imagesFolder/filling.png";
+  static const filledImage = "$imagesFolder/filled.png";
+  static const progressIndicator = "$imagesFolder/progress_indicator.png";
+
   static const screensImage = "$imagesFolder/screens.png";
 
   static const plusIcon = "$imagesFolder/plus_icon.png";

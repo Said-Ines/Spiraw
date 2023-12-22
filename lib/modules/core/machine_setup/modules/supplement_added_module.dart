@@ -5,5 +5,7 @@ import '../screens/supplement_added_screen.dart';
 final supplementAddedModule = GetPage(
   name: '/supplementAddedModule',
   page: () => const SupplementAddedScreen(),
-  binding: BindingsBuilder.put(() => ScanningTemplateController()),
+  binding: BindingsBuilder.put(
+    () => ScanningTemplateController(),
+  ),
 );

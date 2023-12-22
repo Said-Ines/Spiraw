@@ -5,5 +5,7 @@ import '../screens/starter_added_screen.dart';
 final starterAddedModule = GetPage(
   name: '/starterAddedModule',
   page: () => const StarterAddedScreen(),
-  binding: BindingsBuilder.put(() => ScanningTemplateController()),
+  binding: BindingsBuilder.put(
+    () => ScanningTemplateController(),
+  ),
 );

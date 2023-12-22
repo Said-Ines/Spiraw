@@ -5,5 +5,7 @@ import '../screens/scanning_supplement_screen.dart';
 final scanningSupplementModule = GetPage(
   name: '/scanningSupplementModule',
   page: () => const ScanningSupplementScreen(),
-  binding: BindingsBuilder.put(() => ScanningTemplateController()),
+  binding: BindingsBuilder.put(
+    () => ScanningTemplateController(),
+  ),
 );

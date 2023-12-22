@@ -6,6 +6,7 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:scan/scan.dart';
 
 import '../../../../bases/controllers/exports.dart';
+import '../../../../utils/utils.dart';
 import '../../../auth_machine/data/scanned_qr_model.dart';
 
 class ScanningTemplateController extends GetxController {
@@ -21,6 +22,8 @@ class ScanningTemplateController extends GetxController {
   Rx<bool> gotResult = false.obs;
 
   final selectedImagePath = Observable<Rx<String?>>("".obs);
+
+  VoidCallback navigateToScreen = () {};
 
   @override
   void onInit() {
@@ -38,6 +41,26 @@ class ScanningTemplateController extends GetxController {
     Get.toNamed(addWaterModule.name);
   }
 
+  void toScanningStarter() {
+    Get.toNamed(scanningStarterModule.name);
+  }
+
+  void toStarterAddedScreen() {
+    Get.toNamed(starterAddedModule.name);
+  }
+
+  void toDisinfectionScreen() {
+    Get.toNamed(disinfinctionModule.name);
+  }
+
+  void toDisinfectionSuccessScreen() {
+    Get.toNamed(disinfinctionSuccessModule.name);
+  }
+
+  void toWellDoneScreen() {
+    Get.toNamed(wellDoneModule.name);
+  }
+
   void reassemble() {
     if (Platform.isAndroid) {
       qrController?.pauseCamera();
@@ -53,6 +76,17 @@ class ScanningTemplateController extends GetxController {
       gotResult.value = true;
 
       controller.pauseCamera();
+
+      if (result != null) {
+        String? scannedLink = result!.code;
+
+        Utils.showSnackBar(
+          "QR Code Scanned Successfully",
+          scannedLink ?? "Error while scanning the code",
+        );
+
+        navigateToScreen();
+      }
 
       _cancelAndResume();
     });
@@ -76,13 +110,39 @@ class ScanningTemplateController extends GetxController {
   //? scanning QR code from uploaded image
   void scanningUploadedImage(String? selectedImagePath) async {
     String? result = await Scan.parse(selectedImagePath ?? "");
-    log(result ?? "");
+    if (result != null) {
+      Utils.showSnackBar(
+        "QR Code Scanned Successfully",
+        result,
+      );
+      // if (fromSupplement) {
+      //   Future.delayed(const Duration(seconds: 2), () {
+      //     Get.toNamed(supplementAddedModule.name);
+      //   });
+      // } else if (fromStarter) {
+      //   Future.delayed(const Duration(seconds: 2), () {
+      //     Get.toNamed(starterAddedModule.name);
+      //   });
+      // } else if (fromDisinfection) {
+      //   Future.delayed(const Duration(seconds: 2), () {
+      //     Get.toNamed(disinfinctionSuccessModule.name);
+      //   });
+      // } else {
+      //   Future.delayed(const Duration(seconds: 2), () {
+      //     Get.toNamed(successModule.name);
+      //   });
+      // }
+      navigateToScreen();
+    } else {
+      Utils.showSnackBar(
+        "Error",
+        "Error while scanning the code",
+      );
+    }
+    Debugger.magenta('qr code link: $result');
   }
 
   Future<void> pickImageFromGallery() async {
-    //! TODO
-    // open gallery permission
-
     final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
@@ -101,7 +161,7 @@ class ScanningTemplateController extends GetxController {
     qrController?.resumeCamera();
     result = null;
     gotResult.value = false;
-    Get.back(closeOverlays: true);
+    //Get.back(closeOverlays: true);
   }
 
   @override

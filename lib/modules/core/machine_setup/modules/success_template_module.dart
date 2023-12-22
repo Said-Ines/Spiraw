@@ -5,9 +5,12 @@ import '../screens/success_template_screen.dart';
 final successTemplateModule = GetPage(
   name: '/successTemplateModule',
   page: () => SuccessTemplateScreen(
+    onPressed: () {},
     title: 'Disinfinction',
     image: Image.asset(AppImages.successMark),
     text: "Chamber disinfected successfully. Ready for prime spirulina growth!",
   ),
-  binding: BindingsBuilder.put(() => ScanningTemplateController()),
+  binding: BindingsBuilder.put(
+    () => ScanningTemplateController(),
+  ),
 );

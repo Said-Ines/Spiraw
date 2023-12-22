@@ -7,5 +7,7 @@ final scanningTemplateModule = GetPage(
   page: () => const ScanningTemplateScreen(
     title: "Title",
   ),
-  binding: BindingsBuilder.put(() => ScanningTemplateController()),
+  binding: BindingsBuilder.put(
+    () => ScanningTemplateController(),
+  ),
 );

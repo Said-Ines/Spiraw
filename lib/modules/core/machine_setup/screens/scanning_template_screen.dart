@@ -26,17 +26,15 @@ class ScanningTemplateScreen extends GetView<ScanningTemplateController> {
               const BackButton(
                 fromScanning: true,
               ),
-              const Gap(28),
+              const Gap(20),
               Text(
                 title,
-                style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline4).withColor(Colors.white),
+                style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline6).withColor(Colors.white),
               ).center().align(alignment: Alignment.topLeft),
             ],
           ),
           const Gap(AppConstants.minBodyTopPadding),
           ClipRRect(
-              //! TODO
-              //Scan the qr code of the selected image
               borderRadius: BorderRadius.circular(AppConstants.defaultRadius),
               child: Observer(
                 observes: controller.selectedImagePath,

@@ -10,6 +10,7 @@ class StarterAddedScreen extends GetView<ScanningTemplateController> {
     return SuccessTemplateScreen(
       title: 'Starter added',
       image: Image.asset(AppImages.successMark),
+      onPressed: controller.toDisinfectionScreen,
       text: 'Starter added successfully. Ready for prime spirulina growth!',
     );
   }

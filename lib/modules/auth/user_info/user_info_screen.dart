@@ -106,6 +106,7 @@ class _EmailInput extends GetView<UserInfoController> {
       controller: controller.inputControls.last.controller,
       validator: InputValidators.validateEmail,
       fillColor: AppColors.inputColor,
+      keyboardType: TextInputType.emailAddress,
     );
   }
 }
