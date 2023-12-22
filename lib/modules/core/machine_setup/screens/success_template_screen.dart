@@ -21,7 +21,8 @@ class SuccessTemplateScreen extends GetView<ScanningTemplateController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      body: ScrollableForm(
+        body: SingleChildScrollView(
+      child: Column(
         children: [
           Text(
             title,
@@ -49,7 +50,7 @@ class SuccessTemplateScreen extends GetView<ScanningTemplateController> {
             style: AppStyles.interboldHeadline3.withSize(FontSizes.title).withColor(Colors.white),
             textAlign: TextAlign.center,
           ).center(),
-          Gap(Get.height * 0.2),
+          Gap(Get.height * 0.3),
           Row(
             children: [
               const BackButton(fromMachineSetup: true),
@@ -64,7 +65,11 @@ class SuccessTemplateScreen extends GetView<ScanningTemplateController> {
             ],
           ).align(alignment: Alignment.bottomCenter)
         ],
-      ).paddingOnly(top: 50, bottom: 10),
-    );
+      ).paddingOnly(
+          left: AppConstants.bodyMinSymetricHorizontalPadding,
+          right: AppConstants.bodyMinSymetricHorizontalPadding,
+          top: AppConstants.minBodyTopPadding,
+          bottom: AppConstants.minBodyTopPadding),
+    ));
   }
 }

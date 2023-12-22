@@ -115,23 +115,7 @@ class ScanningTemplateController extends GetxController {
         "QR Code Scanned Successfully",
         result,
       );
-      // if (fromSupplement) {
-      //   Future.delayed(const Duration(seconds: 2), () {
-      //     Get.toNamed(supplementAddedModule.name);
-      //   });
-      // } else if (fromStarter) {
-      //   Future.delayed(const Duration(seconds: 2), () {
-      //     Get.toNamed(starterAddedModule.name);
-      //   });
-      // } else if (fromDisinfection) {
-      //   Future.delayed(const Duration(seconds: 2), () {
-      //     Get.toNamed(disinfinctionSuccessModule.name);
-      //   });
-      // } else {
-      //   Future.delayed(const Duration(seconds: 2), () {
-      //     Get.toNamed(successModule.name);
-      //   });
-      // }
+
       navigateToScreen();
     } else {
       Utils.showSnackBar(
@@ -151,7 +135,7 @@ class ScanningTemplateController extends GetxController {
       scanningUploadedImage(selectedImagePath.value.string);
       log(selectedImagePath.value.string);
 
-      log('Image sélectionnée depuis la galerie: ${pickedFile.path}');
+      log('Image from gallery : ${pickedFile.path}');
     }
   }
 

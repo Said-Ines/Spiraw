@@ -9,7 +9,9 @@ class ScanningStarterScreen extends GetView<ScanningTemplateController> {
   @override
   Widget build(BuildContext context) {
     controller.navigateToScreen = () {
-      Get.toNamed(starterAddedModule.name);
+      Future.delayed(const Duration(seconds: 2), () {
+        Get.offAllNamed(starterAddedModule.name);
+      });
     };
     return const ScanningTemplateScreen(
       title: 'Scanning starter',

@@ -13,9 +13,8 @@ class DisinfectionScreen extends GetView<ScanningTemplateController> {
       caption: 'Effortless Sanitization for a Pristine Cultivation Chamber',
       image: Image.asset(
         AppImages.progressIndicator,
-        width: 200,
-        height: 200,
       ),
+      text: "In progress",
     );
   }
 }
