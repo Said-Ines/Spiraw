@@ -11,6 +11,7 @@ class SupplementAddedScreen extends GetView<ScanningTemplateController> {
       title: 'Supplement added',
       image: Image.asset(AppImages.successMark),
       text: 'Supplement added successfully. Ready for prime spirulina growth!',
+      onPressed: controller.toScanningStarter,
     );
   }
 }

@@ -19,7 +19,7 @@ class SuccessScreen extends GetView<ScanningTemplateController> {
         const Gap(48),
         Text(
           "Your account has been successfully created!",
-          style: AppStyles.poppinsboldHeadline3.withColor(Colors.white),
+          style: AppStyles.interboldHeadline3.withSize(FontSizes.headline6).withColor(Colors.white),
           textAlign: TextAlign.center,
         ),
         const Gap(48),
@@ -30,8 +30,6 @@ class SuccessScreen extends GetView<ScanningTemplateController> {
             style: ButtonStyles.primary,
             title: "Setup your machine",
             onPressed: controller.toAddWaterScreen,
-            isFromRecipe: true,
-            reversed: true,
           ),
         ),
       ],

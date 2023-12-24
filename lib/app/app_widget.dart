@@ -33,7 +33,6 @@ class SpirawApp extends StatelessWidget {
 
       //@ Routing
       initialRoute: initialModule.name,
-      // designSystemModule.name,
       getPages: [
         //! Desing System
         designSystemModule,
@@ -55,10 +54,6 @@ class SpirawApp extends StatelessWidget {
         scannerModule,
         successModule,
         gradientBarModule,
-        // stayConnectedModule,
-        // messageSetupModule,
-        // decoyCallModule,
-        // micAccessModule,
 
         //& Machine Setup
         addWaterModule,
@@ -66,8 +61,10 @@ class SpirawApp extends StatelessWidget {
         scanningTemplateModule,
         successTemplateModule,
         supplementAddedModule,
+        scanningStarterModule,
         starterAddedModule,
         disinfinctionModule,
+        disinfinctionSuccessModule,
         wellDoneModule,
 
         //$ Community Home Page

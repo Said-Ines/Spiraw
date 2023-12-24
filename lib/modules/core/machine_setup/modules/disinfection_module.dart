@@ -5,5 +5,7 @@ import '../screens/disinfection_screen.dart';
 final disinfinctionModule = GetPage(
   name: '/disinfinctionModule',
   page: () => const DisinfectionScreen(),
-  binding: BindingsBuilder.put(() => ScanningTemplateController()),
+  binding: BindingsBuilder.put(
+    () => ScanningTemplateController(),
+  ),
 );

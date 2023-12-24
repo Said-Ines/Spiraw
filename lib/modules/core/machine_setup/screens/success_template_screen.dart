@@ -7,6 +7,7 @@ class SuccessTemplateScreen extends GetView<ScanningTemplateController> {
   final Widget? image;
   final String? text;
   final String? caption;
+  final void Function() onPressed;
 
   const SuccessTemplateScreen({
     super.key,
@@ -14,25 +15,26 @@ class SuccessTemplateScreen extends GetView<ScanningTemplateController> {
     this.image,
     this.text,
     this.caption,
+    required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        body: SingleChildScrollView(
+      child: Column(
         children: [
           Text(
             title,
-            style: AppStyles.interboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline3),
+            style: AppStyles.interboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline4),
           ),
           const Gap(20),
           Text(
             caption ?? "",
             textAlign: TextAlign.center,
-            style: AppStyles.interregularSubTitle.withSize(FontSizes.headline5).medium(),
+            style: AppStyles.interregularSubTitle.withSize(FontSizes.subtitle).medium(),
           ),
-          Gap(Get.height * 0.2),
+          const Gap(70),
           SizedBox(
             height: 100,
             width: 100,
@@ -45,10 +47,10 @@ class SuccessTemplateScreen extends GetView<ScanningTemplateController> {
           const Gap(48),
           Text(
             text ?? "",
-            style: AppStyles.interboldHeadline3.withSize(FontSizes.headline6).withColor(Colors.white),
+            style: AppStyles.interboldHeadline3.withSize(FontSizes.title).withColor(Colors.white),
             textAlign: TextAlign.center,
           ).center(),
-          Gap(Get.height * 0.2),
+          Gap(Get.height * 0.3),
           Row(
             children: [
               const BackButton(fromMachineSetup: true),
@@ -57,7 +59,7 @@ class SuccessTemplateScreen extends GetView<ScanningTemplateController> {
                 child: StyledButton(
                   style: ButtonStyles.primary,
                   title: "Next step",
-                  onPressed: () {},
+                  onPressed: onPressed,
                 ),
               ),
             ],
@@ -66,8 +68,8 @@ class SuccessTemplateScreen extends GetView<ScanningTemplateController> {
       ).paddingOnly(
           left: AppConstants.bodyMinSymetricHorizontalPadding,
           right: AppConstants.bodyMinSymetricHorizontalPadding,
-          top: 50,
-          bottom: 10),
-    );
+          top: AppConstants.minBodyTopPadding,
+          bottom: AppConstants.minBodyTopPadding),
+    ));
   }
 }

@@ -118,6 +118,13 @@ enum ButtonStyles {
     borderWidth: 1.5,
   ),
 
+  inactif(
+    textColor: AppColors.inputColor,
+    backgroundColor: AppColors.accent,
+    borderColor: AppColors.accent,
+    borderWidth: 1.5,
+  ),
+
   social(
     textColor: AppColors.blackTitleButton,
     backgroundColor: Colors.white,

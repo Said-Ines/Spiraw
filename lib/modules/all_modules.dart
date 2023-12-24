@@ -13,6 +13,8 @@ export '../modules/core/home/add_recipe/modules/recipe_categories_module.dart';
 export '../modules/core/home/add_recipe/modules/time_spent_module.dart';
 export '../modules/core/machine_setup/modules/add_water_module.dart';
 export '../modules/core/machine_setup/modules/disinfection_module.dart';
+export '../modules/core/machine_setup/modules/disinfection_success_module.dart';
+export '../modules/core/machine_setup/modules/scanning_starter_module.dart';
 export '../modules/core/machine_setup/modules/scanning_supplement_module.dart';
 export '../modules/core/machine_setup/modules/scanning_template_module.dart';
 export '../modules/core/machine_setup/modules/starter_added_module.dart';

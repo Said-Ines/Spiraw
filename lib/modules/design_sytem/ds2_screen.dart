@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:vertical_percent_indicator/vertical_percent_indicator.dart';
 
 import '../../bases/screens/exports.dart';
-import '../../widgets/home/circuler_progress.dart';
+import '../../widgets/home/circular_progress.dart';
 import '../../widgets/home/dose_card.dart';
 import '../../widgets/home/harvest_schedule.dart';
 
