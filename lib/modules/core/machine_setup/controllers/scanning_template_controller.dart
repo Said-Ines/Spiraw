@@ -1,13 +1,17 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:scan/scan.dart';
+import 'package:spiraw/modules/auth_machine/data/machine_model.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../../../bases/controllers/exports.dart';
 import '../../../../utils/utils.dart';
 import '../../../auth_machine/data/scanned_qr_model.dart';
+import '../../../auth_machine/services/machine_service.dart';
 
 class ScanningTemplateController extends GetxController {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
@@ -84,12 +88,42 @@ class ScanningTemplateController extends GetxController {
           "QR Code Scanned Successfully",
           scannedLink ?? "Error while scanning the code",
         );
+        String machineUid = generateUniqueMachineId();
+        String userId = getCurrentUserId();
+
+        MachineModel machine = MachineModel(
+          uid: machineUid,
+          qrCode: ScannedQrCodeModel(
+            qrContent: scannedLink,
+            scannedAt: DateTime.now().millisecond,
+          ),
+          userId: userId,
+        );
+
+        saveMachineToDatabase(machine);
 
         navigateToScreen();
       }
 
       _cancelAndResume();
     });
+  }
+
+  Future<void> saveMachineToDatabase(MachineModel machine) async {
+    try {
+      await MachineService().saveMachinetoDatabase(machine);
+      Debugger.green("Machine added successfully !");
+    } catch (e) {
+      Debugger.red("Error while saving machine: $e");
+    }
+  }
+
+  String generateUniqueMachineId() {
+    return const Uuid().v4();
+  }
+
+  String getCurrentUserId() {
+    return FirebaseAuth.instance.currentUser?.uid ?? "";
   }
 
   void toggleFlash() {

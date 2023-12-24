@@ -15,6 +15,7 @@ import 'managers/firebase_manager.dart';
 import 'modules/auth/otp/otp_service.dart';
 import 'modules/auth/phone_login/phone_login_service.dart';
 import 'modules/auth/user_info/user_info_service.dart';
+import 'modules/auth_machine/services/machine_service.dart';
 
 part 'main_bindings.dart';
 part 'main_styling.dart';
