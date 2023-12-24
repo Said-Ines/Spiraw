@@ -41,6 +41,21 @@ class PhoneLoginService {
     }
   }
 
+  Future<bool> isMachineRegisteredForUser(String? userId) async {
+    if (userId == null) {
+      return false;
+    }
+    try {
+      final DocumentSnapshot<Map<String, dynamic>> snapshot =
+          await FirebaseFirestore.instance.collection(FirebaseCollections.machines).doc(userId).get();
+
+      return snapshot.exists;
+    } catch (e) {
+      Debugger.red('Error checking machine authentication: $e');
+      return false;
+    }
+  }
+
   // Handle verification completed callback
   Future<void> _onVerificationCompleted(PhoneAuthCredential credential) async {
     try {

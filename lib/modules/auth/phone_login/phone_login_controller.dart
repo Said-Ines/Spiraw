@@ -1,4 +1,5 @@
 import 'package:country_picker/country_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import '../../../bases/models/input_control.dart';
@@ -19,10 +20,16 @@ class PhoneLoginController extends GetxController {
     performingApiCall.toggle();
     final phoneNumber = "+${countryPhoneCodeObs.value?.phoneCode ?? "216"} ${phoneControl.first.controller.text}";
     final isUserRegistered = await phoneLoginService.isUserRegistered(phoneNumber);
+    final userId = FirebaseAuth.instance.currentUser?.uid;
+
     if (isUserRegistered) {
-      Get.offAllNamed(
-        addRecipeModule.name,
-      );
+      final isMachineAuthenticated = await phoneLoginService.isMachineRegisteredForUser(userId);
+
+      isMachineAuthenticated
+          ? Get.offAllNamed(
+              addRecipeModule.name,
+            )
+          : Get.offAllNamed(getStartedModule.name);
     } else {
       phoneLoginService.verifyPhoneNumber(
           phoneNumber: phoneNumber,
