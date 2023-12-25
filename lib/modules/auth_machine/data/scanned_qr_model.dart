@@ -1,5 +1,5 @@
 class ScannedQrCodeModel {
-  int? id;
+  String? id;
   dynamic qrContent;
   int? scannedAt;
   ScannedQrCodeModel({
@@ -17,7 +17,7 @@ class ScannedQrCodeModel {
   }
 
   ScannedQrCodeModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'] as int;
+    id = json['id'] as String;
     qrContent = json['qrContent'];
     scannedAt = json['scannedAt'] as int;
   }

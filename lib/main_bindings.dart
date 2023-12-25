@@ -18,6 +18,7 @@ class _Binding {
     Get.lazyPut(() => PhoneLoginService(), fenix: true);
     Get.lazyPut(() => OtpService(), fenix: true);
     Get.lazyPut(() => UserInfoService(), fenix: true);
+    Get.lazyPut(() => MachineService(), fenix: true);
 
     //& Managers
 

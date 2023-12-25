@@ -1,9 +1,10 @@
 import 'package:country_picker/country_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import '../../../bases/models/input_control.dart';
 import '../../../bases/screens/exports.dart';
-import '../otp/module/otp_module.dart';
+import '../../all_modules.dart';
 import 'phone_login_service.dart';
 
 class PhoneLoginController extends GetxController {
@@ -14,19 +15,33 @@ class PhoneLoginController extends GetxController {
 
   final phoneLoginService = Get.find<PhoneLoginService>();
 
-  void loginWithPhone() {
+  void loginWithPhone() async {
     if (!formKey.isValid) return;
     performingApiCall.toggle();
     final phoneNumber = "+${countryPhoneCodeObs.value?.phoneCode ?? "216"} ${phoneControl.first.controller.text}";
-    phoneLoginService.verifyPhoneNumber(
-        phoneNumber: phoneNumber,
-        codeSent: (verificationId, resendToken) => {
-              performingApiCall.toggle(),
-              Get.toNamed(
-                otpModule.name,
-                arguments: [phoneControl.first.controller.text, verificationId],
-              )
-            });
+    final isUserRegistered = await phoneLoginService.isUserRegistered(phoneNumber);
+    final userId = FirebaseAuth.instance.currentUser?.uid;
+
+    if (isUserRegistered) {
+      final isMachineAuthenticated = await phoneLoginService.isMachineRegisteredForUser(userId);
+
+      isMachineAuthenticated
+          ? Get.offAllNamed(
+              addRecipeModule.name,
+            )
+          : Get.offAllNamed(getStartedModule.name);
+    } else {
+      phoneLoginService.verifyPhoneNumber(
+          phoneNumber: phoneNumber,
+          codeSent: (verificationId, resendToken) async {
+            performingApiCall.toggle();
+            Get.toNamed(
+              otpModule.name,
+              arguments: [phoneControl.first.controller.text, verificationId],
+            );
+          });
+    }
+
     performingApiCall.toggle();
   }
 

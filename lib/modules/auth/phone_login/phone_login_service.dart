@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../../app/constants/firebase_collections.dart';
 import '../../../bases/controllers/exports.dart';
 
 final phoneSignupService = Get.find<PhoneLoginService>();
@@ -23,6 +25,34 @@ class PhoneLoginService {
     } catch (e) {
       //TODO:  Handle verification error
       Debugger.red('Error verifying phone number: $e');
+    }
+  }
+
+  Future<bool> isUserRegistered(String phoneNumber) async {
+    try {
+      final QuerySnapshot<Map<String, dynamic>> result = await FirebaseFirestore.instance
+          .collection(FirebaseCollections.users)
+          .where('phoneNumber', isEqualTo: phoneNumber)
+          .get();
+      return result.docs.isNotEmpty;
+    } catch (e) {
+      Debugger.red('Error checking user registration: $e');
+      return false;
+    }
+  }
+
+  Future<bool> isMachineRegisteredForUser(String? userId) async {
+    if (userId == null) {
+      return false;
+    }
+    try {
+      final DocumentSnapshot<Map<String, dynamic>> snapshot =
+          await FirebaseFirestore.instance.collection(FirebaseCollections.machines).doc(userId).get();
+
+      return snapshot.exists;
+    } catch (e) {
+      Debugger.red('Error checking machine authentication: $e');
+      return false;
     }
   }
 

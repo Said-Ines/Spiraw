@@ -61,6 +61,7 @@ class _PinInput extends GetView<OtpController> {
       validator: InputValidators.validateSMSCode,
       errorTextMargin: const EdgeInsets.only(top: 60),
       appContext: context,
+      autoFocus: true,
       length: 6,
       controller: controller.inputControls.first.controller,
       keyboardType: TextInputType.phone,
@@ -70,7 +71,7 @@ class _PinInput extends GetView<OtpController> {
       pinTheme: PinTheme(
           shape: PinCodeFieldShape.box,
           borderRadius: BorderRadius.circular(AppConstants.inputs.radius),
-          fieldHeight: 50,
+          fieldHeight: 59,
           fieldWidth: 48,
           inactiveColor: AppColors.inputColor,
           selectedColor: AppColors.secondary,
