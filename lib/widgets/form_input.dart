@@ -111,7 +111,7 @@ class _State extends State<FormInput> {
       height: !widget.isDescriptionField ? AppConstants.inputs.height : AppConstants.inputs.descriptionHeight,
       child: TextFormField(
         cursorColor: (darkTheme || !widget.isSearchField) ? Colors.white : AppColors.primary,
-        cursorHeight: FontSizes.title,
+        //cursorHeight: FontSizes.headline2,
         enabled: widget.enabled,
         initialValue: widget.initialValue,
         expands: widget.expands,
