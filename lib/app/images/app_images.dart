@@ -8,6 +8,7 @@ class AppImages {
   static const appLogo = "$imagesFolder/app_logo.png";
   static const splashImage = "$imagesFolder/splash_image.png";
   static const groupImage = "$imagesFolder/group_98.png";
+  static const machineImage = "$imagesFolder/machine.png";
 
   static const visibilityIcon = "$imagesFolder/visibility_icon.png";
 

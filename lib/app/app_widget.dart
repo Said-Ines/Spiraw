@@ -39,6 +39,7 @@ class SpirawApp extends StatelessWidget {
 
         //$ Splash
         splashModule,
+        afterSplashModule,
 
         //* Auth
         phoneLoginModule,
