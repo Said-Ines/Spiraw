@@ -27,7 +27,7 @@ class PhoneLoginController extends GetxController {
 
       isMachineAuthenticated
           ? Get.offAllNamed(
-              addRecipeModule.name,
+              addWaterModule.name,
             )
           : Get.offAllNamed(getStartedModule.name);
     } else {
