@@ -41,6 +41,8 @@ class AppImages {
   static const mexicanFood = "$imagesFolder/mexican.png";
   static const americanFood = "$imagesFolder/american.png";
   static const chineseFood = "$imagesFolder/chinese.png";
+  static const notificationIcon = "$imagesFolder/notification_icon.png";
+  static const searchIcon = "$imagesFolder/search_icon.png";
 }
 
 class _BottomBar {

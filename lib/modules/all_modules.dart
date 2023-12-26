@@ -12,6 +12,7 @@ export '../modules/core/home/add_recipe/modules/add_recipe_module.dart';
 export '../modules/core/home/add_recipe/modules/ingredients_module.dart';
 export '../modules/core/home/add_recipe/modules/recipe_categories_module.dart';
 export '../modules/core/home/add_recipe/modules/time_spent_module.dart';
+export '../modules/core/home/recipe_page/module/recipe_page_module.dart';
 export '../modules/core/machine_setup/modules/add_water_module.dart';
 export '../modules/core/machine_setup/modules/disinfection_module.dart';
 export '../modules/core/machine_setup/modules/disinfection_success_module.dart';

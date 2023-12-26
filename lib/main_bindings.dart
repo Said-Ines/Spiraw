@@ -29,4 +29,4 @@ class _Binding {
   }
 }
 
-Future<GetPage> _initialModule() async => phoneLoginModule;
+Future<GetPage> _initialModule() async => designSystemModule;
