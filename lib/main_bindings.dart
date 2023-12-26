@@ -29,4 +29,4 @@ class _Binding {
   }
 }
 
-Future<GetPage> _initialModule() async => designSystemModule;
+Future<GetPage> _initialModule() async => recipePageModule;

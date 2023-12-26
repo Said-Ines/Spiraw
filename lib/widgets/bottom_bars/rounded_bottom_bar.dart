@@ -8,65 +8,74 @@ class RoundedBottomBar extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: AppConstants.bottomBar.height,
-          decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 4, 13, 31),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(AppConstants.bottomBar.bottomRadius),
-                  topRight: Radius.circular(AppConstants.bottomBar.bottomRadius))),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
+          height: AppConstants.bottomBar.height + 50,
+          color: Colors.transparent,
+        ),
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Container(
+            height: AppConstants.bottomBar.height,
+            decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 4, 13, 31),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(AppConstants.bottomBar.bottomRadius),
+                    topRight: Radius.circular(AppConstants.bottomBar.bottomRadius))),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                    onPressed: () {},
+                    icon: Image.asset(
+                      AppImages.bottomBar.home,
+                      width: AppConstants.bottomBar.secondaryButtonSize,
+                      height: AppConstants.bottomBar.secondaryButtonSize,
+                    )),
+                IconButton(
+                    onPressed: () {},
+                    icon: Image.asset(
+                      AppImages.bottomBar.shopping,
+                      width: AppConstants.bottomBar.secondaryButtonSize,
+                      height: AppConstants.bottomBar.secondaryButtonSize,
+                    )),
+                const Gap(40),
+                IconButton(
                   onPressed: () {},
                   icon: Image.asset(
-                    AppImages.bottomBar.home,
+                    AppImages.bottomBar.twoPersons,
                     width: AppConstants.bottomBar.secondaryButtonSize,
                     height: AppConstants.bottomBar.secondaryButtonSize,
-                  )),
-              IconButton(
-                onPressed: () {},
-                icon: Image.asset(
-                  AppImages.bottomBar.twoPersons,
-                  width: AppConstants.bottomBar.secondaryButtonSize,
-                  height: AppConstants.bottomBar.secondaryButtonSize,
-                ),
-              ),
-              const SizedBox(width: 68), // Adjust the width according to your design
-
-              IconButton(
-                  onPressed: () {},
-                  icon: Image.asset(
-                    AppImages.bottomBar.shopping,
-                    width: AppConstants.bottomBar.secondaryButtonSize,
-                    height: AppConstants.bottomBar.secondaryButtonSize,
-                  )),
-              Container(
-                width: AppConstants.bottomBar.secondaryButtonSize,
-                height: AppConstants.bottomBar.secondaryButtonSize,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: ClipOval(
-                  child: Material(
-                    color: AppColors.transparent,
-                    child: InkWell(
-                        onTap: () {},
-                        child: Image.asset(
-                          AppImages.bottomBar.profile,
-                          fit: BoxFit.cover,
-                          width: AppConstants.bottomBar.secondaryButtonSize,
-                          height: AppConstants.bottomBar.secondaryButtonSize,
-                        )),
                   ),
                 ),
-              )
-            ],
-          ).paddingSymmetric(horizontal: 37),
+                Container(
+                  width: AppConstants.bottomBar.secondaryButtonSize,
+                  height: AppConstants.bottomBar.secondaryButtonSize,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
+                  child: ClipOval(
+                    child: Material(
+                      color: AppColors.transparent,
+                      child: InkWell(
+                          onTap: () {},
+                          child: Image.asset(
+                            AppImages.bottomBar.profile,
+                            fit: BoxFit.cover,
+                            width: AppConstants.bottomBar.secondaryButtonSize,
+                            height: AppConstants.bottomBar.secondaryButtonSize,
+                          )),
+                    ),
+                  ),
+                )
+              ],
+            ).customPadding(
+                left: AppConstants.bodyMinSymetricHorizontalPadding, right: AppConstants.bodyMaxSymetricHorizontalPadding),
+          ),
         ),
         Positioned(
             bottom: 50,
-            left: MediaQuery.of(context).size.width / 2 - 48,
+            left: Get.width / 3 + 32,
             child: _HexagonalButton(
               onPressed: () {},
               icon: Icons.add,
