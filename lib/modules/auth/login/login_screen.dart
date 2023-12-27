@@ -25,6 +25,9 @@ class LoginScreen extends GetView<LoginController> {
             hint: "Enter email",
             controller: controller.inputControls.first.controller,
             keyboardType: TextInputType.emailAddress,
+            onChanged: (_) {
+              controller.updateFormValidity();
+            },
             validator: InputValidators.validateEmail,
             fillColor: AppColors.inputColor,
           ),
@@ -40,6 +43,9 @@ class LoginScreen extends GetView<LoginController> {
             hint: "Enter password",
             hintColor: AppColors.hint,
             controller: controller.inputControls.second.controller,
+            onChanged: (_) {
+              controller.updateFormValidity();
+            },
             validator: InputValidators.validatePassword,
             fillColor: AppColors.inputColor,
           ),
@@ -52,11 +58,10 @@ class LoginScreen extends GetView<LoginController> {
           ).align(alignment: Alignment.bottomRight),
           const VerticalSpacing(20),
           Observer(
-            observes: controller.performingApiCall,
-            builder: (context, performingApiCall) => StyledButton(
-              isLoading: performingApiCall,
-              isDisabled: true,
-              style: ButtonStyles.primary,
+            observes: controller.isActive,
+            builder: (context, isActive) => StyledButton(
+              isDisabled: !isActive,
+              style: isActive ? ButtonStyles.primary : ButtonStyles.inactif,
               title: "Login",
               onPressed: controller.login,
             ),

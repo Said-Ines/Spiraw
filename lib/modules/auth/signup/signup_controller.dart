@@ -11,6 +11,7 @@ class SignUpController extends GetxController {
   final inputControls = InputControl.generate(4);
   final formKey = GlobalKey<FormState>();
   final SignUpService _signUpService = SignUpService();
+  final isActive = Observable(false);
 
   void signUp() async {
     if (formKey.currentState!.validate()) {
@@ -28,6 +29,18 @@ class SignUpController extends GetxController {
         Debugger.red("Error while signing up: $e");
       }
     }
+  }
+
+  void updateFormValidity() {
+    bool isFormValid = true;
+
+    for (var control in inputControls) {
+      if (control.controller.text.isEmpty) {
+        isFormValid = false;
+        break;
+      }
+    }
+    isActive.value = isFormValid;
   }
 
   void toLoginScreen() => Get.offNamed(loginModule.name);

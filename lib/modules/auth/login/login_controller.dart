@@ -8,9 +8,22 @@ class LoginController extends GetxController {
   final formKey = GlobalKey<FormState>();
   final performingApiCall = Observable(false);
   final LoginService loginService = LoginService();
+  final isActive = Observable(false);
 
   void toSignUp() {
     Get.toNamed(signupModule.name);
+  }
+
+  void updateFormValidity() {
+    bool isFormValid = true;
+
+    for (var control in inputControls) {
+      if (control.controller.text.isEmpty) {
+        isFormValid = false;
+        break;
+      }
+    }
+    isActive.value = isFormValid;
   }
 
   Future<void> login() async {

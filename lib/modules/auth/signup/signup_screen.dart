@@ -25,6 +25,9 @@ class SignUpScreen extends GetView<SignUpController> {
             hint: "Enter username",
             controller: controller.inputControls.first.controller,
             keyboardType: TextInputType.emailAddress,
+            onChanged: (_) {
+              controller.updateFormValidity();
+            },
             validator: InputValidators.validateUsername,
             fillColor: AppColors.inputColor,
           ),
@@ -39,6 +42,9 @@ class SignUpScreen extends GetView<SignUpController> {
             hint: "Enter email",
             controller: controller.inputControls.second.controller,
             keyboardType: TextInputType.emailAddress,
+            onChanged: (_) {
+              controller.updateFormValidity();
+            },
             validator: InputValidators.validateEmail,
             fillColor: AppColors.inputColor,
           ),
@@ -53,6 +59,9 @@ class SignUpScreen extends GetView<SignUpController> {
             hint: "Enter password",
             hintColor: AppColors.hint,
             controller: controller.inputControls[2].controller,
+            onChanged: (_) {
+              controller.updateFormValidity();
+            },
             validator: InputValidators.validatePassword,
             fillColor: AppColors.inputColor,
           ),
@@ -67,19 +76,28 @@ class SignUpScreen extends GetView<SignUpController> {
             hint: "Enter password again",
             hintColor: AppColors.hint,
             controller: controller.inputControls.last.controller,
-            validator: (value) => InputValidators.validatePasswordConfirmation(
-              value,
-              password: controller.inputControls[2].controller.text,
-            ),
+            onChanged: (_) {
+              controller.updateFormValidity();
+            },
+            validator: (value) {
+              return InputValidators.validatePasswordConfirmation(
+                value,
+                password: controller.inputControls[2].controller.text,
+              );
+            },
             fillColor: AppColors.inputColor,
           ),
           const VerticalSpacing(24),
-          StyledButton(
-            isDisabled: true,
-            style: ButtonStyles.primary,
-            title: "Register",
-            onPressed: controller.signUp,
-          ).paddingOnly(bottom: 48),
+          Observer(
+              observes: controller.isActive,
+              builder: (context, isActive) {
+                return StyledButton(
+                  isDisabled: !isActive,
+                  style: isActive ? ButtonStyles.primary : ButtonStyles.inactif,
+                  title: "Register",
+                  onPressed: controller.signUp,
+                ).paddingOnly(bottom: 48);
+              }),
           Row(
             children: [
               Text(
