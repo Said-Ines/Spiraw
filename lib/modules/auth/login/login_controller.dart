@@ -10,7 +10,7 @@ class LoginController extends GetxController {
   final LoginService loginService = LoginService();
 
   void toSignUp() {
-    formKey.isValid;
+    Get.toNamed(signupModule.name);
   }
 
   Future<void> login() async {
