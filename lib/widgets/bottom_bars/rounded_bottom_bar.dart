@@ -98,7 +98,7 @@ class _HexagonalButton extends StatelessWidget {
       height: 78,
       child: Material(
         color: Colors.transparent,
-        child: InkWell(
+        child: GestureDetector(
           onTap: onPressed,
           child: CustomPaint(
             painter: _HexagonPainter(),
