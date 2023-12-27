@@ -1,4 +1,11 @@
-// export '../modules/auth/email_signup/module/email_signup_module.dart';
+export '../modules/auth/email_signup/module/email_signup_module.dart';
+export '../modules/auth/otp/module/otp_module.dart';
+export '../modules/auth/phone_signup/module/phone_signup_module.dart';
+export '../modules/auth/login/module/login_module.dart';
+export '../modules/auth/signup/module/signup_module.dart';
+export '../modules/design_sytem/ds_module.dart';
+export '../modules/splash/splash_module.dart';
+export '../modules/auth/user_info/module/user_info_module.dart';
 export '../modules/after_splash/module/after_splash_module.dart';
 export '../modules/auth/login/module/login_module.dart';
 export '../modules/auth/otp/module/otp_module.dart';
