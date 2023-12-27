@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../bases/controllers/exports.dart';
-import '../data/model/user_model.dart';
 import '../phone_login/phone_login_controller.dart';
 import 'user_info_service.dart';
 
@@ -28,16 +27,16 @@ class UserInfoController extends GetxController {
     // Save information to Database
     if (currentUser != null) {
       performingApiCall.toggle();
-      await userInfoService.saveUsertoDatabase(
-        UserModel(
-          uid: currentUser.uid,
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          phoneNumber: phoneNumber,
-          userImage: '',
-        ),
-      );
+      // await userInfoService.saveUsertoDatabase(
+      //   UserModel(
+      //     uid: currentUser.uid,
+      //     firstName: firstName,
+      //     lastName: lastName,
+      //     email: email,
+      //     phoneNumber: phoneNumber,
+      //     userImage: '',
+      //   ),
+      // );
       performingApiCall.toggle();
       Get.offNamed(getStartedModule.name);
     } else {
