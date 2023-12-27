@@ -2,33 +2,39 @@ import '../../../../bases/screens/exports.dart';
 
 class BackButton extends StatelessWidget {
   const BackButton({
-    super.key,
-  });
+    Key? key,
+    this.fromMachineSetup = false,
+    this.fromScanning = false,
+  }) : super(key: key);
+
+  final bool fromMachineSetup;
+  final bool fromScanning;
 
   @override
   Widget build(BuildContext context) {
+    final backgroundColor = fromScanning ? Colors.white : (fromMachineSetup ? AppColors.inputColor : AppColors.transparent);
+    final iconColor = fromScanning ? AppColors.inputColor : Colors.white;
     return Container(
-      height: AppConstants.buttons.icon.size,
-      width: AppConstants.buttons.icon.size,
+      height: fromScanning ? AppConstants.buttons.icon.scanningButtonSize : AppConstants.buttons.icon.size,
+      width: fromScanning ? AppConstants.buttons.icon.scanningButtonSize : AppConstants.buttons.icon.size,
       decoration: BoxDecoration(
-        gradient: AppColors.backButtonBorderGradient,
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(AppConstants.buttons.icon.radius),
       ),
       child: IconButton(
         style: IconButton.styleFrom(
           fixedSize: Size.square(AppConstants.buttons.icon.size),
           shape: RoundedRectangleBorder(
-            side: const BorderSide(color: Colors.white),
-            borderRadius:
-                BorderRadius.circular(AppConstants.buttons.icon.radius),
+            side: !fromMachineSetup ? const BorderSide(color: Colors.white) : BorderSide.none,
+            borderRadius: BorderRadius.circular(AppConstants.buttons.icon.radius),
           ),
         ),
         onPressed: Get.back,
         icon: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.white,
-          size: AppConstants.buttons.icon.iconSize,
-        ).paddingSymmetric(horizontal: 7),
+          fromMachineSetup ? Icons.arrow_back : Icons.arrow_back_ios,
+          color: iconColor,
+          size: fromScanning ? AppConstants.buttons.icon.scanningIconSize : AppConstants.buttons.icon.iconSize,
+        ).paddingSymmetric(horizontal: fromScanning ? 7 : (fromMachineSetup ? 0 : 12)),
       ),
     );
   }

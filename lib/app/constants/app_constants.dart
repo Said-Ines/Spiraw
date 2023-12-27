@@ -15,6 +15,7 @@ class AppConstants {
   // static const drawer = _Drawer._();
   //static final topBar = _TopBar._();
   static final bottomBar = _BottomBar._();
+  static final gradientBottomBar = _GradientBottomBar._();
 
   static const Transition bottomNavBarInitalScreensTransition = Transition.noTransition;
 
@@ -27,10 +28,13 @@ class AppConstants {
   static const double heightOfInputBox = dropDownHeight;
 
   //? Scaffold
+
   static const double bodyTopPadding = 100;
+  static const double minBodyTopPadding = 50;
+  static const double maxBodyTopPadding = 100;
   static const double bodyMinSymetricHorizontalPadding = 24;
   static const double bodyMaxSymetricHorizontalPadding = 34;
-  static const double bodyMinBottomPadding = 95;
+  static const double bodyMinBottomPadding = 40;
   static const double bodyMaxBottomPadding = 120;
   static const double bodyBottomPadding = 50;
 
@@ -66,6 +70,10 @@ class AppConstants {
   //? Cards
   //static const double cardElevation = defaultElevation;
   static const double cardRadius = 16;
+  static const double cardHeight = 143;
+  static const double cardWidth = 175;
+  static const double cardBlur = 16;
+
   //static const double cardIconSize = 36;
 
   //? list Tiles
@@ -107,6 +115,10 @@ class AppConstants {
   static const double alertButtonHeight = 40;
   static const double alertButtonWidth = 140;
   static const double alertButtonRadius = defaultRadius;
+
+  //? Scanner
+  static const double scannerHeight = 370;
+  static const double scannerWidth = 350;
 
   //? File Picking
   static const int pickedFileSizeLimit = 5;
@@ -161,9 +173,11 @@ class _SmallButtons {
 
   // static const _applyElevation = false;
   //final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
-  final double size = 41;
+  final double size = 54;
   final double radius = 12;
-  final double iconSize = 19;
+  final double iconSize = 23;
+  final double scanningIconSize = 19;
+  final double scanningButtonSize = 41;
 }
 
 class _FloatingActionButtons {
@@ -185,6 +199,7 @@ class _Inputs {
   //final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
   final double radius = 12;
   final double height = 54;
+  final double descriptionHeight = 140;
   final double width = 366;
   final double horizontalContentPadding = AppConstants.bodyMinSymetricHorizontalPadding;
   final double verticalContentPadding = 24;
@@ -215,10 +230,20 @@ class _BottomBar {
   _BottomBar._();
 
   final double bottomRadius = 50;
-  final double height =
-      // 144 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
-      100;
+
+  final double height = 100 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+
   final double mainButtonSize = 78;
   final double secondaryButtonSize = 32;
   //final double elevation = 5;
+}
+
+//? Gradient Bottom Bar
+class _GradientBottomBar {
+  _GradientBottomBar._();
+
+  final double gradientBottomBarHeight = 64;
+  final double gradientBottomBarWeight = 365.7;
+  final double radius = 10;
+  final double iconSize = 42;
 }

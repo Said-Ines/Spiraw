@@ -37,6 +37,8 @@ class FormInput extends StatefulWidget {
     this.textCapitalization = TextCapitalization.none,
     this.expands = false,
     this.inputFormatters,
+    this.isDescriptionField = false,
+    this.isSearchField = false,
   });
 
   final InputTheme theme;
@@ -67,6 +69,8 @@ class FormInput extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
 
   final FormInputType type;
+  final bool isDescriptionField;
+  final bool isSearchField;
 
   @override
   createState() => _State();
@@ -104,24 +108,22 @@ class _State extends State<FormInput> {
     Widget? suffixIcon,
   }) {
     return SizedBox(
-      height: AppConstants.inputs.height,
+      height: !widget.isDescriptionField ? AppConstants.inputs.height : AppConstants.inputs.descriptionHeight,
       child: TextFormField(
-        cursorColor: darkTheme ? Colors.white : AppColors.primary,
-        cursorHeight: FontSizes.title,
+        cursorColor: (darkTheme || !widget.isSearchField) ? Colors.white : AppColors.primary,
+        // cursorHeight: cursorHeight ?? FontSizes.title,
         enabled: widget.enabled,
         initialValue: widget.initialValue,
         expands: widget.expands,
         textCapitalization: widget.textCapitalization,
         enableInteractiveSelection: true,
         controller: widget.controller,
-        style: AppFonts.inter
-            .withColor(darkTheme ? AppColors.hint : AppColors.primary),
+        style: AppFonts.inter.withColor((darkTheme || !widget.isSearchField) ? AppColors.hint : AppColors.primary),
         obscureText: obscure,
         minLines: isPassword ? 1 : widget.minLines,
         maxLines: isPassword ? 1 : widget.maxLines,
         // maxLength: isPassword ? AppConstants.inputs.passwordInputMaxLength : widget.maxLength,
-        keyboardType:
-            isPassword ? TextInputType.visiblePassword : widget.keyboardType,
+        keyboardType: isPassword ? TextInputType.visiblePassword : widget.keyboardType,
         validator: widget.validator,
         autovalidateMode: AppConstants.inputs.inputsAutovalidationMode,
         focusNode: widget.focusNode,
@@ -130,18 +132,15 @@ class _State extends State<FormInput> {
           widget.focusNode?.unfocus();
           widget.nextFocusNode?.requestFocus();
         },
-        buildCounter: (_,
-                {int? currentLength, int? maxLength, bool? isFocused}) =>
-            widget.displayCounter
-                ? Text(
-                    "$currentLength/$maxLength",
-                    style: AppFonts.inter.withSize(FontSizes.indication),
-                  )
-                : null,
+        buildCounter: (_, {int? currentLength, int? maxLength, bool? isFocused}) => widget.displayCounter
+            ? Text(
+                "$currentLength/$maxLength",
+                style: AppFonts.inter.withSize(FontSizes.indication),
+              )
+            : null,
         inputFormatters: widget.inputFormatters,
         decoration: InputDecoration(
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+          contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(AppConstants.inputs.radius),
             borderSide: BorderSide.none,
@@ -158,8 +157,7 @@ class _State extends State<FormInput> {
 
           //* Hint
           hintText: widget.hint ?? "",
-          hintStyle: AppStyles.interregularTitle
-              .withColor(widget.hintColor ?? AppColors.hint),
+          hintStyle: AppStyles.interregularTitle.withColor(widget.hintColor ?? AppColors.hint),
           errorStyle: AppFonts.inter.withColor(AppColors.remove),
           prefixIcon: widget.prefixIcon,
           prefixIconColor: AppColors.grey,

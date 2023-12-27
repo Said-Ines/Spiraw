@@ -8,7 +8,7 @@ class LoginScreen extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-        displayAppBar: false,
+      
         body: ScrollableForm(
           children: [
             Text(
@@ -131,5 +131,6 @@ class LoginScreen extends GetView<LoginController> {
             ).paddingSymmetric(horizontal: 20)
           ],
         ));
+
   }
-}
+

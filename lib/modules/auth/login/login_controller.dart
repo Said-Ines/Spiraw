@@ -2,6 +2,7 @@ import '../../../bases/models/input_control.dart';
 import '../../../bases/screens/exports.dart';
 import '../../all_modules.dart';
 
+
 class LoginController extends GetxController {
   final inputControls = InputControl.generate(2);
   final formKey = GlobalKey<FormState>();
@@ -18,7 +19,7 @@ class LoginController extends GetxController {
   }
 
   void toSignUpModule() => Get.offNamed(signupModule.name);
-
+  
   @override
   void onClose() {
     inputControls.disposeAll();

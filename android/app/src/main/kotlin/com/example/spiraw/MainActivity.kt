@@ -1,4 +1,4 @@
-package com.example.spiraw
+package com.spiraw
 
 import io.flutter.embedding.android.FlutterActivity
 

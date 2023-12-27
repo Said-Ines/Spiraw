@@ -28,8 +28,24 @@ dependencies:
   pin_code_fields:
   flutter_dash:
   material_symbols_icons:
+  country_picker:
   outline_gradient_button:
   dotted_border:
+  image_picker:
+  glassmorphism: ^3.0.0
+  gap: ^3.0.1
+  action_slider: ^0.7.0
+  simple_circular_progress_bar:
+  vertical_percent_indicator: ^0.0.1
+  flutter_time_picker_spinner: ^2.0.0
+  flutter_spinner_picker: ^0.0.7
+  day_picker: ^2.2.0
+  qr_code_scanner: ^1.0.1
+  scan: ^1.6.0
+  cloud_firestore: ^4.13.6
+  uuid:
+  flutter_launcher_icons:
+  flutter_native_splash:
 
 dev_dependencies:
   flutter_test:
@@ -37,12 +53,28 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  min_sdk_android: 16
+
+flutter_native_splash:
+  background_image: assets/images/splash.png
+  #color: "#0A1B3D"
+  android_12:
+    background_image: assets/images/splash.png
+    #color: "#0A1B3D"
+  android: true
+  ios: true
+  
 flutter:
   uses-material-design: true
 
   assets:
     - assets/fonts/
     - assets/images/
+    - assets/images/app_logo.png
 
   fonts:
     - family: Inter

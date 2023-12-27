@@ -15,6 +15,10 @@ class _Binding {
 
     //& Services
     // Get.lazyPut(() => ConnectivityManager(), fenix: true);
+    Get.lazyPut(() => PhoneLoginService(), fenix: true);
+    Get.lazyPut(() => OtpService(), fenix: true);
+    Get.lazyPut(() => UserInfoService(), fenix: true);
+    Get.lazyPut(() => MachineService(), fenix: true);
 
     //& Managers
 
@@ -25,4 +29,4 @@ class _Binding {
   }
 }
 
-Future<GetPage> _initialModule() async => designSystemModule;
+Future<GetPage> _initialModule() async => afterSplashModule;

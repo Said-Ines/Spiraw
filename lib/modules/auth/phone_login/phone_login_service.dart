@@ -1,23 +1,58 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../helpers/index.dart';
-import '../modules/auth/data/model/user_model.dart';
+import '../../../app/constants/firebase_collections.dart';
+import '../../../bases/controllers/exports.dart';
 
-class FirebaseManager {
+final phoneSignupService = Get.find<PhoneLoginService>();
+
+class PhoneLoginService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future<void> verifyPhoneNumber(String phoneNumber) async {
+  Future<void> verifyPhoneNumber({
+    required String phoneNumber,
+    required void Function(String, int?) codeSent,
+  }) async {
     try {
       await _auth.verifyPhoneNumber(
         phoneNumber: phoneNumber,
         verificationCompleted: _onVerificationCompleted,
         verificationFailed: _onVerificationFailed,
-        codeSent: _onCodeSent,
+        codeSent: codeSent,
         codeAutoRetrievalTimeout: _onCodeAutoRetrievalTimeout,
       );
+      Debugger.green('Verifying phone number: $phoneNumber');
     } catch (e) {
       //TODO:  Handle verification error
       Debugger.red('Error verifying phone number: $e');
+    }
+  }
+
+  Future<bool> isUserRegistered(String phoneNumber) async {
+    try {
+      final QuerySnapshot<Map<String, dynamic>> result = await FirebaseFirestore.instance
+          .collection(FirebaseCollections.users)
+          .where('phoneNumber', isEqualTo: phoneNumber)
+          .get();
+      return result.docs.isNotEmpty;
+    } catch (e) {
+      Debugger.red('Error checking user registration: $e');
+      return false;
+    }
+  }
+
+  Future<bool> isMachineRegisteredForUser(String? userId) async {
+    if (userId == null) {
+      return false;
+    }
+    try {
+      final DocumentSnapshot<Map<String, dynamic>> snapshot =
+          await FirebaseFirestore.instance.collection(FirebaseCollections.machines).doc(userId).get();
+
+      return snapshot.exists;
+    } catch (e) {
+      Debugger.red('Error checking machine authentication: $e');
+      return false;
     }
   }
 
@@ -61,63 +96,11 @@ class FirebaseManager {
     }
   }
 
-  Future<UserModel?> registerWithEmailAndPassword({
-    required String firstName,
-    required String lastName,
-    required String email,
-    required String password,
-  }) async {
-    try {
-      UserCredential authResult = await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+  // Future<void> signUpWithPhone(String phone) async {
+  //   await firebaseManager.verifyPhoneNumber(phoneNumber: phone, codeSent: (a, b) => {});
+  // }
 
-      User? user = authResult.user;
-      if (user != null) {
-        await user.updateDisplayName('$firstName $lastName');
-        return UserModel.fromFirebaseUser(user);
-      }
-
-      return null;
-    } catch (e) {
-      Debugger.red('Error register with email and password : $e');
-
-      return null;
-      //TODO:  Handle register error
-    }
-  }
-
-  // Sign out the user
-  Future<void> signOut() async {
-    try {
-      await _auth.signOut();
-    } catch (e) {
-      Debugger.red('Error signing out: $e');
-      // TODO: Handle sign-out error
-    }
-  }
+  // Future<void> verifySMS() async {
+  //   await firebaseManager.signInWithSmsCode()
+  // }
 }
-
-
- // FirebaseMessaging messaging = FirebaseMessaging.instance;
-
- // Future<void> requestNotificationPermissions() async {
-   // NotificationSettings settings = await messaging.requestPermission(
-    //  alert: true,
-    //  announcement: false,
-    //  badge: true,
-     // carPlay: false,
-     // criticalAlert: false,
-     // provisional: false,
-     // sound: true,
-  //  );
-
-  //  if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      //User granted permission
-   // } else if (settings.authorizationStatus == AuthorizationStatus.provisional) {
-      // User granted provisional permission
-   // } else {
-      //User declined or has not accepted permission
-   // }
- // }

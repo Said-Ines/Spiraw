@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../managers/connectivity_manager.dart';
 import '../modules/all_modules.dart';
+import '../widgets/bottom_bars/gradient_bar_module.dart';
 import 'index.dart';
 
 class SpirawApp extends StatelessWidget {
@@ -36,26 +37,45 @@ class SpirawApp extends StatelessWidget {
         //! Desing System
         designSystemModule,
 
-        //& Menu
-        splashModule,
 
-        // //* Auth
-        // phoneSignupModule,
-        // otpModule,
-        // userInfoModule,
-        signupModule,
+        //$ Splash
+        splashModule,
+        afterSplashModule,
+
+        //* Auth
+        phoneLoginModule,
+        userInfoModule,
+        otpModule,
+        userInfoModule,
+        otpModule,
+        // emailSignupModule,
         loginModule,
 
-        // //? Setup
-        // setupModule,
-        // emergencyCallingModule,
-        // stayConnectedModule,
-        // messageSetupModule,
-        // decoyCallModule,
-        // micAccessModule,
+        //? Machine Auth
+        getStartedModule,
+        scannerModule,
+        successModule,
+        gradientBarModule,
 
-        // //$ Home
-        // homeModule,
+
+        //& Machine Setup
+        addWaterModule,
+        scanningSupplementModule,
+        scanningTemplateModule,
+        successTemplateModule,
+        supplementAddedModule,
+        scanningStarterModule,
+        starterAddedModule,
+        disinfinctionModule,
+        disinfinctionSuccessModule,
+        wellDoneModule,
+
+        //$ Community Home Page
+        addRecipeModule,
+        recipeCategoriesModule,
+        timeSpentModule,
+        ingredientsModule,
+        addIngredientsModule,
       ],
     );
   }

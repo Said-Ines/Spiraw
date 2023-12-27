@@ -8,6 +8,7 @@ class AppImages {
   static const appLogo = "$imagesFolder/app_logo.png";
   static const splashImage = "$imagesFolder/splash_image.png";
   static const groupImage = "$imagesFolder/group_98.png";
+  static const machineImage = "$imagesFolder/machine.png";
 
   static const visibilityIcon = "$imagesFolder/visibility_icon.png";
 
@@ -15,6 +16,31 @@ class AppImages {
 
   static const facebookIcon = "$imagesFolder/facebook_icon.png";
   static const bottomBar = _BottomBar();
+  static const qrScanner = "$imagesFolder/qr_scanner.png";
+  static const successMark = "$imagesFolder/success_mark.png";
+
+  static const galleryIcon = "$imagesFolder/gallery_icon.png";
+  static const flashIcon = "$imagesFolder/flash.png";
+  static const switchCameraIcon = "$imagesFolder/switch_camera.png";
+  static const cameraIcon = "$imagesFolder/camera_icon.png";
+  static const gallery = "$imagesFolder/gallery.png";
+
+  static const emptyImage = "$imagesFolder/empty.png";
+  static const fillingImage = "$imagesFolder/filling.png";
+  static const filledImage = "$imagesFolder/filled.png";
+  static const progressIndicator = "$imagesFolder/progress_indicator.png";
+
+  static const screensImage = "$imagesFolder/screens.png";
+
+  static const plusIcon = "$imagesFolder/plus_icon.png";
+  static const minusIcon = "$imagesFolder/minus_icon.png";
+
+  static const indianFood = "$imagesFolder/indian.png";
+  static const italianFood = "$imagesFolder/italian.png";
+  static const greekFood = "$imagesFolder/greek.png";
+  static const mexicanFood = "$imagesFolder/mexican.png";
+  static const americanFood = "$imagesFolder/american.png";
+  static const chineseFood = "$imagesFolder/chinese.png";
 }
 
 class _BottomBar {

@@ -37,17 +37,10 @@ class StyledButton extends StatelessWidget {
         : Text(
             title,
             style: isFromRecipe
-                ? AppStyles.rubikboldHeadline1
-                    .withSize(FontSizes.headline4)
-                    .withColor(style.textColor)
+                ? AppStyles.rubikboldHeadline1.withSize(FontSizes.headline5)
                 : !isSocial
-                    ? AppStyles.interboldHeadline1
-                        .withSize(FontSizes.headline6)
-                        .withColor(style.textColor)
-                        .semiBold()
-                    : AppStyles.interregularTitle
-                        .withSize(FontSizes.headline6)
-                        .withColor(style.textColor),
+                    ? AppStyles.interboldHeadline1.withSize(FontSizes.headline6).withColor(style.textColor).semiBold()
+                    : AppStyles.interregularTitle.withSize(FontSizes.headline6).withColor(style.textColor),
           );
     final side = MaterialStateProperty.resolveWith<BorderSide?>((states) {
       if (isFromRecipe) {
@@ -86,19 +79,14 @@ class StyledButton extends StatelessWidget {
         onPressed: onPressed,
         style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
               overlayColor: MaterialStateProperty.all(AppColors.overlayColor),
-              backgroundColor: MaterialStateProperty.all(
-                  !isDisabled ? style.backgroundColor : AppColors.accent),
+              backgroundColor: MaterialStateProperty.all(!isDisabled ? style.backgroundColor : AppColors.accent),
               foregroundColor: MaterialStateProperty.all(style.textColor),
-              elevation: !isFromRecipe
-                  ? MaterialStateProperty.all(1)
-                  : MaterialStateProperty.all(4),
+              elevation: !isFromRecipe ? MaterialStateProperty.all(1) : MaterialStateProperty.all(4),
               shadowColor: shadowColor,
               shape: MaterialStateProperty.all(
                 RoundedRectangleBorder(
-                  side: BorderSide(
-                      width: style.borderWidth, color: style.borderColor),
-                  borderRadius: BorderRadius.all(
-                      Radius.circular(AppConstants.buttons.radius)),
+                  side: BorderSide(width: style.borderWidth, color: style.borderColor),
+                  borderRadius: BorderRadius.all(Radius.circular(AppConstants.buttons.radius)),
                 ),
               ),
               side: side,
@@ -130,11 +118,25 @@ enum ButtonStyles {
     borderWidth: 1.5,
   ),
 
+  inactif(
+    textColor: AppColors.inputColor,
+    backgroundColor: AppColors.accent,
+    borderColor: AppColors.accent,
+    borderWidth: 1.5,
+  ),
+
   social(
     textColor: AppColors.blackTitleButton,
     backgroundColor: Colors.white,
     borderColor: AppColors.blackTitleButton,
     borderWidth: 1.5,
+  ),
+
+  ingredient(
+    textColor: Colors.white,
+    backgroundColor: Colors.black,
+    borderColor: Colors.black,
+    borderWidth: 1,
   );
 
   final Color textColor;
