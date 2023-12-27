@@ -1,25 +1,40 @@
-import '../../../bases/models/input_control.dart';
-import '../../../bases/screens/exports.dart';
-import '../../all_modules.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:spiraw/bases/controllers/exports.dart';
 
+import 'login_service.dart';
 
 class LoginController extends GetxController {
   final inputControls = InputControl.generate(2);
   final formKey = GlobalKey<FormState>();
   final performingApiCall = Observable(false);
+  final LoginService loginService = LoginService();
 
   void toSignUp() {
     formKey.isValid;
   }
 
   Future<void> login() async {
-    performingApiCall.toggle();
-    await 2.delay();
-    performingApiCall.toggle();
+    try {
+      performingApiCall.toggle();
+      if (formKey.currentState!.validate()) {
+        final User? user = await loginService.loginWithEmailAndPassword(
+          inputControls[0].controller.text.trim(),
+          inputControls[1].controller.text.trim(),
+        );
+        if (user != null) {
+          Debugger.green("User Authenticated: ${user.uid}");
+          Get.offNamed(addWaterModule.name);
+        }
+      }
+    } catch (error) {
+      Debugger.red('Erreur de connexion: $error');
+    } finally {
+      performingApiCall.toggle();
+    }
   }
 
   void toSignUpModule() => Get.offNamed(signupModule.name);
-  
+
   @override
   void onClose() {
     inputControls.disposeAll();
