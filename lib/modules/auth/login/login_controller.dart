@@ -36,7 +36,7 @@ class LoginController extends GetxController {
         );
         if (user != null) {
           Debugger.green("User Authenticated: ${user.uid}");
-          Get.offNamed(addWaterModule.name);
+          Get.offAllNamed(recipePageModule.name);
         }
       }
     } catch (error) {

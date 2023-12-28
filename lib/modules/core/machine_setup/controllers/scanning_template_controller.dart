@@ -65,6 +65,10 @@ class ScanningTemplateController extends GetxController {
     Get.toNamed(wellDoneModule.name);
   }
 
+  void toHomePage() {
+    Get.offAllNamed(recipePageModule.name);
+  }
+
   void reassemble() {
     if (Platform.isAndroid) {
       qrController?.pauseCamera();

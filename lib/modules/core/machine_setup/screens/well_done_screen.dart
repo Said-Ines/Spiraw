@@ -1,7 +1,8 @@
 import '../../../../bases/screens/exports.dart';
 import '../../../../widgets/back_button.dart';
+import '../controllers/scanning_template_controller.dart';
 
-class WellDoneScreen extends StatelessWidget {
+class WellDoneScreen extends GetView<ScanningTemplateController> {
   const WellDoneScreen({super.key});
 
   @override
@@ -37,7 +38,7 @@ class WellDoneScreen extends StatelessWidget {
                 child: StyledButton(
                   style: ButtonStyles.primary,
                   title: "Next step",
-                  onPressed: () {},
+                  onPressed: controller.toHomePage,
                 ),
               ),
             ],
