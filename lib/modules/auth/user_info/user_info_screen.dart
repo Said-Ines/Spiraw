@@ -1,5 +1,4 @@
 import '../../../bases/screens/exports.dart';
-import '../../../widgets/logo.dart';
 import 'user_info_controller.dart';
 
 class UserInfoScreen extends GetView<UserInfoController> {
@@ -11,7 +10,7 @@ class UserInfoScreen extends GetView<UserInfoController> {
       body: ScrollableForm(
         formKey: controller.formKey,
         children: [
-          const Logo().center(),
+          //const Logo().center(),
           const Gap(30),
           Text(
             "Tell us about you",

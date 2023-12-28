@@ -29,6 +29,8 @@ class AppConstants {
   static const double heightOfInputBox = dropDownHeight;
 
   //? Scaffold
+
+  static const double bodyTopPadding = 100;
   static const double minBodyTopPadding = 50;
   static const double maxBodyTopPadding = 100;
   static const double bodyMinSymetricHorizontalPadding = 24;
@@ -201,7 +203,7 @@ class _Inputs {
   final double descriptionHeight = 140;
   final double width = 366;
   final double horizontalContentPadding = AppConstants.bodyMinSymetricHorizontalPadding;
-  final double verticalContentPadding = 24;
+  final double verticalContentPadding = 15;
   final double borderWidth = 1.5;
   //final int passwordInputMaxLength = 12;
   //final int maxLength = 50;

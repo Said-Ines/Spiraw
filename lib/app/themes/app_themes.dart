@@ -41,8 +41,7 @@ class AppThemes {
         shadowColor: AppColors.greyLight,
         minimumSize: Size.fromHeight(AppConstants.buttons.elevated.height),
         backgroundColor: AppColors.secondary,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(AppConstants.buttons.radius))),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(AppConstants.buttons.radius))),
         // textStyle: AppFonts.helvetica.bold().withSize(FontSizes.headline3),
         foregroundColor: AppColors.scaffold,
       ),
@@ -87,27 +86,27 @@ class AppThemes {
       errorMaxLines: 3,
       suffixIconColor: AppColors.grey,
       alignLabelWithHint: true,
-      // disabledBorder: OutlineInputBorder(
-      //   borderSide: const BorderSide(
-      //       //color: AppColors.disabledColor,
-      //       //width: AppConstants.inputs.borderWidth,
-      //       ),
-      //   borderRadius: BorderRadius.circular(AppConstants.inputs.radius),
-      // ),
-      // enabledBorder: OutlineInputBorder(
-      //   borderSide: const BorderSide(
-      //     color: AppColors.primary,
-      //     //width: AppConstants.inputs.borderWidth,
-      //   ),
-      //   borderRadius: BorderRadius.circular(AppConstants.inputs.radius),
-      // ),
-      // focusedBorder: OutlineInputBorder(
-      //   borderSide: const BorderSide(
-      //     color: AppColors.primary,
-      //     //  width: AppConstants.inputs.borderWidth,
-      //   ),
-      //   borderRadius: BorderRadius.circular(AppConstants.inputs.radius),
-      // ),
+      disabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.remove,
+          width: AppConstants.inputs.borderWidth,
+        ),
+        borderRadius: BorderRadius.circular(AppConstants.inputs.radius),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.transparent,
+          width: AppConstants.inputs.borderWidth,
+        ),
+        borderRadius: BorderRadius.circular(AppConstants.inputs.radius),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.secondary,
+          width: AppConstants.inputs.borderWidth,
+        ),
+        borderRadius: BorderRadius.circular(AppConstants.inputs.radius),
+      ),
       errorBorder: OutlineInputBorder(
         borderSide: BorderSide(
           color: AppColors.remove,
@@ -120,6 +119,7 @@ class AppThemes {
           color: AppColors.remove,
           width: AppConstants.inputs.borderWidth,
         ),
+        borderRadius: BorderRadius.circular(AppConstants.inputs.radius),
       ),
     ),
 

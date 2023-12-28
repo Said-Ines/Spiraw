@@ -1,7 +1,6 @@
 import 'package:country_picker/country_picker.dart';
 
 import '../../../bases/screens/exports.dart';
-import '../../../widgets/logo.dart';
 import '../common/widgets/terms_and_conditions.dart';
 import 'phone_login_controller.dart';
 
@@ -16,9 +15,13 @@ class PhoneLoginScreen extends GetView<PhoneLoginController> {
         formKey: controller.formKey,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Gap(Get.height * 0.06),
-          const Center(child: Logo()),
-          const Gap(AppConstants.maxBodyTopPadding),
+          Gap(Get.height * 0.1),
+          Text(
+            "Welcome,\nGlad to see you !",
+            style: AppStyles.interboldHeadline1.withSize(FontSizes.headline4).withColor(Colors.white),
+          ).align(alignment: Alignment.topLeft),
+          //const Center(child: Logo()),
+          const Gap(AppConstants.minBodyTopPadding + 20),
           Align(
             alignment: Alignment.centerLeft,
             child: Text(

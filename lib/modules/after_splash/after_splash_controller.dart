@@ -10,5 +10,11 @@ class AfterSplashController extends GetxController {
         performingApiCall.toggle(),
       };
 
+  void toLoginScreen() => {
+        performingApiCall.toggle(),
+        Get.toNamed(loginModule.name),
+        performingApiCall.toggle(),
+      };
+
   void toShopScreen() => Utils.showSnackBar("Shopping", "Coming soon");
 }
