@@ -40,7 +40,6 @@ class LoginController extends GetxController {
 
           isMachineAuthenticated ? Get.offAllNamed(recipePageModule.name) : Get.offAllNamed(getStartedModule.name);
           Debugger.green("User Authenticated: ${user.uid}");
-          Get.offAllNamed(recipePageModule.name);
         }
       }
     } catch (error) {

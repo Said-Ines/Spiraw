@@ -1,3 +1,5 @@
+import 'package:auto_size_text/auto_size_text.dart';
+
 import '../../../bases/screens/exports.dart';
 import '../common/widgets/index.dart';
 import 'login_controller.dart';
@@ -125,7 +127,7 @@ class LoginScreen extends GetView<LoginController> {
           // const VerticalSpacing(20),
           Row(
             children: [
-              Text(
+              AutoSizeText(
                 "Don't have an account ? ",
                 style: AppStyles.interregularTitle,
               ),
@@ -135,7 +137,7 @@ class LoginScreen extends GetView<LoginController> {
                 isRegister: true,
               )
             ],
-          ).paddingSymmetric(horizontal: 20)
+          ).paddingSymmetric(horizontal: 10)
         ],
       ).paddingOnly(top: AppConstants.minBodyTopPadding),
     );

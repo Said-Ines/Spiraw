@@ -1,3 +1,5 @@
+import 'package:auto_size_text/auto_size_text.dart';
+
 import '../../../../bases/screens/exports.dart';
 
 class LinkTextButton extends StatelessWidget {
@@ -14,10 +16,10 @@ class LinkTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title,
+    return AutoSizeText(title,
             style: !isRegister
                 ? AppStyles.interregularSubTitle.withColor(AppColors.secondary)
-                : AppStyles.interboldHeadline3.withColor(AppColors.secondary).withSize(FontSizes.title).medium())
+                : AppStyles.interregularSubTitle.withColor(AppColors.secondary).medium())
         //.overallPadding(6)
         .onTap(onTap, overlayColor: AppColors.blueDark);
   }

@@ -68,7 +68,7 @@ class RecipePageScreen extends GetView<RecipePageController> {
               ).align(alignment: Alignment.topLeft).paddingOnly(left: AppConstants.bodyMinSymetricHorizontalPadding),
               const Gap(16),
               SizedBox(
-                height: Get.height * 0.11,
+                height: Get.height * 0.119,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 10,
