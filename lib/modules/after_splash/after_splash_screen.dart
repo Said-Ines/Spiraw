@@ -26,7 +26,7 @@ class AfterSplashScreen extends GetView<AfterSplashController> {
                     isLoading: performingApiCall,
                     style: ButtonStyles.primary,
                     title: "Set up your Spiraw",
-                    onPressed: controller.toPhoneLoginScreen,
+                    onPressed: controller.toLoginScreen,
                   );
                 }),
             const Gap(24),

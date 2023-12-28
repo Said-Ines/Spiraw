@@ -69,8 +69,7 @@ class FirebaseManager {
   }
 
   Future<UserModel?> registerWithEmailAndPassword({
-    required String firstName,
-    required String lastName,
+    required String username,
     required String email,
     required String password,
   }) async {
@@ -82,13 +81,13 @@ class FirebaseManager {
 
       User? user = authResult.user;
       if (user != null) {
-        await user.updateDisplayName('$firstName $lastName');
+        await user.updateDisplayName(username);
         // return UserModel.fromFirebaseUser(user);
         UserModel userModel = UserModel(
           uid: user.uid,
-          firstName: firstName,
-          lastName: lastName,
+          username: username,
           email: email,
+          password: password,
           phoneNumber: '',
           userImage: '',
         );

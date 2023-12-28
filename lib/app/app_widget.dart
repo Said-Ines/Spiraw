@@ -37,7 +37,6 @@ class SpirawApp extends StatelessWidget {
         //! Desing System
         designSystemModule,
 
-
         //$ Splash
         splashModule,
         afterSplashModule,
@@ -47,6 +46,7 @@ class SpirawApp extends StatelessWidget {
         userInfoModule,
         otpModule,
         userInfoModule,
+        signupModule,
         otpModule,
         // emailSignupModule,
         loginModule,
@@ -56,7 +56,6 @@ class SpirawApp extends StatelessWidget {
         scannerModule,
         successModule,
         gradientBarModule,
-
 
         //& Machine Setup
         addWaterModule,

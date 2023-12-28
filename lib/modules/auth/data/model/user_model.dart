@@ -1,17 +1,19 @@
 class UserModel {
   final String uid;
-  final String firstName;
-  final String lastName;
-  final String phoneNumber;
+  final String username;
+  // final String lastName;
+  final String? phoneNumber;
   final String email;
+  final String password;
   final String? userImage;
 
   UserModel(
       {required this.uid,
-      required this.firstName,
-      required this.lastName,
-      required this.phoneNumber,
+      required this.username,
+      //required this.lastName,
+      this.phoneNumber,
       required this.email,
+      required this.password,
       this.userImage});
 
   // factory UserModel.fromFirebaseUser(User user) {
@@ -28,10 +30,11 @@ class UserModel {
   Map<String, dynamic> toMap() {
     return {
       'uid': uid,
-      'firstName': firstName,
-      'lastName': lastName,
+      'username': username,
+      // 'lastName': lastName,
       'phoneNumber': phoneNumber,
       'email': email,
+      'password': password,
       'userImage': userImage,
     };
   }
@@ -39,10 +42,11 @@ class UserModel {
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
       uid: map['uid'],
-      firstName: map['firstName'],
-      lastName: map['lastName'],
+      username: map['username'],
+      //lastName: map['lastName'],
       phoneNumber: map['phoneNumber'],
       email: map['email'],
+      password: map['password'],
       userImage: map['userImage'],
     );
   }

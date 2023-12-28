@@ -108,7 +108,7 @@ class _State extends State<FormInput> {
     Widget? suffixIcon,
   }) {
     return SizedBox(
-      height: !widget.isDescriptionField ? AppConstants.inputs.height : AppConstants.inputs.descriptionHeight,
+      // height: !widget.isDescriptionField ? AppConstants.inputs.height : AppConstants.inputs.descriptionHeight,
       child: TextFormField(
         cursorColor: (darkTheme || !widget.isSearchField) ? Colors.white : AppColors.primary,
         // cursorHeight: cursorHeight ?? FontSizes.title,
@@ -143,21 +143,30 @@ class _State extends State<FormInput> {
           contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(AppConstants.inputs.radius),
-            borderSide: BorderSide.none,
           ),
+          enabledBorder: Theme.of(context).inputDecorationTheme.enabledBorder?.copyWith(
+                borderSide: BorderSide(
+                  color: AppColors.transparent,
+                  width: AppConstants.inputs.borderWidth,
+                ),
+              ),
+          focusedBorder: Theme.of(context).inputDecorationTheme.focusedBorder?.copyWith(
+                borderSide: BorderSide(
+                  color: AppColors.secondary,
+                  width: AppConstants.inputs.borderWidth,
+                ),
+              ),
           isDense: true,
           fillColor: widget.fillColor,
           filled: widget.fillColor != null,
 
-          //* Label
+          // //* Label
           // labelText: widget.label,
-          // labelStyle: AppFonts.inter
-          //     .withSize(FontSizes.title)
-          //     .withColor(AppColors.grey),
+          // labelStyle: AppFonts.inter.withSize(FontSizes.title).withColor(AppColors.grey),
 
           //* Hint
           hintText: widget.hint ?? "",
-          hintStyle: AppStyles.interregularTitle.withColor(widget.hintColor ?? AppColors.hint),
+          hintStyle: AppStyles.interregularTitle.withColor(widget.hintColor ?? AppColors.grey),
           errorStyle: AppFonts.inter.withColor(AppColors.remove),
           prefixIcon: widget.prefixIcon,
           prefixIconColor: AppColors.grey,
