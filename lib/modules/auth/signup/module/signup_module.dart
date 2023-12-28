@@ -1,9 +1,9 @@
-import '../../../../bases/screens/exports.dart';
-import '../signup_controller.dart';
-import '../signup_screen.dart';
+// import '../../../../bases/screens/exports.dart';
+// import '../signup_controller.dart';
+// import '../signup_controller.dart';
 
-final signupModule = GetPage(
-  name: '/signupModule',
-  page: () => const SignUpScreen(),
-  binding: BindingsBuilder.put(() => SignUpController()),
-);
+// final signupModule = GetPage(
+//   name: '/signupModule',
+//   page: () => const SignUpScreen(),
+//   binding: BindingsBuilder.put(() => SignUpController()),
+// );

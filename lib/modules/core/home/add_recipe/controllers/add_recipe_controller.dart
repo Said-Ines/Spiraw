@@ -1,9 +1,21 @@
+import 'package:camera/camera.dart';
+
 import '../../../../../app/images/app_images.dart';
 import '../../../../../bases/controllers/exports.dart';
 
 class AddRecipeController extends GetxController {
   final formKey = GlobalKey<FormState>();
   final inputControls = InputControl.generate(3);
+  late CameraController _cameraController;
+  late Future<void> _initializeCameraControllerFuture;
+  CameraDescription? camera;
+
+  @override
+  void onInit() {
+    super.onInit();
+    _cameraController = CameraController(camera!, ResolutionPreset.medium);
+    _initializeCameraControllerFuture = _cameraController.initialize();
+  }
 
   final List<CategoryInfo> categories = [
     CategoryInfo(image: AppImages.indianFood, title: "Indian"),
@@ -40,6 +52,7 @@ class AddRecipeController extends GetxController {
   @override
   void onClose() {
     inputControls.disposeAll();
+    _cameraController.dispose();
     super.onClose();
   }
 }

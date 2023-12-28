@@ -1,5 +1,5 @@
-import 'package:spiraw/bases/controllers/exports.dart';
-import 'package:spiraw/utils/utils.dart';
+import '../../bases/controllers/exports.dart';
+import '../../utils/utils.dart';
 
 class AfterSplashController extends GetxController {
   final performingApiCall = Observable(false);

@@ -23,9 +23,11 @@
 		<key>CFBundleVersion</key>
 		<string>$(FLUTTER_BUILD_NUMBER)</string>
 		<key>LSRequiresIPhoneOS</key>
-		<true/>
+		<true />
 		<key>NSCameraUsageDescription</key>
-		<string>Your Description</string>
+		<string>This app needs access to your camera to capture photos and videos for uploading and
+			sharing.</string>
+
 		<key>io.flutter.embedded_views_preview</key>
 		<string>YES</string>
 		<key>UILaunchStoryboardName</key>
@@ -46,10 +48,10 @@
 			<string>UIInterfaceOrientationLandscapeRight</string>
 		</array>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
-		<true/>
+		<true />
 		<key>UIApplicationSupportsIndirectInputEvents</key>
-		<true/>
+		<true />
 		<key>UIStatusBarHidden</key>
-		<false/>
+		<false />
 	</dict>
 </plist>

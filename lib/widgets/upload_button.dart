@@ -3,7 +3,11 @@ import 'package:dotted_border/dotted_border.dart';
 import '../../../bases/screens/exports.dart';
 
 class UploadButton extends StatelessWidget {
-  const UploadButton({super.key, this.openCamera, this.openGallery});
+  const UploadButton({
+    super.key,
+    this.openCamera,
+    this.openGallery,
+  });
 
   final void Function()? openCamera;
   final void Function()? openGallery;
@@ -33,7 +37,9 @@ class UploadButton extends StatelessWidget {
                         ).align(alignment: Alignment.topLeft),
                         const Gap(26),
                         InkWell(
-                          onTap: openCamera,
+                          onTap: () {
+                            openCamera;
+                          },
                           child: Row(
                             children: [
                               Image.asset(
@@ -74,25 +80,25 @@ class UploadButton extends StatelessWidget {
                   ).paddingSymmetric(horizontal: AppConstants.bodyMinSymetricHorizontalPadding, vertical: 60));
         },
         child: Container(
-          height: 104,
-          width: 345,
-          decoration: BoxDecoration(color: AppColors.inputColor, borderRadius: BorderRadius.circular(AppConstants.inputs.radius)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.add,
-                color: Colors.white,
-                size: 32,
-              ),
-              const HorizontalSpacing(8),
-              Text(
-                "Upload post content",
-                style: AppStyles.interregularTitle.withColor(AppColors.greyBackground).withSize(FontSizes.title).medium(),
-              ),
-            ],
-          ),
-        ),
+            height: 104,
+            width: 345,
+            decoration:
+                BoxDecoration(color: AppColors.inputColor, borderRadius: BorderRadius.circular(AppConstants.inputs.radius)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.add,
+                  color: Colors.white,
+                  size: 32,
+                ),
+                const HorizontalSpacing(8),
+                Text(
+                  "Upload post content",
+                  style: AppStyles.interregularTitle.withColor(AppColors.greyBackground).withSize(FontSizes.title).medium(),
+                ),
+              ],
+            )),
       ),
     );
   }

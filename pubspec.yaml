@@ -13,7 +13,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   get: ^4.6.6
-  path_provider:
+  path_provider: ^2.1.1
   intl:
   shared_preferences:
   firebase_auth:
@@ -46,6 +46,8 @@ dependencies:
   uuid:
   flutter_launcher_icons:
   flutter_native_splash:
+  camera:
+  path: ^1.8.3
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +69,7 @@ flutter_native_splash:
     #color: "#0A1B3D"
   android: true
   ios: true
-  
+
 flutter:
   uses-material-design: true
 
