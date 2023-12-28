@@ -41,6 +41,20 @@ class AppImages {
   static const mexicanFood = "$imagesFolder/mexican.png";
   static const americanFood = "$imagesFolder/american.png";
   static const chineseFood = "$imagesFolder/chinese.png";
+  static const notificationIcon = "$imagesFolder/notification_icon.png";
+  static const searchIcon = "$imagesFolder/search_icon.png";
+
+  static const heartIcon = "$imagesFolder/heart_icon.png";
+  static const likeIcon = "$imagesFolder/like_icon.png";
+  static const deliciousIcon = "$imagesFolder/delicious_icon.png";
+  static const downloadIcon = "$imagesFolder/download_icon.png";
+
+  static const clockIcon = "$imagesFolder/clock_icon.png";
+  static const flameIcon = "$imagesFolder/flame_icon.png";
+  static const personIcon = "$imagesFolder/person_icon.png";
+  static const leafIcon = "$imagesFolder/leaf_icon.png";
+
+  static const foodImage = "$imagesFolder/food.png";
 }
 
 class _BottomBar {

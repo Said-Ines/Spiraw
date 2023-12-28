@@ -30,3 +30,4 @@ class _Binding {
 }
 
 Future<GetPage> _initialModule() async => afterSplashModule;
+

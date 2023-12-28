@@ -16,6 +16,7 @@ class AppConstants {
   //static final topBar = _TopBar._();
   static final bottomBar = _BottomBar._();
   static final gradientBottomBar = _GradientBottomBar._();
+  static final recipe = _Recipe._();
 
   static const Transition bottomNavBarInitalScreensTransition = Transition.noTransition;
 
@@ -231,11 +232,18 @@ class _BottomBar {
 
   final double bottomRadius = 50;
 
-  final double height = 100 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
+  final double height = 90 + (GetPlatform.isIOS ? 15 : 0) + AppConstants.defaultElevation;
 
   final double mainButtonSize = 78;
   final double secondaryButtonSize = 32;
   //final double elevation = 5;
+}
+
+//? Recipe Page
+class _Recipe {
+  _Recipe._();
+  final double interactiveIconSize = 16;
+  final double iconSize = 32;
 }
 
 //? Gradient Bottom Bar
