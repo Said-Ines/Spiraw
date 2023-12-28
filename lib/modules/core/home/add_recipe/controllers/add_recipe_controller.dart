@@ -1,18 +1,22 @@
 import '../../../../../app/images/app_images.dart';
 import '../../../../../bases/controllers/exports.dart';
+import '../../data/models/category_info_model.dart';
+import '../services/add_recipe_service.dart';
 
 class AddRecipeController extends GetxController {
   final formKey = GlobalKey<FormState>();
   final inputControls = InputControl.generate(3);
 
-  final List<CategoryInfo> categories = [
+  final RxList<CategoryInfo> categories = [
     CategoryInfo(image: AppImages.indianFood, title: "Indian"),
     CategoryInfo(image: AppImages.italianFood, title: "Italian"),
     CategoryInfo(image: AppImages.americanFood, title: "American"),
     CategoryInfo(image: AppImages.mexicanFood, title: "Mexican"),
     CategoryInfo(image: AppImages.chineseFood, title: "Chinese"),
     CategoryInfo(image: AppImages.greekFood, title: "Greek"),
-  ];
+  ].obs;
+
+  final RxList<CategoryInfo> searchResults = <CategoryInfo>[].obs;
 
   var selectedDifficulty = 'Easy'.obs;
 
@@ -37,16 +41,25 @@ class AddRecipeController extends GetxController {
     }
   }
 
+  void onSearchTextChanged(String searchText) {
+    searchResults.value = AddRecipeService().searchCategory(searchText, categories);
+  }
+
+  void updateSearchResults(List<CategoryInfo> results) {
+    searchResults.value = results;
+  }
+
+  void deselectAllExcept(CategoryInfo selectedCategory) {
+    for (var category in categories) {
+      if (category != selectedCategory) {
+        category.isSelected.value = false;
+      }
+    }
+  }
+
   @override
   void onClose() {
     inputControls.disposeAll();
     super.onClose();
   }
-}
-
-class CategoryInfo {
-  final String image;
-  final String title;
-
-  CategoryInfo({required this.image, required this.title});
 }
