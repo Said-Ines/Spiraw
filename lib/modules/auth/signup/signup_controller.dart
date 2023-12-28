@@ -24,7 +24,7 @@ class SignUpController extends GetxController {
       try {
         await _signUpService.signUp(user);
         Debugger.green("user added successfully");
-        Get.offNamed(getStartedModule.name);
+        Get.offNamed(loginModule.name);
       } catch (e) {
         Debugger.red("Error while signing up: $e");
       }
@@ -43,7 +43,7 @@ class SignUpController extends GetxController {
     isActive.value = isFormValid;
   }
 
-  void toLoginScreen() => Get.offNamed(loginModule.name);
+  void toLoginScreen() => Get.offAllNamed(loginModule.name);
 
   @override
   void onClose() {

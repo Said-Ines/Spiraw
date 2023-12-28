@@ -11,7 +11,7 @@ class LoginController extends GetxController {
   final isActive = Observable(false);
 
   void toSignUp() {
-    Get.toNamed(signupModule.name);
+    Get.offAllNamed(signupModule.name);
   }
 
   void updateFormValidity() {
@@ -34,7 +34,11 @@ class LoginController extends GetxController {
           inputControls[0].controller.text.trim(),
           inputControls[1].controller.text.trim(),
         );
+
         if (user != null) {
+          final isMachineAuthenticated = await loginService.isMachineRegisteredForUser(user.uid);
+
+          isMachineAuthenticated ? Get.offAllNamed(recipePageModule.name) : Get.offAllNamed(getStartedModule.name);
           Debugger.green("User Authenticated: ${user.uid}");
           Get.offAllNamed(recipePageModule.name);
         }

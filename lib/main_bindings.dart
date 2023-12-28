@@ -29,5 +29,10 @@ class _Binding {
   }
 }
 
-Future<GetPage> _initialModule() async => afterSplashModule;
+final loginService = LoginService.instance;
 
+Future<GetPage> _initialModule() async {
+  final currentUser = loginService.currentUser;
+
+  return currentUser != null ? recipePageModule : afterSplashModule;
+}

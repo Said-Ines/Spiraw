@@ -57,7 +57,6 @@ class SignUpScreen extends GetView<SignUpController> {
           FormInput(
             type: FormInputType.password,
             hint: "Enter password",
-            hintColor: AppColors.hint,
             controller: controller.inputControls[2].controller,
             onChanged: (_) {
               controller.updateFormValidity();
@@ -74,7 +73,6 @@ class SignUpScreen extends GetView<SignUpController> {
           FormInput(
             type: FormInputType.password,
             hint: "Enter password again",
-            hintColor: AppColors.hint,
             controller: controller.inputControls.last.controller,
             onChanged: (_) {
               controller.updateFormValidity();
