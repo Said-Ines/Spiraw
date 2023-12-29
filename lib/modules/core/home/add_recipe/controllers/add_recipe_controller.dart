@@ -177,6 +177,15 @@ class AddRecipeController extends GetxController {
     }
   }
 
+  void removeIngredient(int index) async {
+    if (ingredients.isNotEmpty && index >= 0 && index < ingredients.length) {
+      final removedIngredient = ingredients[index];
+      await _addRecipeService.removeIngredient(recipeId, removedIngredient);
+      //ingredients.removeAt(index);
+      update();
+    }
+  }
+
   @override
   void onClose() {
     inputControls.disposeAll();

@@ -83,4 +83,23 @@ class AddRecipeService {
       Debugger.red("Error while adding ingredient: $e");
     }
   }
+
+  Future<void> removeIngredient(String recipeId, IngredientModel ingredient) async {
+    try {
+      var recipeRef = FirebaseFirestore.instance.collection('recipes').doc(recipeId);
+      var docSnapshot = await recipeRef.get();
+      if (!docSnapshot.exists) {
+        Debugger.red("Document with ID $recipeId does not exist.");
+        return;
+      }
+      await recipeRef.update({
+        'ingredients': FieldValue.arrayRemove([ingredient.toMap()]),
+      });
+      Get.find<AddRecipeController>().ingredients.remove(ingredient);
+
+      Debugger.green("Ingredient removed for recipe with ID: $recipeId");
+    } catch (e) {
+      Debugger.red("Error while removing ingredient: $e");
+    }
+  }
 }

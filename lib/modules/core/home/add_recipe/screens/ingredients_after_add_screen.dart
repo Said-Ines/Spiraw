@@ -35,7 +35,7 @@ class IngredientsAfterAddScreen extends GetView<AddRecipeController> {
             const Gap(60),
             Row(
               children: [
-                const ColorfulDot(
+                const _ColorfulDot(
                   isSpirulina: true,
                 ),
                 const Gap(16),
@@ -64,7 +64,6 @@ class IngredientsAfterAddScreen extends GetView<AddRecipeController> {
                 ),
               ],
             ),
-            const Gap(10),
             Obx(() {
               final List<IngredientModel> ingredients = controller.ingredients;
               if (ingredients.isEmpty) {
@@ -75,21 +74,13 @@ class IngredientsAfterAddScreen extends GetView<AddRecipeController> {
                   itemCount: ingredients.length,
                   itemBuilder: (context, index) {
                     final ingredient = ingredients[index];
-                    return Row(
-                      children: [
-                        const ColorfulDot(isSpirulina: false),
-                        const Gap(16),
-                        Text(
-                          ingredient.elementName,
-                          style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
-                        ),
-                        const Spacer(),
-                        Text(
-                          "${ingredient.quantity} ${ingredient.servingSize}",
-                          style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
-                        ),
-                      ],
-                    );
+                    return IngredientAdded(
+                        elementName: ingredient.elementName,
+                        servingSize: ingredient.servingSize,
+                        quantity: ingredient.quantity,
+                        removeAction: () {
+                          controller.removeIngredient(index);
+                        });
                   });
             }),
           ],
@@ -137,8 +128,8 @@ class IngredientsAfterAddScreen extends GetView<AddRecipeController> {
   }
 }
 
-class ColorfulDot extends StatelessWidget {
-  const ColorfulDot({super.key, required this.isSpirulina});
+class _ColorfulDot extends StatelessWidget {
+  const _ColorfulDot({super.key, required this.isSpirulina});
 
   final bool isSpirulina;
   @override
@@ -150,6 +141,53 @@ class ColorfulDot extends StatelessWidget {
         color: isSpirulina ? AppColors.secondary : AppColors.blueDot,
         shape: BoxShape.circle,
       ),
+    );
+  }
+}
+
+class IngredientAdded extends StatelessWidget {
+  const IngredientAdded({
+    super.key,
+    required this.elementName,
+    required this.servingSize,
+    required this.quantity,
+    required this.removeAction,
+  });
+
+  final String elementName;
+  final String servingSize;
+  final int quantity;
+
+  final VoidCallback removeAction;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const _ColorfulDot(isSpirulina: false),
+        const Gap(16),
+        Text(
+          elementName,
+          style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
+        ),
+        const Spacer(),
+        Text(
+          "$quantity ",
+          style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
+        ),
+        Text(
+          servingSize,
+          style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
+        ),
+        IconButton(
+          onPressed: removeAction,
+          icon: Image.asset(
+            AppImages.removeIcon,
+            width: 25,
+            height: 25,
+          ),
+        )
+      ],
     );
   }
 }

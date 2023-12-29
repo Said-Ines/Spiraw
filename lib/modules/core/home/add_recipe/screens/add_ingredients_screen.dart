@@ -46,11 +46,6 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
             keyboardType: TextInputType.text,
             validator: InputValidators.validateElementName,
             fillColor: AppColors.offWhite,
-            // prefixIcon: Icon(
-            //   Icons.search,
-            //   color: AppColors.greyDarker,
-            //   size: 24,
-            // ),
           ),
         ),
         const Gap(25),
