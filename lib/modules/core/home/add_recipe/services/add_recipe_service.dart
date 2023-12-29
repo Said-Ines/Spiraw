@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:spiraw/app/constants/firebase_collections.dart';
-import 'package:spiraw/bases/controllers/exports.dart';
 
+import '../../../../../app/constants/firebase_collections.dart';
+import '../../../../../bases/controllers/exports.dart';
 import '../../data/models/category_info_model.dart';
 import '../../data/models/ingredient_model.dart';
 import '../controllers/add_recipe_controller.dart';

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:spiraw/modules/auth_machine/data/machine_model.dart';
 
 import '../../../app/constants/firebase_collections.dart';
 import '../../../helpers/debugging_printer.dart';
+import '../data/machine_model.dart';
 
 class MachineService {
   final CollectionReference machineCollection = FirebaseFirestore.instance.collection(FirebaseCollections.machines);

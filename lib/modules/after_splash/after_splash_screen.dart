@@ -1,5 +1,5 @@
-import 'package:spiraw/bases/screens/exports.dart';
-import 'package:spiraw/modules/after_splash/after_splash_controller.dart';
+import '../../bases/screens/exports.dart';
+import 'after_splash_controller.dart';
 
 class AfterSplashScreen extends GetView<AfterSplashController> {
   const AfterSplashScreen({super.key});

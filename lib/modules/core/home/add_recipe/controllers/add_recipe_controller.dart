@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:spiraw/modules/core/home/data/models/ingredient_model.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../../app/images/app_images.dart';
 import '../../../../../bases/controllers/exports.dart';
 import '../../data/models/category_info_model.dart';
+import '../../data/models/ingredient_model.dart';
 import '../services/add_recipe_service.dart';
 
 class AddRecipeController extends GetxController {

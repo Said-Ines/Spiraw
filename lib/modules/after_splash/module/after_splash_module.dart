@@ -1,7 +1,6 @@
-import 'package:spiraw/modules/after_splash/after_splash_controller.dart';
-import 'package:spiraw/modules/after_splash/after_splash_screen.dart';
-
 import '../../../bases/modules/exports.dart';
+import '../after_splash_controller.dart';
+import '../after_splash_screen.dart';
 
 final afterSplashModule = GetPage(
   name: '/afterSplashModule',

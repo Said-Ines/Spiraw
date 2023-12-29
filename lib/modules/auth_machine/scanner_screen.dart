@@ -1,8 +1,7 @@
-import 'package:spiraw/modules/all_modules.dart';
-import 'package:spiraw/modules/core/machine_setup/screens/scanning_template_screen.dart';
-
 import '../../bases/screens/exports.dart';
+import '../all_modules.dart';
 import '../core/machine_setup/controllers/scanning_template_controller.dart';
+import '../core/machine_setup/screens/scanning_template_screen.dart';
 
 class ScannerScreen extends GetView<ScanningTemplateController> {
   const ScannerScreen({super.key});

@@ -1,5 +1,4 @@
-import 'package:spiraw/bases/controllers/exports.dart';
-
+import '../../../../bases/controllers/exports.dart';
 import '../controllers/scanning_template_controller.dart';
 import 'scanning_template_screen.dart';
 
