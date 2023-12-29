@@ -31,10 +31,12 @@ class LoginService {
       return false;
     }
     try {
-      final DocumentSnapshot<Map<String, dynamic>> snapshot =
-          await FirebaseFirestore.instance.collection(FirebaseCollections.machines).doc(userId).get();
+      final Query<Map<String, dynamic>> snapshot = FirebaseFirestore.instance.collection(FirebaseCollections.machines).where(
+            'userId',
+            isEqualTo: userId,
+          );
 
-      return snapshot.exists;
+      return snapshot.get().then((value) => value.docs.isNotEmpty);
     } catch (e) {
       Debugger.red('Error checking machine authentication: $e');
       return false;

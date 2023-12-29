@@ -33,7 +33,14 @@ final loginService = LoginService.instance;
 
 Future<GetPage> _initialModule() async {
   final currentUser = loginService.currentUser;
-  final isMachineAuthenticated = await loginService.isMachineRegisteredForUser(currentUser.uid);
+  if (currentUser != null) {
+    final isMachineAuthenticated = await loginService.isMachineRegisteredForUser(currentUser.uid);
 
-  return currentUser != null && isMachineAuthenticated ? recipePageModule : afterSplashModule;
+    if (isMachineAuthenticated) {
+      return recipePageModule;
+    } else {
+      return afterSplashModule;
+    }
+  }
+  return afterSplashModule;
 }
