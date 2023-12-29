@@ -12,7 +12,7 @@ class AddRecipeController extends GetxController {
   final formKey = GlobalKey<FormState>();
   final inputControls = InputControl.generate(3);
   final categoryInputControl = InputControl.generate(1);
-  final addIngredientInputControls = InputControl.generate(2);
+  final addIngredientInputControls = InputControl.generate(1);
 
   final AddRecipeService _addRecipeService = AddRecipeService();
 
@@ -181,6 +181,7 @@ class AddRecipeController extends GetxController {
   void onClose() {
     inputControls.disposeAll();
     categoryInputControl.disposeAll();
+    addIngredientInputControls.disposeAll();
     super.onClose();
   }
 }

@@ -42,7 +42,7 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
             hintColor: AppColors.greyDarker,
             hint: "Add element's name",
             isSearchField: true,
-            controller: controller.inputControls.first.controller,
+            controller: controller.addIngredientInputControls.first.controller,
             keyboardType: TextInputType.text,
             validator: InputValidators.validateElementName,
             fillColor: AppColors.offWhite,

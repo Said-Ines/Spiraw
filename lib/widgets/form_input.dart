@@ -110,7 +110,7 @@ class _State extends State<FormInput> {
     return SizedBox(
       height: !widget.isDescriptionField ? AppConstants.inputs.height : AppConstants.inputs.descriptionHeight,
       child: TextFormField(
-        cursorColor: (darkTheme || !widget.isSearchField) ? Colors.white : AppColors.primary,
+        cursorColor: (darkTheme && !widget.isSearchField) ? Colors.white : AppColors.primary,
         // cursorHeight: cursorHeight ?? FontSizes.title,
         enabled: widget.enabled,
         initialValue: widget.initialValue,
@@ -118,7 +118,7 @@ class _State extends State<FormInput> {
         textCapitalization: widget.textCapitalization,
         enableInteractiveSelection: true,
         controller: widget.controller,
-        style: AppFonts.inter.withColor((darkTheme || !widget.isSearchField) ? AppColors.hint : AppColors.primary),
+        style: AppFonts.inter.withColor((darkTheme && !widget.isSearchField) ? AppColors.hint : AppColors.primary),
         obscureText: obscure,
         minLines: isPassword ? 1 : widget.minLines,
         maxLines: isPassword ? 1 : widget.maxLines,

@@ -9,120 +9,129 @@ class IngredientsAfterAddScreen extends GetView<AddRecipeController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      body: ScrollableForm(
-        children: [
-          Row(
-            children: [
-              const BackButton(),
-              const Gap(16),
-              Text(
-                "Add Recipe",
-                style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline2).withColor(Colors.white),
-              ),
-            ],
-          ),
-          const Gap(50),
-          Text(
-            "Ingredients",
-            style: AppStyles.interSemiBoldTextButton.withColor(Colors.white).medium().withSize(FontSizes.headline2),
-          ).align(alignment: Alignment.topLeft),
-          const Gap(8),
-          Text(
-            "Put the neccesary ingredients",
-            style: AppStyles.urbanistregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
-          ).align(alignment: Alignment.topLeft),
-          const Gap(60),
-          Row(
-            children: [
-              const ColorfulDot(
-                isSpirulina: true,
-              ),
-              const Gap(16),
-              Text(
-                "Spirulina",
-                style: AppStyles.rubikboldHeadline3.withSize(FontSizes.headline6).withColor(Colors.white),
-              ),
-              Gap(Get.height * 0.13),
-              InkWell(
-                overlayColor: MaterialStateProperty.all<Color>(AppColors.boxShadow),
-                onTap: () {},
-                child: Row(
-                  children: [
-                    Text(
-                      "Add amount",
-                      style: AppStyles.rubikregularTitle.medium().withColor(AppColors.secondary),
-                    ),
-                    const Gap(8),
-                    const Icon(
-                      Icons.arrow_forward_ios,
-                      size: 18,
-                      color: AppColors.secondary,
-                    ),
-                  ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                const BackButton(),
+                const Gap(16),
+                Text(
+                  "Add Recipe",
+                  style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline2).withColor(Colors.white),
                 ),
-              ),
-            ],
-          ),
-          const Gap(10),
-          Obx(() {
-            final List<IngredientModel> ingredients = controller.ingredients;
-            if (ingredients.isEmpty) {
-              return Container();
-            }
-            return ListView.builder(
-                shrinkWrap: true,
-                itemCount: ingredients.length,
-                itemBuilder: (context, index) {
-                  final ingredient = ingredients[index];
-                  return Row(
+              ],
+            ),
+            const Gap(50),
+            Text(
+              "Ingredients",
+              style: AppStyles.interSemiBoldTextButton.withColor(Colors.white).medium().withSize(FontSizes.headline2),
+            ).align(alignment: Alignment.topLeft),
+            const Gap(8),
+            Text(
+              "Put the neccesary ingredients",
+              style: AppStyles.urbanistregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
+            ).align(alignment: Alignment.topLeft),
+            const Gap(60),
+            Row(
+              children: [
+                const ColorfulDot(
+                  isSpirulina: true,
+                ),
+                const Gap(16),
+                Text(
+                  "Spirulina",
+                  style: AppStyles.rubikboldHeadline3.withSize(FontSizes.headline6).withColor(Colors.white),
+                ),
+                Gap(Get.height * 0.13),
+                InkWell(
+                  overlayColor: MaterialStateProperty.all<Color>(AppColors.boxShadow),
+                  onTap: () {},
+                  child: Row(
                     children: [
-                      const ColorfulDot(isSpirulina: false),
-                      const Gap(16),
                       Text(
-                        ingredient.elementName,
-                        style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
+                        "Add amount",
+                        style: AppStyles.rubikregularTitle.medium().withColor(AppColors.secondary),
                       ),
-                      const Spacer(),
-                      Text(
-                        "${ingredient.quantity} ${ingredient.servingSize}",
-                        style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
+                      const Gap(8),
+                      const Icon(
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: AppColors.secondary,
                       ),
                     ],
-                  );
-                });
-          }),
-          Gap(Get.height * 0.37),
+                  ),
+                ),
+              ],
+            ),
+            const Gap(10),
+            Obx(() {
+              final List<IngredientModel> ingredients = controller.ingredients;
+              if (ingredients.isEmpty) {
+                return Container();
+              }
+              return ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: ingredients.length,
+                  itemBuilder: (context, index) {
+                    final ingredient = ingredients[index];
+                    return Row(
+                      children: [
+                        const ColorfulDot(isSpirulina: false),
+                        const Gap(16),
+                        Text(
+                          ingredient.elementName,
+                          style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
+                        ),
+                        const Spacer(),
+                        Text(
+                          "${ingredient.quantity} ${ingredient.servingSize}",
+                          style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
+                        ),
+                      ],
+                    );
+                  });
+            }),
+          ],
+        ).paddingSymmetric(
+          vertical: AppConstants.minBodyTopPadding,
+          horizontal: AppConstants.bodyMinSymetricHorizontalPadding,
+        ),
+      ),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
           StyledButton(
             style: ButtonStyles.ingredient,
             title: '+  Add ingredient',
             onPressed: controller.toAddIngredientsScreen,
-          )
-        ],
-      ).paddingOnly(top: AppConstants.minBodyTopPadding),
-      floatingActionButton: Container(
-        height: 100,
-        decoration: BoxDecoration(gradient: AppColors.categoriesBarGradient),
-        child: Row(
-          children: [
-            const BackButton(
-              fromMachineSetup: true,
-            ),
-            const Gap(24),
-            Expanded(
-              child: StyledButton(
-                style: ButtonStyles.primary,
-                title: "Finish ",
-                onPressed: () {},
-                isFromRecipe: true,
-                reversed: true,
-                icon: const Icon(
-                  Icons.arrow_forward_ios,
-                  size: 20,
+          ).paddingSymmetric(horizontal: AppConstants.bodyMinSymetricHorizontalPadding),
+          Container(
+            height: 100,
+            decoration: BoxDecoration(gradient: AppColors.categoriesBarGradient),
+            child: Row(
+              children: [
+                const BackButton(
+                  fromMachineSetup: true,
                 ),
-              ),
-            ),
-          ],
-        ).paddingSymmetric(horizontal: AppConstants.bodyMinSymetricHorizontalPadding),
+                const Gap(24),
+                Expanded(
+                  child: StyledButton(
+                    style: ButtonStyles.primary,
+                    title: "Finish ",
+                    onPressed: () {},
+                    isFromRecipe: true,
+                    reversed: true,
+                    icon: const Icon(
+                      Icons.arrow_forward_ios,
+                      size: 20,
+                    ),
+                  ),
+                ),
+              ],
+            ).paddingSymmetric(horizontal: AppConstants.bodyMinSymetricHorizontalPadding),
+          ),
+        ],
       ),
     );
   }
