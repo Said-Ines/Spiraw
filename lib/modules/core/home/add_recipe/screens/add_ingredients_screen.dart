@@ -16,7 +16,7 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
             const Gap(16),
             Text(
               "Add Recipe",
-              style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline2).withColor(Colors.white),
+              style: AppStyles.interboldHeadline3.withSize(FontSizes.headline2).withColor(Colors.white),
             ),
           ],
         ),
@@ -28,7 +28,7 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
         const Gap(30),
         Text(
           "Element's name",
-          style: AppStyles.urbanistregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
+          style: AppStyles.interregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
         ).align(alignment: Alignment.topLeft),
         const Gap(20),
         Container(
@@ -58,7 +58,7 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
         const Gap(25),
         Text(
           "Serving",
-          style: AppStyles.urbanistregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
+          style: AppStyles.interregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
         ).align(alignment: Alignment.topLeft),
         const Gap(20),
         Obx(() => DropDownButtonSection(
@@ -69,7 +69,7 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
         const Gap(25),
         Text(
           "Quantity",
-          style: AppStyles.urbanistregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
+          style: AppStyles.interregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
         ).align(alignment: Alignment.topLeft),
         const Gap(20),
         Row(
@@ -95,7 +95,7 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
             const Gap(20),
             Obx(() => Text(
                   "${controller.quantity.value}",
-                  style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
+                  style: AppStyles.interboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
                 )),
             const Gap(20),
             Container(

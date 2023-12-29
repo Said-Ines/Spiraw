@@ -18,7 +18,7 @@ class RecipePageScreen extends GetView<RecipePageController> {
                 children: [
                   Text(
                     'SPIRAW.',
-                    style: AppStyles.rubikboldHeadline3.withColor(AppColors.secondary).withSize(FontSizes.headline4),
+                    style: AppStyles.interboldHeadline3.withColor(AppColors.secondary).withSize(FontSizes.headline4),
                   ),
                   const Spacer(),
                   Container(

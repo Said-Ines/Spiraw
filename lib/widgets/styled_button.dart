@@ -37,7 +37,7 @@ class StyledButton extends StatelessWidget {
         : Text(
             title,
             style: isFromRecipe
-                ? AppStyles.rubikboldHeadline1.withSize(FontSizes.headline5)
+                ? AppStyles.interboldHeadline1.withSize(FontSizes.headline5)
                 : !isSocial
                     ? AppStyles.interboldHeadline1.withSize(FontSizes.headline6).withColor(style.textColor).semiBold()
                     : AppStyles.interregularTitle.withSize(FontSizes.headline6).withColor(style.textColor),

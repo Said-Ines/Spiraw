@@ -18,7 +18,7 @@ class AddRecipeScreen extends GetView<AddRecipeController> {
               const Gap(16),
               Text(
                 "Add Recipe",
-                style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline2).withColor(Colors.white),
+                style: AppStyles.interboldHeadline3.withSize(FontSizes.headline2).withColor(Colors.white),
               ),
             ],
           ),

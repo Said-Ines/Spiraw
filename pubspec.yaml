@@ -46,6 +46,7 @@ dependencies:
   uuid:
   flutter_launcher_icons:
   flutter_native_splash:
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -86,33 +87,4 @@ flutter:
         - asset: assets/fonts/inter/Inter-Medium.ttf
           weight: 500
         - asset: assets/fonts/inter/Inter-Regular.ttf
-          weight: 400
-
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/poppins/Poppins-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/poppins/Poppins-Medium.ttf
-          weight: 500
-
-    - family: Rubik
-      fonts:
-        - asset: assets/fonts/rubik/Rubik-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/rubik/Rubik-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/rubik/Rubik-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/rubik/Rubik-Regular.ttf
-          weight: 400
-
-    - family: Urbanist
-      fonts:
-        - asset: assets/fonts/urbanist/Urbanist-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/urbanist/Urbanist-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/urbanist/Urbanist-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/urbanist/Urbanist-Regular.ttf
           weight: 400

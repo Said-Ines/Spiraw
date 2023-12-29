@@ -54,7 +54,7 @@ class AppThemes {
         shadowColor: AppColors.greyLight,
         minimumSize: Size.fromHeight(AppConstants.buttons.text.height),
         backgroundColor: AppColors.secondary,
-        textStyle: AppFonts.urbanist.semiBold().withSize(FontSizes.headline3),
+        textStyle: AppFonts.inter.semiBold().withSize(FontSizes.headline3),
         foregroundColor: AppColors.primary,
       ),
     ),

@@ -22,7 +22,7 @@ class CategoryCard extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Center(
-                child: Text(title, style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline4).withColor(Colors.white)),
+                child: Text(title, style: AppStyles.interboldHeadline3.withSize(FontSizes.headline4).withColor(Colors.white)),
               ),
             ],
           ),

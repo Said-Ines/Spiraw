@@ -16,7 +16,7 @@ class IngredientsScreen extends GetView<AddRecipeController> {
               const Gap(16),
               Text(
                 "Add Recipe",
-                style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline2).withColor(Colors.white),
+                style: AppStyles.interboldHeadline3.withSize(FontSizes.headline2).withColor(Colors.white),
               ),
             ],
           ),
@@ -28,7 +28,7 @@ class IngredientsScreen extends GetView<AddRecipeController> {
           const Gap(8),
           Text(
             "Put the neccesary ingredients",
-            style: AppStyles.urbanistregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
+            style: AppStyles.interregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
           ).align(alignment: Alignment.topLeft),
           const Gap(60),
           Row(
@@ -37,7 +37,7 @@ class IngredientsScreen extends GetView<AddRecipeController> {
               const Gap(16),
               Text(
                 "Spirulina",
-                style: AppStyles.rubikboldHeadline3.withSize(FontSizes.headline6).withColor(Colors.white),
+                style: AppStyles.interboldHeadline3.withSize(FontSizes.headline6).withColor(Colors.white),
               ),
               Gap(Get.height * 0.13),
               InkWell(
@@ -47,7 +47,7 @@ class IngredientsScreen extends GetView<AddRecipeController> {
                   children: [
                     Text(
                       "Add amount",
-                      style: AppStyles.rubikregularTitle.medium().withColor(AppColors.secondary),
+                      style: AppStyles.interregularTitle.medium().withColor(AppColors.secondary),
                     ),
                     const Gap(8),
                     const Icon(

@@ -31,7 +31,7 @@ class DropDownButtonSection extends StatelessWidget {
                   value: item,
                   child: Text(
                     item,
-                    style: AppStyles.rubikregularTitle.withSize(FontSizes.headline6).medium().withColor(AppColors.darkBackIcon),
+                    style: AppStyles.interregularTitle.withSize(FontSizes.headline6).medium().withColor(AppColors.darkBackIcon),
                   ).paddingOnly(left: AppConstants.bodyMinSymetricHorizontalPadding),
                 );
               }).toList(),

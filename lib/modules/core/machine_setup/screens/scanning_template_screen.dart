@@ -30,7 +30,7 @@ class ScanningTemplateScreen extends GetView<ScanningTemplateController> {
                 const Gap(20),
                 Text(
                   title,
-                  style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline6).withColor(Colors.white),
+                  style: AppStyles.interboldHeadline3.withSize(FontSizes.headline6).withColor(Colors.white),
                 ).center().align(alignment: Alignment.topLeft),
               ],
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:spiraw/modules/core/profile/profile_module.dart';
 
 import '../managers/connectivity_manager.dart';
 import '../modules/all_modules.dart';
@@ -76,6 +77,7 @@ class SpirawApp extends StatelessWidget {
         ingredientsModule,
         addIngredientsModule,
         recipePageModule,
+        profileModule,
       ],
     );
   }

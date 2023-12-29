@@ -17,7 +17,7 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
               const Gap(16),
               Text(
                 "Add Recipe",
-                style: AppStyles.urbanistboldHeadline3.withSize(FontSizes.headline2).withColor(Colors.white),
+                style: AppStyles.interboldHeadline3.withSize(FontSizes.headline2).withColor(Colors.white),
               ),
             ],
           ),
@@ -29,7 +29,7 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
           const Gap(20),
           Text(
             "Preparation",
-            style: AppStyles.urbanistregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
+            style: AppStyles.interregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
           ).align(alignment: Alignment.topLeft),
           const Gap(20),
           Row(
@@ -55,7 +55,7 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
               const Gap(20),
               Obx(() => Text(
                     "${controller.preparationTime.value} Mins",
-                    style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
+                    style: AppStyles.interboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
                   )),
               const Gap(20),
               Container(
@@ -79,7 +79,7 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
           const Gap(24),
           Text(
             "Cooking",
-            style: AppStyles.urbanistregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
+            style: AppStyles.interregularTitle.semiBold().withColor(AppColors.grey).withSize(FontSizes.headline4),
           ).align(alignment: Alignment.topLeft),
           const Gap(20),
           Row(
@@ -105,7 +105,7 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
               const Gap(20),
               Obx(() => Text(
                     "${controller.cookingTime.value} Mins",
-                    style: AppStyles.rubikboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
+                    style: AppStyles.interboldHeadline3.withColor(Colors.white).withSize(FontSizes.headline2),
                   )),
               const Gap(20),
               Container(

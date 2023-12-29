@@ -11,21 +11,6 @@ class AppStyles {
   static final interregularTitle = AppFonts.inter.regular().withSize(FontSizes.title).withColor(Colors.white);
   static final interregularSubTitle = AppFonts.inter.regular().withSize(FontSizes.subtitle).withColor(Colors.white);
   static final interSemiBoldTextButton = AppFonts.inter.semiBold().withSize(FontSizes.title);
-
-  static final rubikboldHeadline1 = AppFonts.rubik.bold().withSize(FontSizes.headline1);
-  static final rubikboldHeadline3 = AppFonts.rubik.bold().withSize(FontSizes.headline3);
-  static final rubikregularTitle = AppFonts.rubik.regular().withSize(FontSizes.title).withColor(Colors.white);
-  static final rubikregularSubTitle = AppFonts.rubik.regular().withSize(FontSizes.subtitle).withColor(Colors.white);
-
-  static final poppinsboldHeadline1 = AppFonts.poppins.bold().withSize(FontSizes.headline1);
-  static final poppinsboldHeadline3 = AppFonts.poppins.bold().withSize(FontSizes.headline3);
-  static final poppinsregularTitle = AppFonts.poppins.regular().withSize(FontSizes.title).withColor(Colors.white);
-  static final poppinsregularSubTitle = AppFonts.poppins.regular().withSize(FontSizes.subtitle).withColor(Colors.white);
-
-  static final urbanistboldHeadline1 = AppFonts.urbanist.bold().withSize(FontSizes.headline1);
-  static final urbanistboldHeadline3 = AppFonts.urbanist.bold().withSize(FontSizes.headline3);
-  static final urbanistregularTitle = AppFonts.urbanist.regular().withSize(FontSizes.title).withColor(Colors.white);
-  static final urbanistregularSubTitle = AppFonts.urbanist.regular().withSize(FontSizes.subtitle).withColor(Colors.white);
 }
 
 extension TextStyleExt on TextStyle {
