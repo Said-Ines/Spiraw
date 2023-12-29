@@ -5,10 +5,10 @@ class Utils {
     return error.substring(error.indexOf(']') + 1);
   }
 
-  static void showSnackBar(String title, String message) {
+  static void showSnackBar({required String title, required String message, Color? backgroundColor}) {
     Get.showSnackbar(
       GetSnackBar(
-        backgroundColor: AppColors.primary.withOpacity(.4),
+        backgroundColor: backgroundColor ?? AppColors.primary.withOpacity(.4),
         title: title,
         isDismissible: true,
         duration: const Duration(milliseconds: 2000),
@@ -17,7 +17,7 @@ class Utils {
         borderRadius: 20,
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-        snackStyle: SnackStyle.GROUNDED,
+        // snackStyle: SnackStyle.FLOATING,
         barBlur: 30,
       ),
     );

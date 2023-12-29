@@ -16,5 +16,5 @@ class AfterSplashController extends GetxController {
         performingApiCall.toggle(),
       };
 
-  void toShopScreen() => Utils.showSnackBar("Shopping", "Coming soon");
+  void toShopScreen() => Utils.showSnackBar(title: "Shopping", message: "Coming soon");
 }

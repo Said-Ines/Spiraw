@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:spiraw/bases/controllers/exports.dart';
+import 'package:spiraw/utils/utils.dart';
 
+import '../../../bases/screens/exports.dart';
 import 'login_service.dart';
 
 class LoginController extends GetxController {
@@ -43,6 +45,7 @@ class LoginController extends GetxController {
         }
       }
     } catch (error) {
+      Utils.showSnackBar(title: "Error", message: "Email or password is incorrect", backgroundColor: Colors.red);
       Debugger.red('Erreur de connexion: $error');
     } finally {
       performingApiCall.toggle();

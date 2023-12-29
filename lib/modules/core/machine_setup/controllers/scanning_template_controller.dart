@@ -89,8 +89,8 @@ class ScanningTemplateController extends GetxController {
         String? scannedLink = result!.code;
 
         Utils.showSnackBar(
-          "QR Code Scanned Successfully",
-          scannedLink ?? "Error while scanning the code",
+          title: "QR Code Scanned Successfully",
+          message: scannedLink ?? "Error while scanning the code",
         );
         String machineUid = generateUniqueMachineId();
         String userId = getCurrentUserId();
@@ -150,15 +150,15 @@ class ScanningTemplateController extends GetxController {
     String? result = await Scan.parse(selectedImagePath ?? "");
     if (result != null) {
       Utils.showSnackBar(
-        "QR Code Scanned Successfully",
-        result,
+        title: "QR Code Scanned Successfully",
+        message: result,
       );
 
       navigateToScreen();
     } else {
       Utils.showSnackBar(
-        "Error",
-        "Error while scanning the code",
+        title: "Error",
+        message: "Error while scanning the code",
       );
     }
     Debugger.magenta('qr code link: $result');
