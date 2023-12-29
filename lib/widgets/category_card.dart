@@ -1,7 +1,6 @@
-import 'package:spiraw/modules/core/home/data/models/category_info_model.dart';
-
 import '../bases/screens/exports.dart';
 import '../modules/core/home/add_recipe/controllers/add_recipe_controller.dart';
+import '../modules/core/home/data/models/category_info_model.dart';
 
 class CategoryCard extends GetView<AddRecipeController> {
   const CategoryCard({
@@ -22,6 +21,7 @@ class CategoryCard extends GetView<AddRecipeController> {
           onTap: () {
             controller.deselectAllExcept(category);
             category.isSelected.toggle();
+            controller.updateSelectedCategory(category);
           },
           child: Card(
             clipBehavior: Clip.antiAlias,

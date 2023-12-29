@@ -38,21 +38,19 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
               width: 2,
             ),
           ),
-          child: const FormInput(
-            type: FormInputType.normal,
-            isSearchField: true,
+          child: FormInput(
             hintColor: AppColors.greyDarker,
-            //label: "Email",
-            hint: "Search",
-            //controller: controller.inputControls.first.controller,
-            keyboardType: TextInputType.emailAddress,
-            //validator: InputValidators.validateUsername,
+            hint: "Add element's name",
+            isSearchField: true,
+            controller: controller.inputControls.first.controller,
+            keyboardType: TextInputType.text,
+            validator: InputValidators.validateElementName,
             fillColor: AppColors.offWhite,
-            prefixIcon: Icon(
-              Icons.search,
-              color: AppColors.greyDarker,
-              size: 24,
-            ),
+            // prefixIcon: Icon(
+            //   Icons.search,
+            //   color: AppColors.greyDarker,
+            //   size: 24,
+            // ),
           ),
         ),
         const Gap(25),
@@ -62,9 +60,9 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
         ).align(alignment: Alignment.topLeft),
         const Gap(20),
         Obx(() => DropDownButtonSection(
-              onChanged: controller.updateSelectedDifficulty,
-              value: controller.selectedDifficulty.value,
-              itemsList: controller.difficultyOptions,
+              onChanged: controller.updateSelectedServingQuantity,
+              value: controller.selectedServingQuantity.value,
+              itemsList: controller.servingQuantityOptions,
             )),
         const Gap(25),
         Text(
@@ -129,8 +127,14 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
             Expanded(
               child: StyledButton(
                 style: ButtonStyles.primary,
-                title: "Add ",
-                onPressed: () {},
+                title: "Add",
+                onPressed: () {
+                  controller.fromAddtoIngredientsScreen(
+                    controller.inputControls.first.controller.text,
+                    controller.selectedServingQuantity.value,
+                    controller.quantity.value,
+                  );
+                },
                 isFromRecipe: true,
                 reversed: true,
                 icon: const Icon(

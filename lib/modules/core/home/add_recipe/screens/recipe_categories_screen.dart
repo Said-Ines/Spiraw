@@ -1,8 +1,7 @@
-import 'package:spiraw/modules/core/home/data/models/category_info_model.dart';
-
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/back_button.dart';
 import '../../../../../widgets/category_card.dart';
+import '../../data/models/category_info_model.dart';
 import '../controllers/add_recipe_controller.dart';
 
 class RecipeCategoriesScreen extends GetView<AddRecipeController> {
@@ -32,7 +31,7 @@ class RecipeCategoriesScreen extends GetView<AddRecipeController> {
           FormInput(
             type: FormInputType.normal,
             hint: "Select a category",
-            controller: controller.inputControls.first.controller,
+            controller: controller.categoryInputControl.first.controller,
             keyboardType: TextInputType.text,
             fillColor: AppColors.inputColor,
             onChanged: (text) {
@@ -42,20 +41,24 @@ class RecipeCategoriesScreen extends GetView<AddRecipeController> {
           const Gap(36),
           Obx(
             () {
-              final List<CategoryInfo> displayedCategories =
-                  controller.inputControls.first.controller.text.isEmpty ? controller.categories : controller.searchResults;
+              final List<CategoryInfo> displayedCategories = controller.categoryInputControl.first.controller.text.isEmpty
+                  ? controller.categories
+                  : controller.searchResults;
 
               return GridView.count(
                 crossAxisCount: 2,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                children: List.generate(displayedCategories.length, (index) {
-                  return CategoryCard(
-                    category: displayedCategories[index],
-                    image: displayedCategories[index].image,
-                    title: displayedCategories[index].title,
-                  ).paddingAll(12);
-                }),
+                children: List.generate(
+                  displayedCategories.length,
+                  (index) {
+                    return CategoryCard(
+                      category: displayedCategories[index],
+                      image: displayedCategories[index].image,
+                      title: displayedCategories[index].title,
+                    ).paddingAll(12);
+                  },
+                ),
               );
             },
           )
@@ -74,7 +77,7 @@ class RecipeCategoriesScreen extends GetView<AddRecipeController> {
               child: StyledButton(
                 style: ButtonStyles.primary,
                 title: "Next ",
-                onPressed: () {},
+                onPressed: controller.toTimeSpentScreen,
                 isFromRecipe: true,
                 reversed: false,
               ),

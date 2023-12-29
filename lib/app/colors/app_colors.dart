@@ -28,6 +28,8 @@ class AppColors {
   static const Color blackTitleButton = Color(0xFF1B232A);
   static const Color darkBackIcon = Color(0xFF1E232C);
 
+  static const Color blueDot = Color(0xFF3291D9);
+
   static const Color gradientBarBorderClr = Color(0xFF98F9FF);
 
   static const LinearGradient greenGradient = LinearGradient(

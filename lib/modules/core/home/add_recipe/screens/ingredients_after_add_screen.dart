@@ -1,9 +1,10 @@
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/back_button.dart';
+import '../../data/models/ingredient_model.dart';
 import '../controllers/add_recipe_controller.dart';
 
-class IngredientsScreen extends GetView<AddRecipeController> {
-  const IngredientsScreen({super.key});
+class IngredientsAfterAddScreen extends GetView<AddRecipeController> {
+  const IngredientsAfterAddScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +63,34 @@ class IngredientsScreen extends GetView<AddRecipeController> {
               ),
             ],
           ),
+          const Gap(10),
+          Obx(() {
+            final List<IngredientModel> ingredients = controller.ingredients;
+            if (ingredients.isEmpty) {
+              return Container();
+            }
+            return ListView.builder(
+                shrinkWrap: true,
+                itemCount: ingredients.length,
+                itemBuilder: (context, index) {
+                  final ingredient = ingredients[index];
+                  return Row(
+                    children: [
+                      const ColorfulDot(isSpirulina: false),
+                      const Gap(16),
+                      Text(
+                        ingredient.elementName,
+                        style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
+                      ),
+                      const Spacer(),
+                      Text(
+                        "${ingredient.quantity} ${ingredient.servingSize}",
+                        style: AppStyles.interSemiBoldTextButton.medium().withColor(Colors.white).withSize(FontSizes.headline6),
+                      ),
+                    ],
+                  );
+                });
+          }),
           Gap(Get.height * 0.37),
           StyledButton(
             style: ButtonStyles.ingredient,
@@ -82,7 +111,7 @@ class IngredientsScreen extends GetView<AddRecipeController> {
             Expanded(
               child: StyledButton(
                 style: ButtonStyles.primary,
-                title: "Next ",
+                title: "Finish ",
                 onPressed: () {},
                 isFromRecipe: true,
                 reversed: true,

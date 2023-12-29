@@ -29,5 +29,4 @@ class _Binding {
   }
 }
 
-Future<GetPage> _initialModule() async => afterSplashModule;
-
+Future<GetPage> _initialModule() async => addRecipeModule;
