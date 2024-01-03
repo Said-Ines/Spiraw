@@ -48,6 +48,7 @@ dependencies:
   flutter_native_splash:
   camera:
   firebase_storage:
+  auto_size_text:
 
 dev_dependencies:
   flutter_test:

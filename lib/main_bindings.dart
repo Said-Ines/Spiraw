@@ -1,6 +1,5 @@
 part of 'main.dart';
 
-
 class _Binding {
   static Future<void> asynchronous() async {
     await Future.wait([
@@ -18,6 +17,7 @@ class _Binding {
     Get.lazyPut(() => OtpService(), fenix: true);
     Get.lazyPut(() => UserInfoService(), fenix: true);
     Get.lazyPut(() => MachineService(), fenix: true);
+    Get.lazyPut(() => AddRecipeService(), fenix: true);
 
     //& Managers
 
@@ -28,14 +28,12 @@ class _Binding {
   }
 }
 
+//Future<GetPage> _initialModule() async => afterSplashModule;
 
-Future<GetPage> _initialModule() async => addRecipeModule;
+final loginService = LoginService.instance;
 
-//final loginService = LoginService.instance;
+Future<GetPage> _initialModule() async {
+  final currentUser = loginService.currentUser;
 
-//Future<GetPage> _initialModule() async {
- // final currentUser = loginService.currentUser;
-
- // return currentUser != null ? recipePageModule : afterSplashModule;
-//}
-
+  return currentUser != null ? recipePageModule : afterSplashModule;
+}

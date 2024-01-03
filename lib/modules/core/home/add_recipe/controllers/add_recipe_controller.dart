@@ -5,13 +5,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:spiraw/modules/core/home/add_recipe/screens/camera_screen.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../../app/images/app_images.dart';
 import '../../../../../bases/controllers/exports.dart';
 import '../../data/models/category_info_model.dart';
 import '../../data/models/ingredient_model.dart';
+import '../screens/camera_screen.dart';
 import '../services/add_recipe_service.dart';
 
 class AddRecipeController extends GetxController {

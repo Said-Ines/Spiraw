@@ -1,5 +1,6 @@
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/back_button.dart';
+import '../../../../auth/common/widgets/index.dart';
 import '../controllers/add_recipe_controller.dart';
 
 class IngredientsScreen extends GetView<AddRecipeController> {
@@ -47,10 +48,15 @@ class IngredientsScreen extends GetView<AddRecipeController> {
                 onTap: () {},
                 child: Row(
                   children: [
-                    Text(
-                      "Add amount",
-                      style: AppStyles.rubikregularTitle.medium().withColor(AppColors.secondary),
+                    LinkTextButton(
+                      title: "Add amount",
+                      onTap: () {},
+                      isRegister: true,
                     ),
+                    // Text(
+                    //   "Add amount",
+                    //   style: AppStyles.rubikregularTitle.medium().withColor(AppColors.secondary),
+                    // ),
                     const Gap(8),
                     const Icon(
                       Icons.arrow_forward_ios,
