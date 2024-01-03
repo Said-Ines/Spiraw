@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../../app/colors/app_colors.dart';
 import '../../../bases/controllers/exports.dart';
+import '../../../bases/modules/exports.dart';
 import 'login_service.dart';
 
 class LoginController extends GetxController {
@@ -29,11 +31,34 @@ class LoginController extends GetxController {
   Future<void> login() async {
     try {
       performingApiCall.toggle();
+      final email = inputControls[0].controller.text.trim();
+      final password = inputControls[1].controller.text.trim();
+
+      bool isUserRegistered = await loginService.isUserRegistered(email);
+      bool isPasswordValid = await loginService.isPasswordValid(email, password);
+
       if (formKey.currentState!.validate()) {
-        final User? user = await loginService.loginWithEmailAndPassword(
-          inputControls[0].controller.text.trim(),
-          inputControls[1].controller.text.trim(),
-        );
+        if (!isUserRegistered) {
+          Get.snackbar(
+            "User Not Found",
+            "This email is not registered. Please sign up first.",
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: AppColors.remove,
+            colorText: Colors.white,
+          );
+          return;
+        }
+        if (!isPasswordValid) {
+          Get.snackbar(
+            "Invalid Password",
+            "Please check your password and try again.",
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: AppColors.remove,
+            colorText: Colors.white,
+          );
+          return;
+        }
+        final User? user = await loginService.loginWithEmailAndPassword(email, password);
 
         if (user != null) {
           final isMachineAuthenticated = await loginService.isMachineRegisteredForUser(user.uid);
@@ -42,8 +67,25 @@ class LoginController extends GetxController {
           Debugger.green("User Authenticated: ${user.uid}");
         }
       }
-    } catch (error) {
-      Debugger.red('Erreur de connexion: $error');
+    } on FirebaseAuthException catch (error) {
+      if (error.code == 'wrong-password') {
+        Get.snackbar(
+          "Invalid Password",
+          "Please check your password and try again.",
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: AppColors.remove,
+          colorText: Colors.white,
+        );
+      } else {
+        Get.snackbar(
+          "Error",
+          "Something went wrong. Please try again later.",
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: AppColors.remove,
+          colorText: Colors.white,
+        );
+        Debugger.red('Erreur de connexion: $error');
+      }
     } finally {
       performingApiCall.toggle();
     }

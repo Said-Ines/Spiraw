@@ -95,7 +95,8 @@ class SignUpScreen extends GetView<SignUpController> {
                   isDisabled: !isActive,
                   style: isActive ? ButtonStyles.primary : ButtonStyles.inactif,
                   title: "Register",
-                  onPressed: controller.signUp,
+                  onPressed: controller.checkIfEmailExists,
+                  //controller.signUp,
                 ).paddingOnly(bottom: 48);
               }),
           Row(

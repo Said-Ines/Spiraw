@@ -21,4 +21,15 @@ class SignUpService {
       rethrow;
     }
   }
+
+  Future<bool> doesEmailExist(String email) async {
+    try {
+      QuerySnapshot<Map<String, dynamic>> result =
+          await _firebase.collection(FirebaseCollections.users).where('email', isEqualTo: email).limit(1).get();
+      return result.docs.isNotEmpty;
+    } catch (e) {
+      Debugger.red('Error while checking email existence: $e');
+      rethrow;
+    }
+  }
 }

@@ -31,6 +31,21 @@ class SignUpController extends GetxController {
     }
   }
 
+  Future<void> checkIfEmailExists() async {
+    bool emailExists = await _signUpService.doesEmailExist(inputControls.second.controller.text);
+    if (emailExists) {
+      Get.snackbar(
+        "User Already Registered",
+        "Try logging in instead",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: AppColors.remove,
+        colorText: Colors.white,
+      );
+    } else {
+      signUp();
+    }
+  }
+
   void updateFormValidity() {
     bool isFormValid = true;
 
