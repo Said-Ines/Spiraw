@@ -17,7 +17,7 @@ class CategoryCard extends GetView<AddRecipeController> {
   Widget build(BuildContext context) {
     return Obx(
       () {
-        return InkWell(
+        return GestureDetector(
           onTap: () {
             controller.deselectAllExcept(category);
             category.isSelected.toggle();

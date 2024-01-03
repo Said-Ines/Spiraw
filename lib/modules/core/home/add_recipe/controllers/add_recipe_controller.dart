@@ -24,16 +24,16 @@ class AddRecipeController extends GetxController {
 
   var capturedImagePath = Observable("");
 
-  final RxList<CategoryInfo> categories = [
+  final categories = Observable<List<CategoryInfo>>([
     CategoryInfo(image: AppImages.indianFood, title: "Indian"),
     CategoryInfo(image: AppImages.italianFood, title: "Italian"),
     CategoryInfo(image: AppImages.americanFood, title: "American"),
     CategoryInfo(image: AppImages.mexicanFood, title: "Mexican"),
     CategoryInfo(image: AppImages.chineseFood, title: "Chinese"),
     CategoryInfo(image: AppImages.greekFood, title: "Greek"),
-  ].obs;
+  ]);
 
-  final RxList<CategoryInfo> searchResults = <CategoryInfo>[].obs;
+  final searchResults = Observable<List<CategoryInfo>?>(null);
   final Rx<CategoryInfo?> selectedCategory = Rx<CategoryInfo?>(null);
 
   var selectedDifficulty = 'Easy'.obs;
@@ -119,7 +119,7 @@ class AddRecipeController extends GetxController {
   }
 
   void onSearchTextChanged(String searchText) {
-    searchResults.value = _addRecipeService.searchCategory(searchText, categories);
+    searchResults.value = _addRecipeService.searchCategory(searchText, categories.value);
   }
 
   void updateSearchResults(List<CategoryInfo> results) {
@@ -127,7 +127,7 @@ class AddRecipeController extends GetxController {
   }
 
   void deselectAllExcept(CategoryInfo selectedCategory) {
-    for (var category in categories) {
+    for (var category in categories.value) {
       if (category != selectedCategory) {
         category.isSelected.value = false;
       }

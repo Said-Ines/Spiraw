@@ -113,6 +113,7 @@ class _State extends State<FormInput> {
         // cursorHeight: cursorHeight ?? FontSizes.title,
         enabled: widget.enabled,
         initialValue: widget.initialValue,
+
         expands: widget.expands,
         textCapitalization: widget.textCapitalization,
         enableInteractiveSelection: true,

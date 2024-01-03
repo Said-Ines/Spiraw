@@ -202,6 +202,7 @@ class RecipePageScreen extends GetView<RecipePageController> {
                                 )
                               ],
                             ),
+                            const Gap(16),
                             Row(
                               children: [
                                 Container(

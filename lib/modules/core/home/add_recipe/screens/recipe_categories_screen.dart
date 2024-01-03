@@ -1,7 +1,6 @@
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/back_button.dart';
 import '../../../../../widgets/category_card.dart';
-import '../../data/models/category_info_model.dart';
 import '../controllers/add_recipe_controller.dart';
 
 class RecipeCategoriesScreen extends GetView<AddRecipeController> {
@@ -10,6 +9,7 @@ class RecipeCategoriesScreen extends GetView<AddRecipeController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
+      resizeToAvoidBottomInset: false,
       body: ScrollableForm(
         children: [
           Row(
@@ -39,21 +39,22 @@ class RecipeCategoriesScreen extends GetView<AddRecipeController> {
             },
           ),
           const Gap(36),
-          Obx(
-            () {
-              final List<CategoryInfo> displayedCategories = controller.categoryInputControl.first.controller.text.isEmpty
-                  ? controller.categories
-                  : controller.searchResults;
+          Observer(
+            observes: controller.searchResults,
+            builder: (context, searchResults) {
+              final displayedCategories = controller.categoryInputControl.first.controller.text.isEmpty
+                  ? controller.categories.value
+                  : controller.searchResults.value;
 
               return GridView.count(
                 crossAxisCount: 2,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 children: List.generate(
-                  displayedCategories.length,
+                  displayedCategories?.length ?? 0,
                   (index) {
                     return CategoryCard(
-                      category: displayedCategories[index],
+                      category: displayedCategories![index],
                       image: displayedCategories[index].image,
                       title: displayedCategories[index].title,
                     ).paddingAll(12);

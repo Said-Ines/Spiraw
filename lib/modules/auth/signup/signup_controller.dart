@@ -13,8 +13,11 @@ class SignUpController extends GetxController {
   final SignUpService _signUpService = SignUpService();
   final isActive = Observable(false);
 
+  final performingApiCall = Observable(false);
+
   void signUp() async {
     if (formKey.currentState!.validate()) {
+      performingApiCall.toggle();
       UserModel user = UserModel(
         uid: const Uuid().v4(),
         username: inputControls.first.controller.text,
@@ -29,6 +32,7 @@ class SignUpController extends GetxController {
         Debugger.red("Error while signing up: $e");
       }
     }
+    performingApiCall.toggle();
   }
 
   Future<void> checkIfEmailExists() async {
