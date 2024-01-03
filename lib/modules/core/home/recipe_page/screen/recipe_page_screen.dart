@@ -246,12 +246,17 @@ class RecipePageScreen extends GetView<RecipePageController> {
                                     )),
                                 const Spacer()
                               ],
-                            )
+                            ),
+                            const Gap(8),
+                            Text(
+                              "This gorgeous Blue Spirulina Smoothie is packed with good-for-you ingredients that are loaded with antioxidants.",
+                              style: AppStyles.interregularSubTitle.withColor(Colors.white),
+                            ),
                           ],
                         ).paddingSymmetric(horizontal: 26, vertical: 15),
                       ).paddingSymmetric(horizontal: 6),
                       Positioned(
-                        bottom: Get.height / 2,
+                        bottom: Get.height / 2.7,
                         left: Get.width / 2 + 20,
                         child: ClipOval(
                           child: Material(
