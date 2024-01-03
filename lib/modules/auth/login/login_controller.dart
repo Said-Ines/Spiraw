@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:spiraw/bases/controllers/exports.dart';
 
+import '../../../bases/controllers/exports.dart';
 import 'login_service.dart';
 
 class LoginController extends GetxController {

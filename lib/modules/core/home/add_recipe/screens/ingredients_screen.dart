@@ -33,7 +33,9 @@ class IngredientsScreen extends GetView<AddRecipeController> {
           const Gap(60),
           Row(
             children: [
-              const GreenDot(),
+              const ColorfulDot(
+                isSpirulina: true,
+              ),
               const Gap(16),
               Text(
                 "Spirulina",
@@ -61,7 +63,11 @@ class IngredientsScreen extends GetView<AddRecipeController> {
             ],
           ),
           Gap(Get.height * 0.37),
-          StyledButton(style: ButtonStyles.ingredient, title: '+  Add ingredient', onPressed: () {})
+          StyledButton(
+            style: ButtonStyles.ingredient,
+            title: '+  Add ingredient',
+            onPressed: controller.toAddIngredientsScreen,
+          )
         ],
       ).paddingOnly(top: AppConstants.minBodyTopPadding),
       floatingActionButton: Container(
@@ -93,16 +99,17 @@ class IngredientsScreen extends GetView<AddRecipeController> {
   }
 }
 
-class GreenDot extends StatelessWidget {
-  const GreenDot({super.key});
+class ColorfulDot extends StatelessWidget {
+  const ColorfulDot({super.key, required this.isSpirulina});
 
+  final bool isSpirulina;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 18,
       width: 18,
-      decoration: const BoxDecoration(
-        color: AppColors.secondary,
+      decoration: BoxDecoration(
+        color: isSpirulina ? AppColors.secondary : AppColors.blueDot,
         shape: BoxShape.circle,
       ),
     );

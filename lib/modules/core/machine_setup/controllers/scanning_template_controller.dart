@@ -5,11 +5,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:scan/scan.dart';
-import 'package:spiraw/modules/auth_machine/data/machine_model.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../bases/controllers/exports.dart';
 import '../../../../utils/utils.dart';
+import '../../../auth_machine/data/machine_model.dart';
 import '../../../auth_machine/data/scanned_qr_model.dart';
 import '../../../auth_machine/services/machine_service.dart';
 

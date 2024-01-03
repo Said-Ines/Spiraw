@@ -76,6 +76,7 @@ class SpirawApp extends StatelessWidget {
         ingredientsModule,
         addIngredientsModule,
         recipePageModule,
+        ingredientsAfterAddModule,
       ],
     );
   }

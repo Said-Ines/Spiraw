@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/back_button.dart';
 import '../../../../../widgets/upload_button.dart';
@@ -42,7 +44,27 @@ class AddRecipeScreen extends GetView<AddRecipeController> {
             style: AppStyles.interregularTitle.withColor(Colors.white).withSize(FontSizes.headline4).medium(),
           ).align(alignment: Alignment.topLeft),
           const Gap(20),
-          const UploadButton(),
+          Observer(
+              observes: controller.capturedImagePath,
+              builder: (context, value) {
+                return controller.capturedImagePath.value.isNotEmpty
+                    ? Image.file(
+                        File(controller.capturedImagePath.value),
+                        width: 344,
+                        height: 196,
+                        fit: BoxFit.cover,
+                      )
+                    : UploadButton(
+                        openCamera: () {
+                          controller.takePhoto();
+                          Get.back();
+                        },
+                        openGallery: () {
+                          controller.pickImageFromGallery();
+                          Get.back();
+                        },
+                      );
+              }),
           const Gap(36),
           Text(
             "Description",

@@ -1,6 +1,5 @@
 part of 'main.dart';
 
-//* -------------------------------------------
 
 class _Binding {
   static Future<void> asynchronous() async {
@@ -29,10 +28,14 @@ class _Binding {
   }
 }
 
-final loginService = LoginService.instance;
 
-Future<GetPage> _initialModule() async {
-  final currentUser = loginService.currentUser;
+Future<GetPage> _initialModule() async => addRecipeModule;
 
-  return currentUser != null ? recipePageModule : afterSplashModule;
-}
+//final loginService = LoginService.instance;
+
+//Future<GetPage> _initialModule() async {
+ // final currentUser = loginService.currentUser;
+
+ // return currentUser != null ? recipePageModule : afterSplashModule;
+//}
+

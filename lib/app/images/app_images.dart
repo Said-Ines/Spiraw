@@ -55,6 +55,8 @@ class AppImages {
   static const leafIcon = "$imagesFolder/leaf_icon.png";
 
   static const foodImage = "$imagesFolder/food.png";
+
+  static const removeIcon = "$imagesFolder/remove_icon.png";
 }
 
 class _BottomBar {

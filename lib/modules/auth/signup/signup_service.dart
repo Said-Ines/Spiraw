@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:spiraw/app/constants/firebase_collections.dart';
-import 'package:spiraw/bases/controllers/exports.dart';
-import 'package:spiraw/modules/auth/data/model/user_model.dart';
+
+import '../../../app/constants/firebase_collections.dart';
+import '../../../bases/controllers/exports.dart';
+import '../data/model/user_model.dart';
 
 class SignUpService {
   final FirebaseAuth _auth = FirebaseAuth.instance;

@@ -1,6 +1,7 @@
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/back_button.dart';
 import '../../../../../widgets/category_card.dart';
+import '../../data/models/category_info_model.dart';
 import '../controllers/add_recipe_controller.dart';
 
 class RecipeCategoriesScreen extends GetView<AddRecipeController> {
@@ -30,21 +31,37 @@ class RecipeCategoriesScreen extends GetView<AddRecipeController> {
           FormInput(
             type: FormInputType.normal,
             hint: "Select a category",
-            controller: controller.inputControls.first.controller,
+            controller: controller.categoryInputControl.first.controller,
             keyboardType: TextInputType.text,
-            validator: InputValidators.validateRecipeName,
             fillColor: AppColors.inputColor,
+            onChanged: (text) {
+              controller.onSearchTextChanged(text);
+            },
           ),
           const Gap(36),
-          GridView.count(
-            crossAxisCount: 2,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            children: List.generate(6, (index) {
-              return CategoryCard(image: controller.categories[index].image, title: controller.categories[index].title)
-                  .paddingAll(12);
-            }),
-          ),
+          Obx(
+            () {
+              final List<CategoryInfo> displayedCategories = controller.categoryInputControl.first.controller.text.isEmpty
+                  ? controller.categories
+                  : controller.searchResults;
+
+              return GridView.count(
+                crossAxisCount: 2,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                children: List.generate(
+                  displayedCategories.length,
+                  (index) {
+                    return CategoryCard(
+                      category: displayedCategories[index],
+                      image: displayedCategories[index].image,
+                      title: displayedCategories[index].title,
+                    ).paddingAll(12);
+                  },
+                ),
+              );
+            },
+          )
         ],
       ).paddingOnly(top: AppConstants.minBodyTopPadding),
       floatingActionButton: Container(
@@ -60,7 +77,7 @@ class RecipeCategoriesScreen extends GetView<AddRecipeController> {
               child: StyledButton(
                 style: ButtonStyles.primary,
                 title: "Next ",
-                onPressed: () {},
+                onPressed: controller.toTimeSpentScreen,
                 isFromRecipe: true,
                 reversed: false,
               ),

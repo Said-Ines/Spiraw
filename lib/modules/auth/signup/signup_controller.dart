@@ -1,10 +1,10 @@
-import 'package:spiraw/modules/auth/data/model/user_model.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../bases/models/input_control.dart';
 import '../../../bases/screens/exports.dart';
 import '../../../helpers/index.dart';
 import '../../all_modules.dart';
+import '../data/model/user_model.dart';
 import 'signup_service.dart';
 
 class SignUpController extends GetxController {

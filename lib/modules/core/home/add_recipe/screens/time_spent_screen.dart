@@ -152,7 +152,7 @@ class TimeSpentScreen extends GetView<AddRecipeController> {
               child: StyledButton(
                 style: ButtonStyles.primary,
                 title: "Next ",
-                onPressed: () {},
+                onPressed: controller.toIngredientsScreen,
                 isFromRecipe: true,
                 reversed: false,
               ),

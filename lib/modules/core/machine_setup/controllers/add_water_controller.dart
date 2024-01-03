@@ -1,5 +1,4 @@
-import 'package:spiraw/bases/controllers/exports.dart';
-
+import '../../../../bases/controllers/exports.dart';
 import '../../../../bases/screens/exports.dart';
 
 class AddWaterController extends GetxController {

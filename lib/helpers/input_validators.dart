@@ -30,6 +30,9 @@ class InputValidators {
     return (value != null && value.length == 6) ? null : 'Invalid Code';
   }
 
+  static String? validateElementName(String? value) =>
+      (value != null && value.isNotEmpty) ? null : 'Element Name musn\'t be empty';
+
   static String? validateRecipeName(String? value) =>
       (value != null && value.length > 2) ? null : 'Title must contain more than 2 characters';
   static String? validateRecipeDescription(String? value) =>
