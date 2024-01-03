@@ -13,8 +13,11 @@ class SignUpController extends GetxController {
   final SignUpService _signUpService = SignUpService();
   final isActive = Observable(false);
 
+  final performingApiCall = Observable(false);
+
   void signUp() async {
     if (formKey.currentState!.validate()) {
+      performingApiCall.toggle();
       UserModel user = UserModel(
         uid: const Uuid().v4(),
         username: inputControls.first.controller.text,
@@ -28,6 +31,22 @@ class SignUpController extends GetxController {
       } catch (e) {
         Debugger.red("Error while signing up: $e");
       }
+    }
+    performingApiCall.toggle();
+  }
+
+  Future<void> checkIfEmailExists() async {
+    bool emailExists = await _signUpService.doesEmailExist(inputControls.second.controller.text);
+    if (emailExists) {
+      Get.snackbar(
+        "User Already Registered",
+        "Try logging in instead",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: AppColors.remove,
+        colorText: Colors.white,
+      );
+    } else {
+      signUp();
     }
   }
 

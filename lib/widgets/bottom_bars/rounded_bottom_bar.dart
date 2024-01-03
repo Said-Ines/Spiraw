@@ -1,6 +1,7 @@
 import '../../bases/screens/exports.dart';
+import '../../modules/core/home/recipe_page/controller/recipe_page_controller.dart';
 
-class RoundedBottomBar extends StatelessWidget {
+class RoundedBottomBar extends GetView<RecipePageController> {
   const RoundedBottomBar({super.key});
 
   @override
@@ -77,7 +78,7 @@ class RoundedBottomBar extends StatelessWidget {
             bottom: 50,
             left: Get.width / 3 + 32,
             child: _HexagonalButton(
-              onPressed: () {},
+              onPressed: controller.toAddRecipeScreen,
               icon: Icons.add,
             ))
       ],

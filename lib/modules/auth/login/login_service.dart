@@ -26,6 +26,33 @@ class LoginService {
     }
   }
 
+  Future<bool> isUserRegistered(String email) async {
+    try {
+      final QuerySnapshot<Map<String, dynamic>> snapshot =
+          await FirebaseFirestore.instance.collection(FirebaseCollections.users).where('email', isEqualTo: email).get();
+
+      return snapshot.docs.isNotEmpty;
+    } catch (e) {
+      Debugger.red('Error checking user registration: $e');
+      return false;
+    }
+  }
+
+  Future<bool> isPasswordValid(String email, String password) async {
+    try {
+      final QuerySnapshot<Map<String, dynamic>> snapshot = await FirebaseFirestore.instance
+          .collection(FirebaseCollections.users)
+          .where('email', isEqualTo: email)
+          .where('password', isEqualTo: password)
+          .get();
+
+      return snapshot.docs.isNotEmpty;
+    } catch (e) {
+      Debugger.red('Invalid password: $e');
+      return false;
+    }
+  }
+
   Future<bool> isMachineRegisteredForUser(String? userId) async {
     if (userId == null) {
       return false;

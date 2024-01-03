@@ -89,15 +89,19 @@ class SignUpScreen extends GetView<SignUpController> {
           ),
           const VerticalSpacing(24),
           Observer(
-              observes: controller.isActive,
-              builder: (context, isActive) {
-                return StyledButton(
-                  isDisabled: !isActive,
-                  style: isActive ? ButtonStyles.primary : ButtonStyles.inactif,
-                  title: "Register",
-                  onPressed: controller.signUp,
-                ).paddingOnly(bottom: 48);
-              }),
+            observes: controller.isActive,
+            builder: (context, isActive) => Observer(
+              observes: controller.performingApiCall,
+              builder: (context, isLoading) => StyledButton(
+                isLoading: isLoading,
+                isDisabled: !isActive,
+                style: isActive ? ButtonStyles.primary : ButtonStyles.inactif,
+                title: "Register",
+                onPressed: controller.checkIfEmailExists,
+                //controller.signUp,
+              ).paddingOnly(bottom: 48),
+            ),
+          ),
           Row(
             children: [
               AutoSizeText(

@@ -63,11 +63,15 @@ class LoginScreen extends GetView<LoginController> {
           const VerticalSpacing(20),
           Observer(
             observes: controller.isActive,
-            builder: (context, isActive) => StyledButton(
-              isDisabled: !isActive,
-              style: isActive ? ButtonStyles.primary : ButtonStyles.inactif,
-              title: "Login",
-              onPressed: controller.login,
+            builder: (context, isActive) => Observer(
+              observes: controller.performingApiCall,
+              builder: (context, isLoading) => StyledButton(
+                isLoading: isLoading,
+                isDisabled: !isActive,
+                style: isActive ? ButtonStyles.primary : ButtonStyles.inactif,
+                title: "Login",
+                onPressed: controller.login,
+              ),
             ),
           ),
           const VerticalSpacing(45),
