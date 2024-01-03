@@ -108,7 +108,6 @@ class _State extends State<FormInput> {
     Widget? suffixIcon,
   }) {
     return SizedBox(
-      height: !widget.isDescriptionField ? AppConstants.inputs.height : AppConstants.inputs.descriptionHeight,
       child: TextFormField(
         cursorColor: (darkTheme && !widget.isSearchField) ? Colors.white : AppColors.primary,
         // cursorHeight: cursorHeight ?? FontSizes.title,
