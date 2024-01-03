@@ -30,22 +30,6 @@ class _CameraScreenState extends State<CameraScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // if (!_cameraController.value.isInitialized) {
-    //   return Container();
-    // }
-    // return SmartScaffold(
-    //     body: CameraPreview(_cameraController),
-    //     floatingActionButton: FloatingActionButton(
-    //       onPressed: () async {
-    //         try {
-    //           final XFile file = await _cameraController.takePicture();
-    //           Navigator.pop(context, file.path);
-    //         } catch (e) {
-    //           log("error taking picture: $e");
-    //         }
-    //       },
-    //       child: const Icon(Icons.camera_alt),
-    //     ));
     return SmartScaffold(
       body: Observer(
         observes: isCameraInitialized,
@@ -60,7 +44,6 @@ class _CameraScreenState extends State<CameraScreen> {
         onPressed: () async {
           try {
             final XFile file = await _cameraController.takePicture();
-            // Navigator.pop(context, file.path);
             Get.back(result: file.path);
           } catch (e) {
             log("error taking picture: $e");
