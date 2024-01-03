@@ -1,3 +1,5 @@
+import 'package:auto_size_text/auto_size_text.dart';
+
 import '../../../bases/screens/exports.dart';
 import '../common/widgets/index.dart';
 import 'signup_controller.dart';
@@ -57,7 +59,6 @@ class SignUpScreen extends GetView<SignUpController> {
           FormInput(
             type: FormInputType.password,
             hint: "Enter password",
-            hintColor: AppColors.hint,
             controller: controller.inputControls[2].controller,
             onChanged: (_) {
               controller.updateFormValidity();
@@ -74,7 +75,6 @@ class SignUpScreen extends GetView<SignUpController> {
           FormInput(
             type: FormInputType.password,
             hint: "Enter password again",
-            hintColor: AppColors.hint,
             controller: controller.inputControls.last.controller,
             onChanged: (_) {
               controller.updateFormValidity();
@@ -100,7 +100,7 @@ class SignUpScreen extends GetView<SignUpController> {
               }),
           Row(
             children: [
-              Text(
+              AutoSizeText(
                 "Already have an account ? ",
                 style: AppStyles.interregularTitle,
               ),
@@ -110,7 +110,7 @@ class SignUpScreen extends GetView<SignUpController> {
                 isRegister: true,
               )
             ],
-          ).paddingSymmetric(horizontal: 20)
+          ).paddingSymmetric(horizontal: 10)
         ],
       ).paddingOnly(top: AppConstants.minBodyTopPadding),
     );

@@ -1,10 +1,17 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../../app/constants/firebase_collections.dart';
 import '../../../helpers/index.dart';
 
 class LoginService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  LoginService._();
 
+  static LoginService instance = LoginService._();
+  LoginService();
+
+  get currentUser => _auth.currentUser;
   Future<User?> loginWithEmailAndPassword(String email, String password) async {
     try {
       final UserCredential userCredential = await _auth.signInWithEmailAndPassword(
@@ -16,6 +23,21 @@ class LoginService {
     } catch (error) {
       Debugger.red('Error while signing in: $error');
       rethrow;
+    }
+  }
+
+  Future<bool> isMachineRegisteredForUser(String? userId) async {
+    if (userId == null) {
+      return false;
+    }
+    try {
+      final DocumentSnapshot<Map<String, dynamic>> snapshot =
+          await FirebaseFirestore.instance.collection(FirebaseCollections.machines).doc(userId).get();
+
+      return snapshot.exists;
+    } catch (e) {
+      Debugger.red('Error checking machine authentication: $e');
+      return false;
     }
   }
 }
