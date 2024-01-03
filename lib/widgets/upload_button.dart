@@ -3,7 +3,11 @@ import 'package:dotted_border/dotted_border.dart';
 import '../../../bases/screens/exports.dart';
 
 class UploadButton extends StatelessWidget {
-  const UploadButton({super.key, this.openCamera, this.openGallery});
+  const UploadButton({
+    super.key,
+    this.openCamera,
+    this.openGallery,
+  });
 
   final void Function()? openCamera;
   final void Function()? openGallery;

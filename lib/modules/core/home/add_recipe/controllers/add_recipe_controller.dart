@@ -1,5 +1,11 @@
+import 'dart:io';
+
+import 'package:camera/camera.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:spiraw/modules/core/home/add_recipe/screens/camera_screen.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../../app/images/app_images.dart';
@@ -15,6 +21,8 @@ class AddRecipeController extends GetxController {
   final addIngredientInputControls = InputControl.generate(1);
 
   final AddRecipeService _addRecipeService = AddRecipeService();
+
+  var capturedImagePath = Observable("");
 
   final RxList<CategoryInfo> categories = [
     CategoryInfo(image: AppImages.indianFood, title: "Indian"),
@@ -64,12 +72,14 @@ class AddRecipeController extends GetxController {
     if (!formKey.isValid) return;
     recipeId = const Uuid().v4();
     final DocumentReference<Map<String, dynamic>> recipeRef = FirebaseFirestore.instance.collection('recipes').doc(recipeId);
+    final imageUrl = await uploadImageToFirebaseStorage(recipeId, capturedImagePath.value);
+
     await recipeRef.set({
       'uid': recipeId,
       'title': inputControls.first.controller.text,
       'userId': getUserId(),
       'description': inputControls.last.controller.text,
-      'recipeImage': inputControls.second.controller.text,
+      'recipeImage': imageUrl,
       'category': categoryData,
       'preparationTime': 0,
       'cookingTime': 0,
@@ -80,6 +90,20 @@ class AddRecipeController extends GetxController {
     final DocumentSnapshot<Map<String, dynamic>> snapshot = await recipeRef.get();
     _addRecipeService.saveAddRecipeScreenInfo(snapshot.data() ?? {});
     Get.toNamed(recipeCategoriesModule.name);
+  }
+
+  Future<String> uploadImageToFirebaseStorage(String recipeId, String imagePath) async {
+    try {
+      final Reference storageReference = FirebaseStorage.instance.ref().child('recipe_images').child('$recipeId.jpg');
+
+      final UploadTask uploadTask = storageReference.putFile(File(imagePath));
+      await uploadTask.whenComplete(() => null);
+      final String imageUrl = await storageReference.getDownloadURL();
+      return imageUrl;
+    } catch (error) {
+      Debugger.red("Error while uploading recipe's image to firebase: $error");
+      return "";
+    }
   }
 
   void updateSelectedDifficulty(String? newValue) {
@@ -183,6 +207,27 @@ class AddRecipeController extends GetxController {
       await _addRecipeService.removeIngredient(recipeId, removedIngredient);
       //ingredients.removeAt(index);
       update();
+    }
+  }
+
+  void takePhoto() async {
+    final cameras = await availableCameras();
+    final camera = cameras.first;
+
+    final result = await Get.to(CameraScreen(camera: camera));
+    if (result != null) {
+      capturedImagePath.value = result;
+
+      Debugger.yellow("Chemin de la photo capturée : $result");
+    }
+  }
+
+  void pickImageFromGallery() async {
+    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      capturedImagePath.value = pickedFile.path;
+      Debugger.yellow("Chemin de la photo capturée : ${pickedFile.path}");
     }
   }
 
