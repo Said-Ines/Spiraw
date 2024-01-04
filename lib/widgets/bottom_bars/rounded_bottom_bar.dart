@@ -1,5 +1,5 @@
 import '../../bases/screens/exports.dart';
-import '../../modules/core/home/recipe_page/controller/recipe_page_controller.dart';
+import '../../modules/core/community_home_page/recipe_page/controller/recipe_page_controller.dart';
 
 class RoundedBottomBar extends GetView<RecipePageController> {
   const RoundedBottomBar({super.key});
