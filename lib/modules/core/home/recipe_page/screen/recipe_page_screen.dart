@@ -256,7 +256,7 @@ class RecipePageScreen extends GetView<RecipePageController> {
                         ).paddingSymmetric(horizontal: 26, vertical: 15),
                       ).paddingSymmetric(horizontal: 6),
                       Positioned(
-                        bottom: Get.height / 2.7,
+                        bottom: Get.height / 2,
                         left: Get.width / 2 + 20,
                         child: ClipOval(
                           child: Material(
