@@ -57,6 +57,11 @@ class AppImages {
   static const foodImage = "$imagesFolder/food.png";
 
   static const removeIcon = "$imagesFolder/remove_icon.png";
+
+  static const sandClockIcon = "$imagesFolder/sand_clock.png";
+  static const trendingIcon = "$imagesFolder/trending_icon.png";
+
+  static const arrowForwardDuoIcon = "$imagesFolder/arrow_forward_duo.png";
 }
 
 class _BottomBar {

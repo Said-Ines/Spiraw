@@ -77,6 +77,11 @@ class SpirawApp extends StatelessWidget {
         addIngredientsModule,
         recipePageModule,
         ingredientsAfterAddModule,
+
+        //? Machine Home Page
+        machineHomePageModule,
+        spirulinaGrowthModule,
+        ecoImpactModule,
       ],
     );
   }
