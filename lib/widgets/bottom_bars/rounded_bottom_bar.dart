@@ -83,7 +83,7 @@ class RoundedBottomBar extends StatelessWidget {
         ),
         Positioned(
             bottom: 50,
-            left: !isFromMachineHomePage ? Get.width / 3 + 32 : Get.width / 3 + 13,
+            left: Get.width / 3 + 32,
             child: _HexagonalButton(
               onPressed: onPressed,
               isFromMachineHomePage: isFromMachineHomePage,

@@ -1,4 +1,5 @@
 import '../../../../bases/screens/exports.dart';
+import '../../../../widgets/bottom_bars/rounded_bottom_bar.dart';
 import '../../common/notifications_button.dart';
 import '../../common/search_button.dart';
 import '../controller/machine_home_page_controller.dart';
@@ -11,61 +12,71 @@ class MachineHomePageScreen extends GetView<MachineHomePageController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: Stack(
+        alignment: AlignmentDirectional.bottomEnd,
         children: [
-          Row(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 42,
-                height: 42,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: ClipOval(
-                  child: Material(
-                    color: AppColors.transparent,
-                    child: GestureDetector(
-                        onTap: () {},
-                        child: Image.asset(
-                          AppImages.bottomBar.profile,
-                          fit: BoxFit.cover,
-                          width: AppConstants.bottomBar.secondaryButtonSize,
-                          height: AppConstants.bottomBar.secondaryButtonSize,
-                        )),
+              Row(
+                children: [
+                  Container(
+                    width: 42,
+                    height: 42,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                    ),
+                    child: ClipOval(
+                      child: Material(
+                        color: AppColors.transparent,
+                        child: GestureDetector(
+                            onTap: () {},
+                            child: Image.asset(
+                              AppImages.bottomBar.profile,
+                              fit: BoxFit.cover,
+                              width: AppConstants.bottomBar.secondaryButtonSize,
+                              height: AppConstants.bottomBar.secondaryButtonSize,
+                            )),
+                      ),
+                    ),
                   ),
+                  const Spacer(),
+                  const SearchButton(),
+                  const Gap(8),
+                  const NotificationsButton(),
+                ],
+              ),
+              const Gap(12),
+              Text(
+                "Spirulina Growth",
+                style: AppStyles.interboldHeadline1.withSize(FontSizes.headline2).withColor(Colors.white),
+              ),
+              const Gap(30),
+              _CustomTabBar(
+                tabController: controller.tabController,
+                selectedIndex: controller.selectedTabIndex,
+              ),
+              const Gap(AppConstants.bodyMaxSymetricHorizontalPadding),
+              Expanded(
+                child: TabBarView(
+                  controller: controller.tabController,
+                  children: [
+                    SingleChildScrollView(child: const SpirulinaGrowthScreen().paddingOnly(bottom: 100)),
+                    const SingleChildScrollView(child: EcoImpactScreen()),
+                  ],
                 ),
               ),
-              const Spacer(),
-              const SearchButton(),
-              const Gap(8),
-              const NotificationsButton(),
             ],
+          ).paddingSymmetric(
+            horizontal: AppConstants.bodyMinSymetricHorizontalPadding,
+            vertical: AppConstants.minBodyTopPadding,
           ),
-          const Gap(12),
-          Text(
-            "Spirulina Growth",
-            style: AppStyles.interboldHeadline1.withSize(FontSizes.headline2).withColor(Colors.white),
-          ),
-          const Gap(30),
-          _CustomTabBar(
-            tabController: controller.tabController,
-            selectedIndex: controller.selectedTabIndex,
-          ),
-          const Gap(AppConstants.bodyMaxSymetricHorizontalPadding),
-          Expanded(
-            child: TabBarView(
-              controller: controller.tabController,
-              children: const [
-                SingleChildScrollView(child: SpirulinaGrowthScreen()),
-                SingleChildScrollView(child: EcoImpactScreen()),
-              ],
-            ),
-          ),
+          Positioned(
+              child: RoundedBottomBar(
+            isFromMachineHomePage: true,
+            onPressed: () {},
+          )),
         ],
-      ).paddingSymmetric(
-        horizontal: AppConstants.bodyMinSymetricHorizontalPadding,
-        vertical: AppConstants.minBodyTopPadding,
       ),
     );
   }
