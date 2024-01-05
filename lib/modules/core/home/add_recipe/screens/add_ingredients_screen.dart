@@ -125,7 +125,7 @@ class AddIngredientsScreen extends GetView<AddRecipeController> {
                 title: "Add",
                 onPressed: () {
                   controller.fromAddtoIngredientsScreen(
-                    controller.inputControls.first.controller.text,
+                    controller.addIngredientInputControls.first.controller.text,
                     controller.selectedServingQuantity.value,
                     controller.quantity.value,
                   );
