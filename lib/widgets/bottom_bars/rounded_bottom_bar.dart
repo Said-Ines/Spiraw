@@ -1,12 +1,19 @@
 import '../../bases/screens/exports.dart';
-import '../../modules/core/community_home_page/recipe_page/controller/recipe_page_controller.dart';
 
-class RoundedBottomBar extends GetView<RecipePageController> {
-  const RoundedBottomBar({super.key});
+class RoundedBottomBar extends StatelessWidget {
+  const RoundedBottomBar({
+    super.key,
+    required this.onPressed,
+    this.isFromMachineHomePage = false,
+  });
+
+  final void Function() onPressed;
+  final bool isFromMachineHomePage;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: AlignmentDirectional.bottomEnd,
       children: [
         Container(
           height: AppConstants.bottomBar.height + 50,
@@ -58,7 +65,7 @@ class RoundedBottomBar extends GetView<RecipePageController> {
                   child: ClipOval(
                     child: Material(
                       color: AppColors.transparent,
-                      child: InkWell(
+                      child: GestureDetector(
                           onTap: () {},
                           child: Image.asset(
                             AppImages.bottomBar.profile,
@@ -76,9 +83,11 @@ class RoundedBottomBar extends GetView<RecipePageController> {
         ),
         Positioned(
             bottom: 50,
-            left: Get.width / 3 + 32,
+            left: !isFromMachineHomePage ? Get.width / 3 + 32 : Get.width / 3 + 13,
             child: _HexagonalButton(
-              onPressed: controller.toAddRecipeScreen,
+              onPressed: onPressed,
+              isFromMachineHomePage: isFromMachineHomePage,
+              // recipeController.toAddRecipeScreen,
               icon: Icons.add,
             ))
       ],
@@ -89,8 +98,13 @@ class RoundedBottomBar extends GetView<RecipePageController> {
 class _HexagonalButton extends StatelessWidget {
   final VoidCallback onPressed;
   final IconData icon;
+  final bool isFromMachineHomePage;
 
-  const _HexagonalButton({required this.onPressed, required this.icon});
+  const _HexagonalButton({
+    required this.onPressed,
+    required this.icon,
+    this.isFromMachineHomePage = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +121,7 @@ class _HexagonalButton extends StatelessWidget {
               child: Icon(
                 icon,
                 size: 44,
-                color: Colors.white,
+                color: !isFromMachineHomePage ? Colors.white : AppColors.secondary,
               ),
             ),
           ),

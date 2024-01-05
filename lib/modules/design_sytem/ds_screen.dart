@@ -16,7 +16,6 @@ class DesignSystemScreen extends GetView<DesignSystemController> {
   @override
   Widget build(BuildContext context) {
     return SmartScaffold(
-
       body: ScrollableForm(formKey: controller.formKey, topPadding: 35, bottomPadding: 135, children: [
         const VerticalSpacing(20),
         Text(
@@ -188,7 +187,9 @@ class DesignSystemScreen extends GetView<DesignSystemController> {
               ),
             )),
         const VerticalSpacing(20),
-        const RoundedBottomBar(),
+        RoundedBottomBar(
+          onPressed: () {},
+        ),
         const VerticalSpacing(20),
         Observer(
           observes: controller.performingApiCall,
@@ -242,7 +243,6 @@ class DesignSystemScreen extends GetView<DesignSystemController> {
             ],
           ).symmetricPadding(horizontal: 15),
         )
-
       ]),
     );
   }

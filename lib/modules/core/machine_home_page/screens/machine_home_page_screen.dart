@@ -57,8 +57,8 @@ class MachineHomePageScreen extends GetView<MachineHomePageController> {
             child: TabBarView(
               controller: controller.tabController,
               children: const [
-                SpirulinaGrowthScreen(),
-                EcoImpactScreen(),
+                SingleChildScrollView(child: SpirulinaGrowthScreen()),
+                SingleChildScrollView(child: EcoImpactScreen()),
               ],
             ),
           ),

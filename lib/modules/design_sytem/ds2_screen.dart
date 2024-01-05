@@ -134,6 +134,7 @@ class _DS2ScreenState extends State<DS2Screen> with SingleTickerProviderStateMix
             const HarvestSchedule(
               time: "03:10 PM",
               daysList: ["Monday", "Tusday"],
+              isSwitched: true,
             ),
             const CircularProgress(),
             VerticalBarIndicator(

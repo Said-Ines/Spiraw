@@ -25,7 +25,6 @@ class RecipePageScreen extends GetView<RecipePageController> {
                   ),
                   const Spacer(),
                   const SearchButton(),
-                  const Gap(8),
                   const NotificationsButton(),
                 ],
               ).paddingOnly(
@@ -249,7 +248,10 @@ class RecipePageScreen extends GetView<RecipePageController> {
               ),
             ],
           ),
-          const Positioned(child: RoundedBottomBar()),
+          Positioned(
+              child: RoundedBottomBar(
+            onPressed: controller.toAddRecipeScreen,
+          )),
         ],
       ),
       floatingActionButton: FloatingButton(
