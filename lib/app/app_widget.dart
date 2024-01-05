@@ -82,6 +82,7 @@ class SpirawApp extends StatelessWidget {
         machineHomePageModule,
         spirulinaGrowthModule,
         ecoImpactModule,
+        scheduleTimeModule,
       ],
     );
   }

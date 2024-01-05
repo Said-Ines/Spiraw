@@ -61,8 +61,8 @@ class MachineHomePageScreen extends GetView<MachineHomePageController> {
                 child: TabBarView(
                   controller: controller.tabController,
                   children: [
-                    SingleChildScrollView(child: const SpirulinaGrowthScreen().paddingOnly(bottom: 100)),
-                    const SingleChildScrollView(child: EcoImpactScreen()),
+                    const SpirulinaGrowthScreen().paddingOnly(bottom: 100),
+                    SingleChildScrollView(child: const EcoImpactScreen().paddingOnly(bottom: 100)),
                   ],
                 ),
               ),
@@ -74,7 +74,7 @@ class MachineHomePageScreen extends GetView<MachineHomePageController> {
           Positioned(
               child: RoundedBottomBar(
             isFromMachineHomePage: true,
-            onPressed: () {},
+            onPressed: controller.toScheduleTimeScreen,
           )),
         ],
       ),

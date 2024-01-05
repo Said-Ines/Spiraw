@@ -28,6 +28,7 @@ export 'core/community_home_page/add_recipe/modules/time_spent_module.dart';
 export 'core/community_home_page/recipe_page/module/recipe_page_module.dart';
 export 'core/machine_home_page/eco_impact/modules/eco_impact_module.dart';
 export 'core/machine_home_page/modules/machine_home_page_module.dart';
+export 'core/machine_home_page/modules/schedule_time_module.dart';
 export 'core/machine_home_page/spirulina_growth/modules/spirulina_growth_module.dart';
 // export '../modules/core/emergency_calling/module/emergency_calling_module.dart';
 // export '../modules/core/sos_text_message/stay_connected/module/stay_connected_module.dart';

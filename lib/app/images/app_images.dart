@@ -62,6 +62,7 @@ class AppImages {
   static const trendingIcon = "$imagesFolder/trending_icon.png";
 
   static const arrowForwardDuoIcon = "$imagesFolder/arrow_forward_duo.png";
+  static const noSchedulesIcon = "$imagesFolder/no_schedules_icon.png";
 }
 
 class _BottomBar {
