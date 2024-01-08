@@ -1,10 +1,10 @@
 import 'package:action_slider/action_slider.dart';
 import 'package:intl/intl.dart';
-import 'package:spiraw/modules/core/machine_home_page/controller/machine_home_page_controller.dart';
 
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/home/dose_card.dart';
 import '../../../../../widgets/home/harvest_schedule.dart';
+import '../../controller/machine_home_page_controller.dart';
 import '../../data/harvest_schedule_model.dart';
 
 class SpirulinaGrowthScreen extends GetView<MachineHomePageController> {
@@ -80,7 +80,7 @@ class SpirulinaGrowthScreen extends GetView<MachineHomePageController> {
           child: Observer(
             observes: controller.isSwitched,
             builder: (context, isSwitched) {
-              return const SingleChildScrollView(child: _HarvestSchedulesList());
+              return const _HarvestSchedulesList();
             },
           ),
         ),
@@ -95,20 +95,22 @@ class _HarvestSchedulesList extends GetView<MachineHomePageController> {
   @override
   Widget build(BuildContext context) {
     return controller.harvestSchedules.isEmpty
-        ? Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(
-                AppImages.noSchedulesIcon,
-                width: 150,
-                height: 150,
-              ),
-              Text(
-                "No schedules here yet",
-                style: AppStyles.interSemiBoldTextButton.medium().withSize(FontSizes.headline5).withColor(Colors.white),
-              ),
-            ],
-          ).align(alignment: Alignment.center)
+        ? SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  AppImages.noSchedulesIcon,
+                  width: 150,
+                  height: 150,
+                ),
+                Text(
+                  "No schedules here yet",
+                  style: AppStyles.interSemiBoldTextButton.medium().withSize(FontSizes.headline5).withColor(Colors.white),
+                ),
+              ],
+            ).align(alignment: Alignment.center),
+          )
         : ListView.builder(
             itemCount: controller.harvestSchedules.length,
             itemBuilder: (context, index) {

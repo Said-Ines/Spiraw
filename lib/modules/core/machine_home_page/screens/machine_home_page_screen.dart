@@ -89,6 +89,7 @@ class MachineHomePageScreen extends GetView<MachineHomePageController> {
           Positioned(
               child: RoundedBottomBar(
             isFromMachineHomePage: true,
+            isEmpty: controller.harvestSchedules.isEmpty,
             onPressed: controller.toScheduleTimeScreen,
           )),
         ],

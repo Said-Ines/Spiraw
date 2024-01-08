@@ -5,10 +5,12 @@ class RoundedBottomBar extends StatelessWidget {
     super.key,
     required this.onPressed,
     this.isFromMachineHomePage = false,
+    this.isEmpty = false,
   });
 
   final void Function() onPressed;
   final bool isFromMachineHomePage;
+  final bool isEmpty;
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +89,7 @@ class RoundedBottomBar extends StatelessWidget {
             child: _HexagonalButton(
               onPressed: onPressed,
               isFromMachineHomePage: isFromMachineHomePage,
+              isEmpty: isEmpty,
               icon: Icons.add,
             ))
       ],
@@ -98,11 +101,13 @@ class _HexagonalButton extends StatelessWidget {
   final VoidCallback onPressed;
   final IconData icon;
   final bool isFromMachineHomePage;
+  final bool isEmpty;
 
   const _HexagonalButton({
     required this.onPressed,
     required this.icon,
     this.isFromMachineHomePage = false,
+    this.isEmpty = false,
   });
 
   @override
@@ -115,12 +120,12 @@ class _HexagonalButton extends StatelessWidget {
         child: GestureDetector(
           onTap: onPressed,
           child: CustomPaint(
-            painter: _HexagonPainter(),
+            painter: _HexagonPainter(isEmpty: isEmpty),
             child: Center(
               child: Icon(
                 icon,
                 size: 44,
-                color: !isFromMachineHomePage ? Colors.white : AppColors.secondary,
+                color: !isFromMachineHomePage || isEmpty ? Colors.white : AppColors.secondary,
               ),
             ),
           ),
@@ -131,9 +136,15 @@ class _HexagonalButton extends StatelessWidget {
 }
 
 class _HexagonPainter extends CustomPainter {
+  final bool isEmpty;
+
+  _HexagonPainter({
+    super.repaint,
+    this.isEmpty = false,
+  });
   @override
   void paint(Canvas canvas, Size size) {
-    final Paint paint = Paint()..color = AppColors.inputColor;
+    final Paint paint = Paint()..color = isEmpty ? AppColors.secondary : AppColors.inputColor;
     final Path path = Path();
     path.moveTo(size.width / 2, 0);
     path.lineTo(size.width, size.height / 4);
