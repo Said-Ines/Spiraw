@@ -14,7 +14,7 @@ class _CircularProgressState extends State<CircularProgress> {
   @override
   void initState() {
     valueNotifier = ValueNotifier(0.0);
-    valueNotifier?.value = 50;
+    valueNotifier?.value = 75;
     super.initState();
   }
 
@@ -29,15 +29,15 @@ class _CircularProgressState extends State<CircularProgress> {
       progressStrokeWidth: 10,
       backStrokeWidth: 0,
       progressColors: const [
+        Color(0xFFCBEDB8),
+        Color(0xFF60AD86),
         Color(0xFF2E8F4A),
-        Color(0xFF00DB74),
-        Color(0xFFD3F5BD),
       ],
       onGetText: (double value) {
         return const Text(
-          '     Good\n     20%\nAir Quality',
+          '     Good\n       75%\n  Air Quality',
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 27,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),

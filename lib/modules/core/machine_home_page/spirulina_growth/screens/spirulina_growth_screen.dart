@@ -76,20 +76,11 @@ class SpirulinaGrowthScreen extends GetView<MachineHomePageController> {
         ),
         const Gap(30),
         Text("Harvest Schedules", style: AppStyles.interboldHeadline3.withSize(FontSizes.headline6).withColor(Colors.white)),
-        const Gap(30),
         Expanded(
           child: Observer(
             observes: controller.isSwitched,
             builder: (context, isSwitched) {
-              // return HarvestSchedule(
-              //   time: "03:10 PM",
-              //   daysList: const ["Monday", "Tusday"],
-              //   isSwitched: controller.isSwitched.value,
-              //   onChanged: (isSwitched) {
-              //     controller.toggleSwitch();
-              //   },
-              // );
-              return const _HarvestSchedulesList();
+              return const SingleChildScrollView(child: _HarvestSchedulesList());
             },
           ),
         ),
@@ -104,23 +95,20 @@ class _HarvestSchedulesList extends GetView<MachineHomePageController> {
   @override
   Widget build(BuildContext context) {
     return controller.harvestSchedules.isEmpty
-        ? Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset(
-                  AppImages.noSchedulesIcon,
-                  width: 150,
-                  height: 150,
-                ),
-                const Gap(20),
-                Text(
-                  "No schedules here yet",
-                  style: AppStyles.interSemiBoldTextButton.medium().withSize(FontSizes.headline5).withColor(Colors.white),
-                ),
-              ],
-            ).align(alignment: Alignment.center),
-          )
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                AppImages.noSchedulesIcon,
+                width: 150,
+                height: 150,
+              ),
+              Text(
+                "No schedules here yet",
+                style: AppStyles.interSemiBoldTextButton.medium().withSize(FontSizes.headline5).withColor(Colors.white),
+              ),
+            ],
+          ).align(alignment: Alignment.center)
         : ListView.builder(
             itemCount: controller.harvestSchedules.length,
             itemBuilder: (context, index) {

@@ -87,7 +87,6 @@ class RoundedBottomBar extends StatelessWidget {
             child: _HexagonalButton(
               onPressed: onPressed,
               isFromMachineHomePage: isFromMachineHomePage,
-              // recipeController.toAddRecipeScreen,
               icon: Icons.add,
             ))
       ],

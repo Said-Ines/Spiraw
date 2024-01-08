@@ -49,6 +49,8 @@ dependencies:
   camera:
   firebase_storage:
   auto_size_text:
+  dots_indicator:
+  fl_chart:
 
 dev_dependencies:
   flutter_test:

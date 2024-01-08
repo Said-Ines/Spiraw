@@ -31,11 +31,7 @@ class ScheduleTimeScreen extends GetView<MachineHomePageController> {
                 highlightedTextStyle:
                     AppStyles.interSemiBoldTextButton.medium().withSize(FontSizes.headline4).withColor(AppColors.secondary),
                 isForce2Digits: true,
-                onTimeChange: (time) {
-                  // setState(() {
-                  //   dateTime = time;
-                  // });
-                },
+                onTimeChange: (time) {},
               ),
             ),
             const Gap(30),
@@ -64,8 +60,6 @@ class ScheduleTimeScreen extends GetView<MachineHomePageController> {
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     onSelect: (values) async {
-                      // <== Callback to handle the selected days
-                      // print(values);
                       debugPrint(controller.selectedDates.toString());
 
                       controller.selectedDates = values;

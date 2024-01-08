@@ -1,7 +1,6 @@
-import 'package:spiraw/modules/core/common/notifications_button.dart';
-
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/bottom_bars/rounded_bottom_bar.dart';
+import '../../../common/notifications_button.dart';
 import '../../../common/search_button.dart';
 import '../../common/floatting_button.dart';
 import '../controller/recipe_page_controller.dart';
