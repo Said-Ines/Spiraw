@@ -97,7 +97,7 @@ class MachineHomePageController extends GetxController with GetTickerProviderSta
     Get.back();
   }
 
-  void _handleBarTapped(int index) {
+  void handleBarTapped(int index) {
     selectedBarIndex = index;
   }
 
@@ -123,6 +123,7 @@ class MachineHomePageController extends GetxController with GetTickerProviderSta
               color: isSelected ? Colors.white : Colors.white.withOpacity(0.5),
             ),
           ],
+          //showingTooltipIndicators: isSelected ? [0] : [],
         );
       },
     );
