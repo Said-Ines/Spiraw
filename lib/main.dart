@@ -13,12 +13,11 @@ import 'environment/app_environment.dart';
 import 'firebase_options.dart';
 import 'managers/connectivity_manager.dart';
 import 'managers/firebase_manager.dart';
-import 'modules/auth/login/login_service.dart';
 import 'modules/auth/otp/otp_service.dart';
 import 'modules/auth/phone_login/phone_login_service.dart';
 import 'modules/auth/user_info/user_info_service.dart';
 import 'modules/auth_machine/services/machine_service.dart';
-import 'modules/core/home/add_recipe/services/add_recipe_service.dart';
+import 'modules/core/community_home_page/add_recipe/services/add_recipe_service.dart';
 
 part 'main_bindings.dart';
 part 'main_styling.dart';

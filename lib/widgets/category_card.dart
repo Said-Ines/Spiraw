@@ -1,6 +1,6 @@
 import '../bases/screens/exports.dart';
-import '../modules/core/home/add_recipe/controllers/add_recipe_controller.dart';
-import '../modules/core/home/data/models/category_info_model.dart';
+import '../modules/core/community_home_page/add_recipe/controllers/add_recipe_controller.dart';
+import '../modules/core/community_home_page/data/models/category_info_model.dart';
 
 class CategoryCard extends GetView<AddRecipeController> {
   const CategoryCard({

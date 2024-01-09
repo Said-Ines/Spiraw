@@ -1,12 +1,21 @@
 import '../../bases/screens/exports.dart';
-import '../../modules/core/home/recipe_page/controller/recipe_page_controller.dart';
 
-class RoundedBottomBar extends GetView<RecipePageController> {
-  const RoundedBottomBar({super.key});
+class RoundedBottomBar extends StatelessWidget {
+  const RoundedBottomBar({
+    super.key,
+    required this.onPressed,
+    this.isFromMachineHomePage = false,
+    this.isEmpty = false,
+  });
+
+  final void Function() onPressed;
+  final bool isFromMachineHomePage;
+  final bool isEmpty;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: AlignmentDirectional.bottomEnd,
       children: [
         Container(
           height: AppConstants.bottomBar.height + 50,
@@ -58,7 +67,7 @@ class RoundedBottomBar extends GetView<RecipePageController> {
                   child: ClipOval(
                     child: Material(
                       color: AppColors.transparent,
-                      child: InkWell(
+                      child: GestureDetector(
                           onTap: () {},
                           child: Image.asset(
                             AppImages.bottomBar.profile,
@@ -78,7 +87,9 @@ class RoundedBottomBar extends GetView<RecipePageController> {
             bottom: 50,
             left: Get.width / 3 + 32,
             child: _HexagonalButton(
-              onPressed: controller.toAddRecipeScreen,
+              onPressed: onPressed,
+              isFromMachineHomePage: isFromMachineHomePage,
+              isEmpty: isEmpty,
               icon: Icons.add,
             ))
       ],
@@ -89,8 +100,15 @@ class RoundedBottomBar extends GetView<RecipePageController> {
 class _HexagonalButton extends StatelessWidget {
   final VoidCallback onPressed;
   final IconData icon;
+  final bool isFromMachineHomePage;
+  final bool isEmpty;
 
-  const _HexagonalButton({required this.onPressed, required this.icon});
+  const _HexagonalButton({
+    required this.onPressed,
+    required this.icon,
+    this.isFromMachineHomePage = false,
+    this.isEmpty = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -102,12 +120,12 @@ class _HexagonalButton extends StatelessWidget {
         child: GestureDetector(
           onTap: onPressed,
           child: CustomPaint(
-            painter: _HexagonPainter(),
+            painter: _HexagonPainter(isEmpty: isEmpty),
             child: Center(
               child: Icon(
                 icon,
                 size: 44,
-                color: Colors.white,
+                color: !isFromMachineHomePage || isEmpty ? Colors.white : AppColors.secondary,
               ),
             ),
           ),
@@ -118,9 +136,15 @@ class _HexagonalButton extends StatelessWidget {
 }
 
 class _HexagonPainter extends CustomPainter {
+  final bool isEmpty;
+
+  _HexagonPainter({
+    super.repaint,
+    this.isEmpty = false,
+  });
   @override
   void paint(Canvas canvas, Size size) {
-    final Paint paint = Paint()..color = AppColors.inputColor;
+    final Paint paint = Paint()..color = isEmpty ? AppColors.secondary : AppColors.inputColor;
     final Path path = Path();
     path.moveTo(size.width / 2, 0);
     path.lineTo(size.width, size.height / 4);

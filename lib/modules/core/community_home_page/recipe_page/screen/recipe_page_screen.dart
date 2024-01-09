@@ -1,5 +1,7 @@
 import '../../../../../bases/screens/exports.dart';
 import '../../../../../widgets/bottom_bars/rounded_bottom_bar.dart';
+import '../../../common/notifications_button.dart';
+import '../../../common/search_button.dart';
 import '../../common/floatting_button.dart';
 import '../controller/recipe_page_controller.dart';
 
@@ -21,41 +23,8 @@ class RecipePageScreen extends GetView<RecipePageController> {
                     style: AppStyles.rubikboldHeadline3.withColor(AppColors.secondary).withSize(FontSizes.headline4),
                   ),
                   const Spacer(),
-                  Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.18),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: IconButton(
-                      color: AppColors.greyDark,
-                      icon: Image.asset(
-                        AppImages.searchIcon,
-                        width: 24,
-                        height: 24,
-                      ),
-                      onPressed: () {},
-                    ).center(),
-                  ),
-                  const Gap(8),
-                  Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.18),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: IconButton(
-                      color: AppColors.greyDark,
-                      icon: Image.asset(
-                        AppImages.notificationIcon,
-                        width: 24,
-                        height: 24,
-                      ),
-                      onPressed: () {},
-                    ).center(),
-                  ),
+                  const SearchButton(),
+                  const NotificationsButton(),
                 ],
               ).paddingOnly(
                   left: AppConstants.bodyMinSymetricHorizontalPadding,
@@ -278,7 +247,10 @@ class RecipePageScreen extends GetView<RecipePageController> {
               ),
             ],
           ),
-          const Positioned(child: RoundedBottomBar()),
+          Positioned(
+              child: RoundedBottomBar(
+            onPressed: controller.toAddRecipeScreen,
+          )),
         ],
       ),
       floatingActionButton: FloatingButton(

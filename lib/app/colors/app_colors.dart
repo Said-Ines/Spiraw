@@ -177,6 +177,17 @@ class AppColors {
     stops: [0.2083, 1.0],
   );
 
+  static LinearGradient dozesIconGradientColor = const LinearGradient(
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+    colors: [
+      Color.fromRGBO(85, 85, 85, 0.40),
+      Color.fromRGBO(15, 15, 15, 0.42),
+    ],
+    stops: [-0.0777, 1.265],
+    transform: GradientRotation(100 * (3.1415926535 / 180)),
+  );
+
   static const LinearGradient bottomBarColor = bottomBarGradient;
 
   static const Color scaffold = primary;

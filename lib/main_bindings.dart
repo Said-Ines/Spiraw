@@ -28,12 +28,12 @@ class _Binding {
   }
 }
 
-//Future<GetPage> _initialModule() async => afterSplashModule;
+Future<GetPage> _initialModule() async => machineHomePageModule;
 
-final loginService = LoginService.instance;
+// final loginService = LoginService.instance;
 
-Future<GetPage> _initialModule() async {
-  final currentUser = loginService.currentUser;
+// Future<GetPage> _initialModule() async {
+//   final currentUser = loginService.currentUser;
 
-  return currentUser != null ? recipePageModule : afterSplashModule;
-}
+//   return currentUser != null ? recipePageModule : afterSplashModule;
+// }

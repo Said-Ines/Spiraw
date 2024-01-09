@@ -142,9 +142,10 @@ class _Buttons {
 
   final elevated = const _ElevatedButtons._();
   final text = const _TextButtons._();
-  final icon = const _SmallButtons._();
+  final back = const _SmallButtons._();
   final floating = const _FloatingActionButtons._();
   final oval = _OvalButtons();
+  final icon = const _IconButtons._();
 }
 
 class _OvalButtons {
@@ -167,6 +168,13 @@ class _TextButtons {
   // static const _applyElevation = false;
   //final double elevation = _applyElevation ? AppConstants.defaultElevation : 0;
   final double height = 20;
+}
+
+class _IconButtons {
+  const _IconButtons._();
+
+  final double size = 36;
+  final double iconSize = 24;
 }
 
 class _SmallButtons {
